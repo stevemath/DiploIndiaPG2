@@ -4874,6 +4874,12 @@ width:100%;
 
     @media screen and (max-width: 1024px) {
 
+        .intro2 .text-panel {
+            width: 70%;
+            left: 12.5%;
+           
+        }
+
         .itin-side-panel .itin-wrapper {
             margin-top: 0px;
         }
