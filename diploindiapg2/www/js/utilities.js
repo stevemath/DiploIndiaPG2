@@ -226,6 +226,18 @@ document.addEventListener("visibilitychange", handleVisibilityChange, false);
 
 function onDeviceReady() {
     console.log("device ready");
+
+            if (checkSimulator() == false && window.screen.orientation.lock) {
+
+            console.log("locking");
+            screen.orientation.lock('landscape');
+            console.log("landscape lock");
+            console.log(screen.orientation.type);
+           // alert(screen.orientation.type)
+        } else {
+//alert("no screen orientation")
+
+        }
     document.addEventListener("pause", onPause, false);
     document.addEventListener("resume", onResume, false);
    // alert("device ready")
