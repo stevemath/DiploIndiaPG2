@@ -1,0 +1,1482 @@
+<div data-role="view" data-title="India Presidential Mission:  An educational game about diplomacy and India's geography, culture, and history." data-reload="true" data-layout="main" data-model="app.home" data-show="app.home.onShow" data-after-show="app.home.afterShow" data-before-hide="app.home.beforeHide" id="homeScreen" class="screen">
+	<header data-role="header">
+		<div data-role="navbar" class="header-text">
+			<span data-bind="text: strings.home.title"></span>
+		</div>
+	</header>
+
+	<!-- START_CUSTOM_CODE_home -->
+	<!-- Add custom code here. For more information about custom code, see http://docs.telerik.com/platform/screenbuilder/troubleshooting/how-to-keep-custom-code-changes -->
+	<div id="loading">
+		<i class="fa fa-spinner fa-spin fa-5x"></i>
+
+	</div>
+	
+
+	<canvas width="950" height="680" id="chinaCanvas"></canvas>
+
+
+	<div class="tool-links">
+		<div class="links-left">
+
+
+
+			<div class="icon-wrapper scrapbook ">
+				<div class="scrap-num"><div class="scrapnum-innercontent" data-bind="text:unlockedScrapPages"></div></div>
+				<img src="images/system/scrapbookicon.png" />
+
+			</div>
+
+
+			<div class="icon-wrapper getbcardfull ">
+				<div class="bcard-num"><div class="bcard-innercontent" data-bind="text:savedCardsNum"></div></div>
+				<img class="bush-cards" src="images/system/bushcardicon.png" />
+
+			</div>
+
+
+			<div class="icon-wrapper expPts">
+				<div class="curr-points left">	<span data-bind="text:expLevel">375</span><span class="pts-label">pts</span></div>
+
+			</div>
+		</div>
+
+
+		<div class="links-right">
+
+
+		</div>
+
+	</div>
+
+	<div id="itinerary">
+		<div class="itin-bkgrd"></div>
+		<div id="itin-panels">
+
+			<div class="itin-dot ul"></div>
+			<div class="itin-dot ur"></div>
+			<div class="itin-dot ll"></div>
+			<div class="itin-dot lr"></div>
+
+			<div class="itin-header">
+				<div class="itinhead-wrapper">
+					<div class="head-left">Presidential</div>
+					<div class="head-logo">
+						<img src="images/system/presidentialseal.png" />
+					</div>
+					<div class="head-rt">Itinerary</div>
+				</div>
+				<div title="Collapse Itinerary" class="btn-expand"><i class="fa fa-angle-double-up"></i></div>
+			</div>
+
+			<div class="itin-wrapper">
+				<ul id="btnGroup" style=display:none; data-role="buttongroup" data-select-on="up" data-select="gamePlay.getItinPanel">
+
+					<li>Itinerary</li>
+					<li>Visted</li>
+				</ul>
+				<div id="itin">
+				</div>
+
+				<div class="itin-buttons">
+					<div class="instruction">Click on a location to remove it.</div>
+					<div class="red-btn-container show-visited small ib" data-text="Show Visited" data-fontsize="15" data-width="160" data-height="30"></div>
+					<span class="submit-wrapper">
+						<div class="red-btn-container submit-itin small ib" data-text="Submit Itinerary" data-fontsize="15" data-width="160" data-height="30"></div>
+					</span>
+				</div>
+			</div>
+
+
+
+
+			<div class="viewed-locales-wrapper">
+				<div class="viewed-advance back">
+
+					<img src="images/system/advanceup.png" />
+				</div>
+				<div id="viewedLocations"></div>
+				<div class="viewed-advance forward">
+					<img src="images/system/advancedown.png" />
+				</div>
+				<div class="itin-buttons">
+					<div class="instruction">Click on a location to add it to the itinerary.</div>
+					<div class="red-btn-container show-itin small ib" data-text="Show Itinerary" data-fontsize="15" data-width="175" data-height="30"></div>
+
+				</div>
+			</div>
+
+
+
+
+
+		</div>
+
+	</div>
+
+	<div class="itinerary-wrapper">
+
+	</div>
+
+	<script id="notificationTemplate" type="text/x-kendo-template">
+		<div class="notification-container">
+			<div class="disc-bkgrd"></div>
+			<div class="card-content">
+				<div class="task-text">
+
+					<div class="boldtext">#= message#</div>
+
+
+				</div>
+
+			</div>
+
+			<div class="dip-btns">
+
+
+
+
+				<div class="red-btn-container close-notification ib padrt small" data-text="OK" data-width="170" data-height="60"></div>
+
+			</div>
+		</div>
+
+	</script>
+
+	<script id="itinTemplate" type="text/x-kendo-template">
+		<div class="itin-item selected" title="#:name#" onclick="gamePlay.removeItinItem('#=Id#')">
+			<div class="itin-name">#=name#</div>
+
+			#if(data.hasOwnProperty("stars") == true){#
+			<div class="itin-rating">
+				<div class="star-container" data-height="18" data-stars="#=stars #">
+
+				</div>
+				#}else{#
+				<div class="itin-rating">
+
+					<div class="star-container" data-height="18" data-stars="0">
+					</div>
+
+					#}#
+				</div>
+
+				#if(data.hasOwnProperty("category" ) == true){#
+				<div class="itin-cat">#= category.name#</div>
+				#}else{#
+				<div class="itin-cat">-</div>
+
+				#}#
+
+
+				<div class="itin-remv" data-id="#=Id#" onclick="gamePlay.removeItinItem('#=Id#')"> <i class="fa fa-minus-circle"></i></div>
+				<div class="clear"></div>
+			</div>
+		</div>
+
+	</script>
+
+	<script id="itinerary-gameover" type="text/x-kendo-template">
+
+		<div class="itin-bkgrd"></div>
+
+		<div id="itin-panels">
+
+			<div class="itin-dot ul"></div>
+			<div class="itin-dot ur"></div>
+			<div class="itin-dot ll"></div>
+			<div class="itin-dot lr"></div>
+
+			<div class="itin-header">
+				<div class="itinhead-wrapper">
+					<div class="head-left">Presidential</div>
+					<div class="head-logo">
+						<img src="images/system/presidentialseal.png" />
+					</div>
+					<div class="head-rt">Itinerary</div>
+				</div>
+
+			</div>
+
+			<div class="itin-wrapper">
+
+				<div id="itinGameOver">
+				</div>
+
+
+			</div>
+
+
+		</div>
+
+
+	</script>
+
+	<script id="itinTemplate-gameover" type="text/x-kendo-template">
+		<div class="itin-item selected gameover" title="#:name#">
+			<div class="itin-name">#=name#</div>
+
+			#if(data.hasOwnProperty("stars") == true){#
+			<div class="itin-rating">
+				<div class="star-container" data-height="18" data-stars="#=stars #">
+
+				</div>
+				#}else{#
+				<div class="itin-rating">
+
+					<div class="star-container" data-height="18" data-stars="0">
+					</div>
+
+					#}#
+				</div>
+
+				#if(data.hasOwnProperty("category" ) == true){#
+				<div class="itin-cat">#=category.name#</div>
+				#}else{#
+				<div class="itin-cat">-</div>
+
+				#}#
+
+
+
+			</div>
+		</div>
+
+	</script>
+
+	<script id="viewedLocalesTemplate" type="text/x-kendo-template">
+		<div class="itin-item viewed" title="#:name#" onclick="gamePlay.addItinItem('#=Id#')">
+			<div class="itin-name">#=name#</div>
+
+			#if(data.hasOwnProperty("stars") == true){#
+			<div class="itin-rating">
+				<div class="star-container" data-height="18" data-stars="#=stars #">
+
+				</div>
+				#}else{#
+				<div class="itin-rating">
+
+					<div class="star-container" data-height="18" data-stars="0">
+					</div>
+
+					#}#
+				</div>
+				#if(data.hasOwnProperty("category" ) == true){#
+				<div class="itin-cat">#= category.name#</div>
+				#}else{#
+				<div class="itin-cat">-</div>
+
+				#}#
+
+				<div class="itin-remv" data-id="#=Id#" onclick="gamePlay.addItinItem('#=Id#')"> <i class="fa fa-plus-circle"></i></div>
+				<div class="clear"></div>
+			</div>
+		</div>
+
+	</script>
+
+	<script id="gameOverPromptTemplate" type="text/x-kendo-template">
+
+		<div class="diplomacy-container">
+			<div class="disc-bkgrd"></div>
+			<div class="card-content">
+				<div class="task-text">
+					Are you ready to submit your itinerary to the President for review?
+
+				</div>
+
+			</div>
+
+			<div class="dip-btns">
+
+
+				<div class="red-btn-container cancel-eval ib small" data-text="Not Yet" data-width="170" data-height="60"></div>
+
+				<div class="red-btn-container accept-eval ib padrt small" data-text="Yes I Am" data-width="170" data-height="60"></div>
+
+			</div>
+		</div>
+
+
+
+
+	</script>
+	<script id="diplomacyTemplate" type="text/x-kendo-template">
+
+		<div class="diplomacy-container">
+			<div class="disc-bkgrd"></div>
+			<div class="card-content">
+				<div class="task-text">#= intro# </div>
+
+			</div>
+
+			<div class="dip-btns">
+
+
+				<div class="red-btn-container accept ib small" data-text="Do It!" data-width="170" data-height="60"></div>
+
+				<div class="red-btn-container cancel ib padrt small" data-text="Maybe Later" data-width="170" data-height="60"></div>
+
+			</div>
+		</div>
+
+
+
+
+	</script>
+
+
+	<script id="diplomacyActionTemplate" type="text/x-kendo-template">
+		#var bkgrd = data.hasOwnProperty("bkgrdImgBack") && bkgrdImgBack !=""  ?    bkgrdImgBack : "blank.gif" #
+
+		<div class="dis-fact" style="background-image:url('#= bkgrdDir + bkgrd#')">
+
+			<div class="header">
+
+				<div class="near-left"> </div>
+				<div class="head-text">#:name #</div>
+				<div class="near-rt"></div>
+
+
+			</div>
+
+			<div class="card-content">
+
+				<div class="q-wrapper">
+
+					<div class="fact-bkgrd"></div>
+					<div class="answer-wrapper">
+						<div class="task-text small">#= quizIntro# #= q#</div>
+						<div class="a-btns">
+							# for (var i=0;i< answers.length ;i++){#
+							<div>
+								<div class="red-btn-container dip-btn ib" data-text="#=answers[i].atext#" data-corr="#=answers[i].correct#" data-corrresp="#=correctResponse.title#" data-incorrresp="#=incorrectResponse.title#" data-width="520" data-height="80" data-fontsize="20"></div>
+							</div>
+							#}#
+						</div>
+					</div>
+				</div>
+				<div class="resp-wrapper">
+					<div class="fact-bkgrd"></div>
+					<div class="resp-container">
+						<div class="corr-resp">
+							<div class="q-text"> #= correctResponse.text#</div>
+							#if(correctResponse.subtext != ""){#
+							<div class="subtext">#= correctResponse.subtext#</div>
+							#}#
+							#if(correctResponse.bullets && correctResponse.bullets.length > 0 && showBullets== true){#
+							<ul>
+								#for(var i = 0; i < correctResponse.bullets.length; i++ ){#
+								<li class="bullet">#= correctResponse.bullets[i].btext#</li>
+								#}#
+							</ul>
+							#}#
+
+
+						</div>
+						<div class="incorr-resp">
+							<div class="q-text">
+
+								#= incorrectResponse.text#
+
+							</div>
+
+							#if(correctiveText != undefined){#
+							<div class="subtext">#= correctiveText#</div>
+							#}#
+							#if(incorrectResponse.subtext != ""){#
+							<div class="subtext">#= incorrectResponse.subtext#</div>
+							#}#
+							#if(incorrectResponse.bullets && incorrectResponse.bullets.length > 0  && showBullets == true){#
+							<ul>
+								#for(var i = 0; i < incorrectResponse.bullets.length; i++ ){#
+								<li class="bullet">#= incorrectResponse.bullets[i].btext#</li>
+								#}#
+							</ul>
+							#}#
+
+
+						</div>
+
+
+
+
+					</div>
+					<div class="add-itin-panel">
+						<div class="subHeading">
+							<div class="two-thirds text-center">#=name #</div>
+							<div class="one-third text-left">
+
+								<div class="star-container" data-height="35" data-stars="#=stars #"></div>
+
+							</div>
+							<div class="clear"></div>
+						</div>
+						<div class="itin-req">
+							<div class="itin-req-text">
+								Do you want to add "#= name#" to the President's itinerary?
+							</div>
+
+
+
+						</div>
+						<div class="itin-btns">
+							<div class="red-btn-container itin-yes ib padrt small" data-text="Yes" data-width="175" data-height="60"></div>
+
+							<div class="red-btn-container  itin-no ib padrt small" data-text="Decide Later" data-width="175" data-height="60"></div>
+
+
+						</div>
+
+					</div>
+					<div class="clear ib"></div>
+
+				</div>
+
+				<div class="dis-btn">
+					<div class="red-btn-container continue ib" style="display:none;" data-text="Continue" data-width="170" data-height="60"></div>
+				</div>
+
+
+
+
+
+			</div>
+
+
+
+
+		</div>
+
+
+
+	</script>
+
+	<script id="diplomacyActionRandomTemplate" type="text/x-kendo-template">
+
+		#var bkgrd = data.hasOwnProperty("bkgrdImgBack") && bkgrdImgBack !=""  ?    bkgrdImgBack : "blank.gif" #
+
+		<div class="dis-fact" style="background-image:url('#= bkgrdDir + bkgrd#')">
+			<div class="header">
+
+				<div class="near-left"> </div>
+				<div class="head-text">#:name #</div>
+				<div class="near-rt"></div>
+
+
+			</div>
+
+			<div class="card-content">
+
+				<div class="q-wrapper">
+					<div class="fact-bkgrd"></div>
+					<div class="q-text">
+					</div>
+					<div class="outcome">
+						<i class="fa fa-spinner  fa-4x"></i>
+
+					</div>
+					<div class="dip-btns" style="display:none;">
+						<div class="red-btn-container get-random ib" data-text="View the Result" data-width="220" data-height="60"></div>
+
+					</div>
+				</div>
+				<div class="resp-wrapper">
+					<div class="fact-bkgrd"></div>
+					<div class="resp-container">
+						<div class="corr-resp">
+							<div class="q-text">
+
+								#if(typeof correctResponse.noQuiz != 'undefined' && correctResponse.noQuiz !=""){#
+								#= correctResponse.noQuiz#
+								#}else{#
+								#= correctResponse.text#
+								#}#
+							</div>
+
+							<div class="subtext">
+								#if(typeof correctResponse.subtextNoQuiz != 'undefined' && correctResponse.subtextNoQuiz !=""){#
+								#= correctResponse.subtextNoQuiz#
+								#}else{#
+								#= correctResponse.subtext#
+								#}#
+							</div>
+
+
+							#if(typeof correctResponse.bullets !="undefined" && correctResponse.bullets.length > 0  && showBullets== true){#
+							<ul>
+								#for(var i = 0; i < correctResponse.bullets.length; i++ ){#
+								<li class="bullet">#= correctResponse.bullets[i].btext#</li>
+								#}#
+							</ul>
+							#}#
+
+
+						</div>
+						<div class="incorr-resp">
+
+							<div class="q-text">
+
+								#if(typeof incorrectResponse.noQuiz != 'undefined' && incorrectResponse.noQuiz !=""){#
+								#= incorrectResponse.noQuiz#
+								#}else{#
+								#= incorrectResponse.text#
+								#}#
+
+							</div>
+
+							<div class="subtext">
+								#if(typeof incorrectResponse.subtextNoQuiz != 'undefined' && incorrectResponse.subtextNoQuiz !=""){#
+								#= incorrectResponse.subtextNoQuiz#
+								#}else{#
+								#= incorrectResponse.subtext#
+								#}#
+							</div>
+
+							#if(typeof incorrectResponse.bullets !="undefined" && incorrectResponse.bullets.length > 0  && showBullets== true){#
+							<ul>
+								#for(var i = 0; i < incorrectResponse.bullets.length; i++ ){#
+								<li class="bullet">#= incorrectResponse.bullets[i].btext#</li>
+								#}#
+							</ul>
+							#}#
+
+
+						</div>
+
+
+					</div>
+
+					<div class="add-itin-panel">
+						<div class="subHeading">
+							<div class="two-thirds text-center">#=name #</div>
+							<div class="one-third text-left">
+
+								<div class="star-container" data-height="35" data-stars="#=stars #"></div>
+
+							</div>
+							<div class="clear"></div>
+						</div>
+						<div class="itin-req">
+							<div class="itin-req-text">
+								Do you want to add "#= name#" to the President's itinerary?
+							</div>
+
+
+
+						</div>
+						<div class="itin-btns">
+							<div class="red-btn-container itin-yes ib padrt small" data-text="Yes" data-width="175" data-height="60"></div>
+
+							<div class="red-btn-container  itin-no ib padrt small" data-text="Decide Later" data-width="175" data-height="60"></div>
+
+
+						</div>
+
+					</div>
+					<div class="clear ib"></div>
+				</div>
+
+				<div class="dis-btn">
+					<div class="red-btn-container continue ib" data-text="Continue" data-width="170" data-height="60"></div>
+				</div>
+
+
+
+			</div>
+
+
+
+
+		</div>
+
+
+
+	</script>
+
+
+
+	<script id="starTemplate" type="text/x-kendo-template">
+		<div class="star-wrapper">
+			<div class="star">
+				<img src="images/system/star.png" />
+			</div>
+
+			<div class="star">
+				<img src="images/system/star.png" />
+			</div>
+
+			<div class="star">
+				<img src="images/system/star.png" />
+			</div>
+		</div>
+	</script>
+
+
+	<script id="resultsTemplate" type="text/x-kendo-template">
+
+		<div id="resultsContainer">
+			<div class="diplo-pts">
+				<div class="pts #=ptClass#">#=dipPts#</div>
+				<div class="label">Diplomacy</div>
+			</div>
+			<div id="dragonWrapperLrg">
+				<div class="dragon-red">
+					<img src="images/system/red-dragon-lrg.png" />
+
+				</div>
+
+				<div class="dragon-gold" style="width:#=meterValue#">
+					<img src="images/system/gold-dragon-lrg.png" />
+				</div>
+			</div>
+			<div class="exp-pts">
+				<div class="pts #=ptClass#">#=expPts#</div>
+				<div class="label">Experience </div>
+			</div>
+		</div>
+
+	</script>
+
+	<script id="discoveryFactTemplate" type="text/x-kendo-template">
+		#var bkgrd = data.hasOwnProperty("bkgrdImgBack") && bkgrdImgBack !=""  ?    bkgrdImgBack : "blank.gif" #
+
+		<div class="dis-fact" style="background-image:url('#= bkgrdDir + bkgrd#')">
+			<div class="header">
+
+				<div class="near-left"> </div>
+				<div class="head-text">#:name #</div>
+				<div class="near-rt"></div>
+
+
+			</div>
+
+			<div class="card-content">
+
+				<div class="fact-wrapper">
+					<div class="fact-bkgrd"></div>
+					<div class="fact-text">#= fact#</div>
+
+					<div class="add-itin-panel">
+						<div class="subHeading">
+							<div class="two-thirds text-center">#=name #</div>
+							<div class="one-third text-left">
+
+								<div class="star-container" data-height="35" data-stars="#=stars #"></div>
+
+							</div>
+							<div class="clear"></div>
+						</div>
+						<div class="itin-req">
+							<div class="itin-req-text">
+								Do you want to add "#= name#" to the President's itinerary?
+							</div>
+
+
+
+						</div>
+						<div class="itin-btns">
+							<div class="red-btn-container itin-yes ib padrt small" data-text="Yes" data-width="175" data-height="60"></div>
+
+							<div class="red-btn-container  itin-no ib padrt small" data-text="Decide Later" data-width="175" data-height="60"></div>
+
+
+						</div>
+					</div>
+
+
+
+
+				</div>
+
+				<div class="dis-btn">
+					<div class="red-btn-container continue ib" data-text="Continue" data-width="170" data-height="60"></div>
+				</div>
+
+
+
+			</div>
+		</div>
+
+
+	</script>
+	<script id="discoveryTemplate" type="text/x-kendo-template">
+
+		<div class="discovery-container">
+			<div class="disc-bkgrd"></div>
+
+			<div class="card-content">
+
+				<div class="task-text">#= intro#</div>
+
+			</div>
+			<div class="dip-btns">
+
+
+				<div class="red-btn-container accept ib padrt small" data-text="Do It!" data-width="170" data-height="60"></div>
+				<div class="red-btn-container cancel ib padrt small" data-text="Maybe Later" data-width="170" data-height="60"></div>
+
+
+			</div>
+
+		</div>
+
+	</script>
+
+
+
+
+
+	<script id="redButtonTemplate" type="text/x-kendo-template">
+		<div class="red-button" style="#=styles#">
+
+			<div class="redbtn-inner-bkg">
+				<div class="inner-bkg"></div>
+				<div class="btn-corner ll"></div>
+				<div class="btn-corner lr"></div>
+				<div class="btn-corner ur"></div>
+				<div class="btn-corner ul"></div>
+				<div class="line upper">
+
+					<div class="dot"></div>
+					<div class="dot"></div>
+					<div class="dot"></div>
+					<div class="dot"></div>
+					<div class="dot"></div>
+					<div class="dot"></div>
+					<div class="dot"></div>
+					<div class="dot"></div>
+					<div class="dot"></div>
+					<div class="dot"></div>
+					<div class="dot"></div>
+					<div class="dot"></div>
+					<div class="dot"></div>
+					<div class="dot"></div>
+					<div class="dot"></div>
+					<div class="dot"></div>
+					<div class="dot"></div>
+					<div class="dot"></div>
+					<div class="dot"></div>
+					<div class="dot"></div>
+					<div class="dot"></div>
+					<div class="dot"></div>
+					<div class="dot"></div>
+					<div class="dot"></div>
+					<div class="dot"></div>
+					<div class="dot"></div>
+					<div class="dot"></div>
+					<div class="dot"></div>
+					<div class="dot"></div>
+					<div class="dot"></div>
+					<div class="dot"></div>
+					<div class="dot"></div>
+					<div class="dot"></div>
+					<div class="dot"></div>
+					<div class="dot"></div>
+					<div class="dot"></div>
+					<div class="dot"></div>
+
+				</div>
+				<div class="line lower">
+
+					<div class="dot"></div>
+					<div class="dot"></div>
+					<div class="dot"></div>
+					<div class="dot"></div>
+					<div class="dot"></div>
+					<div class="dot"></div>
+					<div class="dot"></div>
+					<div class="dot"></div>
+					<div class="dot"></div>
+					<div class="dot"></div>
+					<div class="dot"></div>
+					<div class="dot"></div>
+					<div class="dot"></div>
+					<div class="dot"></div>
+					<div class="dot"></div>
+					<div class="dot"></div>
+					<div class="dot"></div>
+					<div class="dot"></div>
+					<div class="dot"></div>
+					<div class="dot"></div>
+					<div class="dot"></div>
+					<div class="dot"></div>
+					<div class="dot"></div>
+					<div class="dot"></div>
+					<div class="dot"></div>
+					<div class="dot"></div>
+					<div class="dot"></div>
+					<div class="dot"></div>
+					<div class="dot"></div>
+					<div class="dot"></div>
+					<div class="dot"></div>
+					<div class="dot"></div>
+					<div class="dot"></div>
+					<div class="dot"></div>
+					<div class="dot"></div>
+					<div class="dot"></div>
+					<div class="dot"></div>
+
+				</div>
+
+				<div class="col lt">
+
+					<div class="dot"></div>
+					<div class="dot"></div>
+					<div class="dot"></div>
+					<div class="dot"></div>
+					<div class="dot"></div>
+					<div class="dot"></div>
+					<div class="dot"></div>
+					<div class="dot"></div>
+					<div class="dot"></div>
+					<div class="dot"></div>
+					<div class="dot"></div>
+					<div class="dot"></div>
+					<div class="dot"></div>
+					<div class="dot"></div>
+					<div class="dot"></div>
+					<div class="dot"></div>
+					<div class="dot"></div>
+					<div class="dot"></div>
+					<div class="dot"></div>
+					<div class="dot"></div>
+					<div class="dot"></div>
+					<div class="dot"></div>
+					<div class="dot"></div>
+					<div class="dot"></div>
+					<div class="dot"></div>
+
+				</div>
+				<div class="col rt">
+
+					<div class="dot"></div>
+					<div class="dot"></div>
+					<div class="dot"></div>
+					<div class="dot"></div>
+					<div class="dot"></div>
+					<div class="dot"></div>
+					<div class="dot"></div>
+					<div class="dot"></div>
+					<div class="dot"></div>
+					<div class="dot"></div>
+					<div class="dot"></div>
+					<div class="dot"></div>
+					<div class="dot"></div>
+					<div class="dot"></div>
+					<div class="dot"></div>
+					<div class="dot"></div>
+					<div class="dot"></div>
+					<div class="dot"></div>
+					<div class="dot"></div>
+					<div class="dot"></div>
+					<div class="dot"></div>
+					<div class="dot"></div>
+					<div class="dot"></div>
+					<div class="dot"></div>
+					<div class="dot"></div>
+
+				</div>
+				<div class="btn-text">
+					#=text#
+				</div>
+
+			</div>
+
+		</div>
+	</script>
+
+
+
+
+
+
+
+	<script id="bCardLayoutTemplate" type="text/x-kendo-template">
+		<div id="scrim" class="scrim"></div>
+		<div id="bCardLayout">
+
+			<div class="bush-wrapper" style="">
+
+
+				<div class="card-content layout">
+					<div class="header">
+						<div>Your Bush Cards</div>
+						<div class="close-bush-cards">close</div>
+					</div>
+					<div class="heading-text">
+						<div class="heading-desc">
+							Before he became president, George Bush was America's chief diplomat in India. He worked tirelessly to learn about India and to improve the relationship between the two countries.
+
+						</div>
+						<div class="heading-print">
+							<div class="red-btn-container print small ib " data-text="Print" data-width="100" data-fontsize="15" data-height="30"></div>
+						</div>
+					</div>
+
+
+					<div id="cardsList" data-role="listview" data-template="cardListTemplate" data-bind="source:cardList"></div>
+				</div>
+			</div>
+		</div>
+
+
+	</script>
+	<script id="cardListTemplate" type="text/x-kendo-template">
+		<div class="cards-wrapper">
+			<div class="bcardfull-content">
+				<div class="bcardfull-container">
+					<div class="bc-front">
+						<div class="bcard-img-front"><img src="images/system/bushcardback3.png" /></div>
+					</div>
+
+
+					<div class="bc-back">
+
+						<div class="bcard-content">
+							<div class="bcard-bkgrd"></div>
+							<div class="inner-wrapper">
+								<div class="card-top">#=name#</div>
+								<div class="card-middle">
+									<img src="images/system/bushcards/#= img #" />
+
+								</div>
+								<div class="card-bottom">
+
+									#= description#
+								</div>
+								<div class="card-frame">
+									<img src="images/system/bushcardfront2lrg.png" />
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="clear"></div>
+			</div>
+			<div class="clear"></div>
+		</div>
+
+	</script>
+
+	<script id="bCardTemplate" type="text/x-kendo-template">
+		<div class="bcard-full-container">
+
+
+			<div class="bcard-status-content">
+				<div class="bcard-bkgrd-left"></div>
+				<div class="task-text">
+					<div>You unlocked a Bush Card! <br /><br /></div>
+					<div>You've collected #= collectedNum# of #= maxCards#.</div>
+					<div>Keep playing to collect them all!</div>
+				</div>
+
+				<div class="dip-btns">
+					<div class="red-btn-container save-card small ib" data-text="Save Card" data-width="225" data-height="60"></div>
+
+
+				</div>
+			</div>
+			<div class="bcard-content">
+				<div class="bcard-bkgrd"></div>
+				<div class="inner-wrapper">
+					<div class="card-top">#=name#</div>
+					<div class="card-middle">
+						<img src="images/system/bushcards/#= img #" />
+
+					</div>
+					<div class="card-bottom">
+
+						#= description#
+					</div>
+					<div class="card-frame">
+						<img src="images/system/bushcardfront2lrg.png" />
+					</div>
+				</div>
+			</div>
+		</div>
+	</script>
+
+
+	<script id="bCardFullTemplate" type="text/x-kendo-template">
+
+		<div class="card-wrapper full-card">
+			<div class="bcardfull-container">
+				<div class="bc-front">
+					<div class="bcard">
+						<div class="outer-bwrapper">
+							<div class="inner-bcontent">
+
+								<div class="bcard-content">
+
+									<div class="bcard-img-front"><img src="images/system/bushcardback.png" /></div>
+
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="bc-back">
+
+					<div class="bcard-content">
+						<div class="bcard-bkgrd"></div>
+						<div class="inner-wrapper">
+							<div class="card-top">#=name#</div>
+							<div class="card-middle">
+								<img src="images/system/bushcards/#= img #" />
+
+							</div>
+							<div class="card-bottom">
+
+								#= description#
+							</div>
+							<div class="card-frame">
+								<img src="images/system/bushcardfront2lrg.png" />
+							</div>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+
+	</script>
+
+
+
+
+	<script id="achievementTemplate" type="text/x-kendo-template">
+
+		<div class="card-wrapper">
+			<div class="achievement-container">
+
+				<div class="levelup-card">
+					<div class="outer-wrapper">
+						<div class="corner"></div><div class="corner"></div><div class="corner"></div><div class="corner"></div>
+						<div class="inner-content">
+
+							<div class="card-content">
+
+								<div class="heading">You've Earned A Badge!</div>
+
+								<div class="achievement-desc">
+									<div class="upper">
+										By completing #=reqPoints# #= name#
+										#if(reqPoints >1){#
+										activities
+										#}else{#
+										activity
+										#}#
+										, you've earned this badge.   See all your badges on your Career Page
+
+									</div>
+
+
+								</div>
+
+								<div class="achievement-sml">
+
+									<div class="aBadge left"><img src="#= badgeDir + image# " /></div>
+									<div class="left desc-wrapper">
+										<div class="badge-heading"> #= name# Badge</div>
+										<div>
+											#= description#
+										</div>
+									</div>
+								</div>
+
+
+								<div class="dip-btns">
+									<div class="red-btn-container close-achievement ib" data-text="Continue" data-width="180" data-height="60"></div>
+
+
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</script>
+
+
+
+	<script id="gameCompletedTemplate" type="text/x-kendo-template">
+		<div id="gameoverLayout">
+			<div class="gameover-wrapper" style="background-image:url('images/system/WhiteHouse-gameover.jpg')">
+
+				<div class="header">
+					<div class="title">THE WHITE HOUSE</div>
+					<div class="subtext">
+						The White House has reviewed and evaluated your itinerary based on the quality and variety of experiences.
+					</div>
+
+				</div>
+
+				<div class="gameover-content">
+					<div>
+						<div class="itin-side-panel">
+
+
+
+							<div class="itin-bkgrd-rt"></div>
+
+							<div id="itin-panels">
+
+								<div class="itin-dot ul"></div>
+								<div class="itin-dot ur"></div>
+								<div class="itin-dot ll"></div>
+								<div class="itin-dot lr"></div>
+
+
+								<div class="itin-wrapper">
+
+									<div>
+
+										<div class="eval-text rating" data-bind="{text:txtStarAvg}">
+										</div>
+										<div>
+											<div class="star-container" data-height="24" data-stars="#=starAvg#">
+											</div>
+
+										</div>
+
+										<div class="heading">Quality:</div>
+										<div class="eval-text" data-bind="{text:txtQuality}"></div>
+										<div class="heading">Variety:</div>
+										<div class="eval-text" data-bind="{html:txtVariety}"></div>
+
+
+
+										<div class="heading">Your Score:</div>
+										<div class="eval-text" data-bind="{html:txtYourScore}"></div>
+									</div>
+
+
+								</div>
+
+
+							</div>
+
+
+
+
+						</div>
+						<div class="evaluation" data-bind="{text:txtEval}">
+
+						</div>
+
+						<div class="list-itin">
+
+							<div class="gameover-itin">
+
+
+							</div>
+						</div>
+
+						<div class="clear"></div>
+					</div>
+					<div class="list-bcards">
+						<div class="disc-bkgrd"></div>
+						<div class="view-bcardicon">
+							<div class="bcard-num"><div class="bcard-innercontent" data-bind="text:savedCardsNum"></div></div>
+							<img class="bush-cards" src="images/system/viewbushcardicon.png" />
+
+
+						</div>
+						<div class="view-scrap-icon">
+							<div class="bcard-num"><div class="bcard-innercontent" data-bind="text:scrapPgs"></div></div>
+							<img src="images/system/scrapbookicon.png" />
+
+						</div>
+						<div class="play-again-btn">
+							<div class="red-btn-container replay ib " data-text="Replay" data-width="200" data-fontsize="25" data-height="60"></div>
+						</div>
+
+
+						<div class="desc-text">
+							Now look at your unlocked Bush Cards and explore the scapboook about George and Barbara Bush's 1984 trip to India!
+						</div>
+					</div>
+
+				</div>
+
+
+
+			</div>
+
+		</div>
+
+
+	</script>
+
+
+	<script id="scrapbookTemplate" type="text/x-kendo-template">
+		<div class="scrap-bkgrd">
+			<div class="scrap-edge-top"></div>
+			<div class="scrap-edge-bottom"></div>
+		</div>
+
+		<div class="last-scrap">
+			<div class="msg-bkgrd"></div>
+			<div class="msg">Plan the Presidential Itinerary to unlock more pages!</div>
+		</div>
+		<div id="scrapbookLayout">
+			<div class="sb-advance sb-prev">
+				<img src="images/system/left-arrow.png" />
+			</div>
+
+			<div class="sb-advance sb-next">
+				<img src="images/system/rt-arrow.png" />
+			</div>
+
+			<div class="close-scrapbook-btn">
+				<div class="red-btn-container close-scrap ib small" data-text="Close" data-width="125" data-fontsize="17" data-height="25"></div>
+			</div>
+
+			<div class="title">Trip to India Scrapbook</div>
+			<div class="desc">
+				In May 1984, Vice President George H.W. Bush</br>
+				and Mrs. Bush visited India!
+			</div>
+			<div class="pg-wrapper">
+				<div id="lvScrapPgs"></div>
+
+			</div>
+
+
+
+
+
+
+
+		</div>
+
+
+	</script>
+
+
+
+
+	<script id="scrapbookPageTemplate-copy" type="text/x-kendo-template">
+		<div class="sb-page sbpg#=idx#">
+
+
+			#if(heading != ""){#
+			<div class="sb-heading">#=heading#</div>
+			#}#
+
+			#if(imgUrl != undefined && imgUrl != ""){#
+			<img class="sb-img1" src="images/system/scrapbook/#=imgUrl#" />
+			#}#
+
+			#if(imgUrl2 != undefined && imgUrl2 != ""){#
+			<img class="sb-img2" src="images/system/scrapbook/#=imgUrl2#" />
+			#}#
+
+			#if(imgUrl3 != undefined && imgUrl3 != ""){#
+			<img class="sb-img3" src="images/system/scrapbook/#=imgUrl3#" />
+			#}#
+
+			#if(imgUrl4 != undefined && imgUrl4 != ""){#
+			<img class="sb-img4" src="images/system/scrapbook/#=imgUrl4#" />
+			#}#
+
+			#if(imgUrl5 != undefined && imgUrl5 != ""){#
+			<img class="sb-img5" src="images/system/scrapbook/#=imgUrl5#" />
+			#}#
+
+
+			#if(text1 != ""){#
+			<div class="txt1">#=text1#</div>
+			#}#
+
+			#if(text2 != ""){#
+			<div class="txt2">#=text2#</div>
+			#}#
+
+			#if(citation != ""){#
+			<div class="citation">#=citation#</div>
+			#}#
+
+
+
+
+
+		</div>
+	</script>
+
+	<script id="scrapbookPageTemplate" type="text/x-kendo-template">
+		<div class="sb-page sbpg#=idx#">
+
+
+			#if(heading != ""){#
+			<div class="sb-heading">#=heading#</div>
+			#}#
+
+			#if(imgUrl != undefined && imgUrl != ""){#
+			<img class="sb-img1" src="images/system/scrapbook/#=imgUrl#" />
+			#}#
+
+			#if(imgUrl2 != undefined && imgUrl2 != ""){#
+			<img class="sb-img2" src="images/system/scrapbook/#=imgUrl2#" />
+			#}#
+
+			#if(imgUrl3 != undefined && imgUrl3 != ""){#
+			<img class="sb-img3" src="images/system/scrapbook/#=imgUrl3#" />
+			#}#
+
+			#if(imgUrl4 != undefined && imgUrl4 != ""){#
+			<img class="sb-img4" src="images/system/scrapbook/#=imgUrl4#" />
+			#}#
+
+			#if(imgUrl5 != undefined && imgUrl5 != ""){#
+			<img class="sb-img5" src="images/system/scrapbook/#=imgUrl5#" />
+			#}#
+
+
+			#if(text1 != ""){#
+			<div class="txt1">#=text1#</div>
+			#}#
+
+			#if(text2 != ""){#
+			<div class="txt2">#=text2#</div>
+			#}#
+
+			#if(citation != ""){#
+			<div class="citation">#=citation#</div>
+			#}#
+
+
+
+
+
+		</div>
+	</script>
+	<!--
+	 <div class="pts-lists">
+
+						<div class="list btn-career">
+							<div>
+								<div class="heading">CAREER</div>
+								<div class="pts-wrapper">
+
+									<div class="tbl">
+										<div class="cell">
+											<img class="inb" src="images/system/star.png" />
+											<div class="career-text" data-bind="text:activityNum">45</div>
+										</div>
+
+									</div>
+
+								</div>
+							</div>
+						</div>
+
+						<div class="list">
+							<div>
+								<div class="heading">POINTS</div>
+								<div class="pts-wrapper">
+									<div class="current-points left" data-bind="text:expLevel">375</div>
+
+								</div>
+							</div>
+						</div>
+
+						<div class="list">
+							<div class="heading">FINAL RANK</div>
+							<div class="final-rank" data-bind="text:currentRank"></div>
+						</div>
+
+						<div class="list">
+							<div class="ib vtop">
+								<div class="heading">BUSH CARDS</div>
+								<div>
+
+									<span class="lrg-num" data-bind="text:savedCardsNum"></span><span class="list-text"> of </span><span class="lrg-num" data-bind="text:totalCards"></span>
+								</div>
+
+							</div>
+							<div class="ib">
+								<img class="view-bcards" src="images/system/viewbcardsicon.png" />
+							</div>
+
+						</div>
+					</div>
+
+		-->
+	<script id="gametipTemplate" type="text/x-kendo-template">
+
+		<div class="card-wrapper">
+			<div class="gametip-container">
+
+				<div class="levelup-card">
+					<div class="outer-wrapper">
+						<div class="corner"></div><div class="corner"></div><div class="corner"></div><div class="corner"></div>
+						<div class="inner-content">
+
+							<div class="card-content">
+
+								<div class="heading">#= heading#</div>
+
+								<div class="gametip-desc">
+
+									<div>
+										#= text#
+									</div>
+								</div>
+
+
+
+								<div class="dip-btns">
+									<div class="red-btn-container close-gametip ib" data-text="Continue" data-width="180" data-height="60"></div>
+
+
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</script>
+
+
+
+	<script id="messageTemplate" type="text/x-kendo-template">
+
+		<div class="messagebar">
+			<div class="message-header">#= heading#</div>
+			<div class="message-text">#= text#</div>
+		</div>
+	</script>
+
+	<script id="activitiesTemplate" type="text/x-kendo-template">
+		<div class="item"> #= data#</div>
+	</script>
+
+	<script id="achievementsTemplate" type="text/x-kendo-template">
+		<div class="item">
+			<div class="aBadge left"><img src="#= badgeDir + image# " /></div>
+			<div class="left desc-wrapper">
+				<div class="badge-heading"> #= name# Badge</div>
+				<div>
+					#= description#
+				</div>
+			</div>
+			<div class="clear"></div>
+		</div>
+	</script>
+
+	<script id="ranksTemplate" type="text/x-kendo-template">
+		<div class="item"> #= name#</div>
+	</script>
+
+
+	<div id="imgLoader">
+		<img id="imgHolder" />
+	</div>
+	<!-- END_CUSTOM_CODE_home -->
+</div>
