@@ -35,17 +35,17 @@
     $(document).ready(function () {
         console.log("doc ready");
        
-        if (checkSimulator() == false && window.screen.orientation.lock) {
+//        if (checkSimulator() == false && window.screen.orientation.lock) {
 
-            console.log("locking");
-            screen.orientation.lock('landscape');
-            console.log("landscape lock");
-            console.log(screen.orientation.type);
-           // alert(screen.orientation.type)
-        } else {
-//alert("no screen orientation")
+//            console.log("locking");
+//            screen.orientation.lock('landscape');
+//            console.log("landscape lock");
+//            console.log(screen.orientation.type);
+//           // alert(screen.orientation.type)
+//        } else {
+////alert("no screen orientation")
 
-        }
+//        }
 
         var navigationShowMoreView = $('#navigation-show-more-view').find('ul'),
             allItems = $('#navigation-container-more').find('a'),

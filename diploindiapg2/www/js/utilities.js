@@ -146,71 +146,41 @@ function getDisplayName(cleanText){
 
 function playAudio(item) {
     console.log(item)
-    if (item != null && currentAudio != null && item != currentAudio   ) {
-        console.log("stop audio");
-        currentAudio.pause();
-        currentAudio.currentTime = 0;
-        currentAudio.volume = 1;
-    }
-    if (item != null) {
-        console.log("play audio");
-        item.play();
-        currentAudio = item;
-        item.volume = 1;
-    }
+    //if (item != null && currentAudio != null && item != currentAudio   ) {
+    //    console.log("stop audio");
+    //    currentAudio.pause();
+    //    currentAudio.currentTime = 0;
+    //    currentAudio.volume = 1;
+    //}
+    //if (item != null) {
+    //    console.log("play audio");
+    //    item.play();
+    //    currentAudio = item;
+    //    item.volume = 1;
+    //}
 }
 
 function fadeAudio(item) {
 
-    //console.log(item.volume)
-   // audio.pause();
-    //audio.currentTime = 0;
-    
-   // console.log("fade audio");
-    if (item != null && item.paused == false) {
-        if (kendo.support.mobileOS.device != "iphone" &&  kendo.support.mobileOS.device != "ipad") {
+  
+    //if (item != null && item.paused == false) {
+    //    if (kendo.support.mobileOS.device != "iphone" &&  kendo.support.mobileOS.device != "ipad") {
 
-            if (item.volume > 0.1) {
-                item.volume -= 0.05;
-                setTimeout(function () { fadeAudio(item) }, 100);
-            } else {
-                item.pause();
-                item.currentTime = 0;
-                item.volume = 1;
-            }
-        } else {
-            item.pause();
-            item.currentTime = 0;
-        }
-    }
+    //        if (item.volume > 0.1) {
+    //            item.volume -= 0.05;
+    //            setTimeout(function () { fadeAudio(item) }, 100);
+    //        } else {
+    //            item.pause();
+    //            item.currentTime = 0;
+    //            item.volume = 1;
+    //        }
+    //    } else {
+    //        item.pause();
+    //        item.currentTime = 0;
+    //    }
+    //}
 }
 
-//$(window).on("blur focus", function(e) {
-    
-
-//    var prevType = $(this).data("prevType");
-
-//    if (prevType != e.type) {   
-//        switch (e.type) {
-//            case "blur":
-//                if (currentAudio != null) {
-//                    currentAudio.pause();
-//                }
-//                break;
-
-//            case "focus":
-//                if (currentAudio != null) {
-//                    currentAudio.play();
-//                }
-//                break;
-//        }
-//    }
-
-//    $(this).data("prevType", e.type);
-
-//})
-
-// pause audio on window visibility change
 function handleVisibilityChange() {
     if (currentAudio != undefined && currentAudio != null) {
         if (document.hidden) {
