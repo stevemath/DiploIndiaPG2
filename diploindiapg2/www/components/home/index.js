@@ -303,6 +303,12 @@ function resizeCanvas() {
      workingH = 752;
     // workingH = 875;
     }
+
+    // increase width overflow foor standard def
+    if (w/h < 1.4) {
+        workingW = 1120;
+    }
+
     var ofh = (imgH - workingH) / 2;
     var ofw = (imgW - workingW) / 2;
     ofh = 10;
@@ -518,6 +524,10 @@ function repositionCanvas() {
     if (w > 1000) {
         workingH = 635;
         // workingH = 875;
+    }
+
+    if (w / h < 1.4) {
+        workingW = 1100;
     }
     var ofh = (imgH - workingH) / 2;
     var ofw = (imgW - workingW) / 2;
