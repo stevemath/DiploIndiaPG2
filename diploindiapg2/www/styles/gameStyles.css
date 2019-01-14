@@ -1,4 +1,8 @@
-﻿@font-face {
+﻿body {
+    background-color: #140809;
+}
+
+@font-face {
     font-family: 'Merienda';
     src: url('../fonts/Merienda-Regular.eot');
     src: url('../fonts/Merienda-Regular.woff2') format('woff2'), url('../fonts/Merienda-Regular.eot?#iefix') format('embedded-opentype');
@@ -5114,7 +5118,19 @@ width:100%;
         }
     }
 
-    @media screen and (max-width: 750px) {
+    @media screen and (max-width: 815px) {
+
+        .discovery-container,.diplomacy-container {
+        width:70%;
+        min-height:275px;
+        margin-left:-40%;
+        }
+
+        .task-text {
+        font-size:1.75em;
+
+        
+        }
 
         .credits-container {
             height: 90%;
@@ -5416,7 +5432,7 @@ width:100%;
             .links-left {
                 position: absolute;
                 left: 1.5%;
-                top: 0.5%;
+                top: 2%;
                 height: 10%;
             }
 
@@ -5490,7 +5506,7 @@ width:100%;
             .bcard-full-container {
                 transform: scale(.45);
                 margin-left: -22%;
-                margin-top: -30%;
+                margin-top: -25%;
             }
 
             #itinerary {
@@ -5529,7 +5545,7 @@ width:100%;
 
             .dis-btn {
                 transform: scale(.55);
-                right: -5%;
+                right: -4%;
             }
 
             .dis-fact .header, .career-wrapper .header, .gameover-wrapper .header {
@@ -5598,9 +5614,8 @@ width:100%;
                 width: 150px !important;
                 font-size: 15px !important;
             }
-        .red-button .btn-text{
-           
-            font-size: 15px !important;
+        :not(.dip-btn) .btn-text {
+            font-size: 22px !important;
         }
 
         .intro-btn-wrapper2 .red-button {
@@ -5613,10 +5628,10 @@ width:100%;
                 font-size: 1em !important;
             }
 
-
-            .red-button {
-                padding: 10px;
-            }
+        :not(.dip-btn)>.red-button {
+            padding: 10px;
+            width: 180px !important;
+        }
 
             .inner-bkg {
                 border-radius: 4px;
@@ -5795,6 +5810,7 @@ width:100%;
 
             .resp-wrapper {
                 width: 72%;
+                font-size:.8em;
             }
 
             .fact-text {
