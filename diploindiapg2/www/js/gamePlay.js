@@ -18,7 +18,7 @@
         console.log("init game")
         self.setupNotification();
         
-       
+
 
         $(document).on('touchmove', function (ev) {
 
@@ -782,7 +782,7 @@ $(".accept").on("click touchend", function (e) {
         self.evalDipResp(e, diploPts, exPts)
     });
 
-    },350)
+    },500)
    
 
 
