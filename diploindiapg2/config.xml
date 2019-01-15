@@ -97,8 +97,6 @@
     <splash src="res/screens/ios/screen-iphone-portrait-667h.png" width="750" height="1334" />
     <splash src="res/screens/ios/screen-iphone-portrait-736h.png" width="1242" height="2208" />
     <splash src="res/screens/ios/screen-iphone-landscape-736h.png" width="2208" height="1242" />
-
-
     <splash src="res/screen/ios/Default@2x~iphone~anyany.png" />
     <splash src="res/screen/ios/Default@2x~iphone~comany.png" />
     <splash src="res/screen/ios/Default@2x~iphone~comcom.png" />
@@ -107,7 +105,6 @@
     <splash src="res/screen/ios/Default@3x~iphone~comany.png" />
     <splash src="res/screen/ios/Default@2x~ipad~anyany.png" />
     <splash src="res/screen/ios/Default@2x~ipad~comany.png" />
-
   </platform>
   <platform name="windows">
     <splash src="res/screens/windows/SplashScreen.scale-100.png" width="620" height="300" />
@@ -120,4 +117,5 @@
   <plugin name="es6-promise-plugin" spec="~4.2.2" />
   <preference name="Fullscreen" value="True" />
   <preference name="BackupWebStorage" value="none" />
+  <plugin name="cordova-plugin-splashscreen" spec="~5.0.2" />
 </widget>

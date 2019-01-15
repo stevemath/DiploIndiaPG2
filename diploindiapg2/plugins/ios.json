@@ -15,6 +15,9 @@
         },
         "cordova-plugin-inappbrowser": {
             "PACKAGE_NAME": "io.cordova.myapp3c686b"
+        },
+        "cordova-plugin-splashscreen": {
+            "PACKAGE_NAME": "io.cordova.myapp3c686b"
         }
     },
     "dependent_plugins": {}
