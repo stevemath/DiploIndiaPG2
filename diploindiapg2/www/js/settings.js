@@ -11,7 +11,9 @@ var fbAuthDomain = "diplomacy-india.firebaseapp.com";
 var fbUrl = "https://diplomacy-india.firebaseio.com";
 var fbProjectId = "diplomacy-india";
 var fbMsgId = "1005286435043";
-
+var devModel;
+var devOS;
+var iosx11 = false;
 
 //var minDip = 4;
 //var minDis = 3;

@@ -26,6 +26,34 @@
                 initial: 'components/intro/view.html',
                 useNativeScrolling: true,
                 hideAddressBar: true,
+                init: function () {
+                    setTimeout(function () {
+
+                        if (iosx11 == true) {
+                            console.log("app init");
+                            //alert(iosx11)
+                            var winh = $(window).height();
+                            var winw = $(window).width();
+                            console.log(winh);
+                            //  app.showNotification("win: " + winh)
+
+                            var viewh = $(".km-view").height();
+                            console.log(viewh);
+                            //app.showNotification("view: " + viewh)
+
+                            var vh = $(".km-content").height();
+
+                            console.log(vh);
+                            //  app.showNotification("win: " +winw + "x" + winh + " " + "view: " + viewh + " " + "content: " + vh)
+
+                            $(".text-panel").css("top", "44%");
+                            $(".intro2 .text-panel").css("top", "65%")
+
+                            $(".intro-btn-wrapper").css("bottom", "9%");
+                        }
+                    }, 400)
+
+                },
             });
 
             kendo.bind($('.navigation-link-text'), app.navigation.viewModel);
@@ -35,17 +63,10 @@
     $(document).ready(function () {
         console.log("doc ready");
        
-//        if (checkSimulator() == false && window.screen.orientation.lock) {
-
-//            console.log("locking");
-//            screen.orientation.lock('landscape');
-//            console.log("landscape lock");
-//            console.log(screen.orientation.type);
-//           // alert(screen.orientation.type)
-//        } else {
-////alert("no screen orientation")
-
-//        }
+        if (isIPX11() == true) {
+            iosx11 = true;
+           
+        }
 
         var navigationShowMoreView = $('#navigation-show-more-view').find('ul'),
             allItems = $('#navigation-container-more').find('a'),
@@ -59,7 +80,7 @@
         kendo.bind($('#navigation-show-more-view'), app.showMore.viewModel);
 
         app.notification = $("#notify");
-
+        bootstrap();
        
 
     });
@@ -77,20 +98,20 @@
         app.notification.fadeIn("slow").delay(autoHideAfter).fadeOut("slow");
     };
 
-    if (window.cordova) {
-        document.addEventListener('deviceready', function() {
-            if (navigator && navigator.splashscreen) {
-                navigator.splashscreen.hide();
-            }
-            alert("dev ready")
-            //screen.orientation.lock('landscape');
-            //console.log("device landscape lock");
-            //alert("device landscape lock")
-            bootstrap();
-        }, false);
-    } else {
-        bootstrap();
-    }
+    //if (window.cordova) {
+    //    document.addEventListener('deviceready', function() {
+    //        if (navigator && navigator.splashscreen) {
+    //            navigator.splashscreen.hide();
+    //        }
+    //        alert("dev ready")
+    //        //screen.orientation.lock('landscape');
+    //        //console.log("device landscape lock");
+    //        //alert("device landscape lock")
+    //        bootstrap();
+    //    }, false);
+    //} else {
+    //    bootstrap();
+    //}
 
     app.keepActiveState = function _keepActiveState(item) {
         var currentItem = item;

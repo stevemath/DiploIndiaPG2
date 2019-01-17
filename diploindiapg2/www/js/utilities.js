@@ -252,6 +252,20 @@ function onResume() {
 }
 
 
+function isIPX11() {
+
+    var osver = kendo.support.mobileOS.flatVersion;
+    var os = kendo.support.mobileOS.name;
+    var dev = kendo.support.mobileOS.device;
+
+    // alert(osver + "  " + os + "  " + dev)
+    if (osver >= 1100 && osver < 1200 && os == "ios" && dev == "iphone") {
+        return true
+    } else {
+        return false
+    }
+
+}
 
 
 

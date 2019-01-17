@@ -4,7 +4,7 @@ app.intro = kendo.observable({
     onShow: function () {
         var self = this;
         
-        
+        var currPg = 1;
        
 
         //function onLoad() {
@@ -23,10 +23,12 @@ app.intro = kendo.observable({
         });
 
         $(".intro-panel .scrap-icon").on("click touchend", function () {
-            fadeAudio(currentAudio);
+            if (currPg == 2) {
+                fadeAudio(currentAudio);
 
-            console.log("get scrapbook");
-            gamePlay.getScrapbook();
+                console.log("get scrapbook");
+                gamePlay.getScrapbook();
+            }
         });
 
         $(".intro1 .red-btn-container").on("click touchend", function () {
@@ -34,20 +36,26 @@ app.intro = kendo.observable({
             if (currentAudio != null && currentAudio.paused == true) {
                 playAudio(currentAudio);
             }
-            app.intro.slidePanel("intro1", "intro2");
-
+            if (currPg == 1) {
+                app.intro.slidePanel("intro1", "intro2");
+                setTimeout(function () { currPg = 2 }, 500)
+            }
         });
 
         $(".intro2 .red-btn-container").on("click touchend", function () {
 
-           
-             app.intro.slidePanel("intro2", "intro3");
+            if (currPg == 2) {
+                app.intro.slidePanel("intro2", "intro3");
+                setTimeout(function () { currPg = 3 }, 500)
 
+            }
         });
 
         $(".intro3 .red-btn-container").on("click touchend", function () {
            // app.intro.slidePanel("intro3", "intro4");
-            app.intro.navToGame();
+            if (currPg == 3) {
+                app.intro.navToGame();
+            }
         });
 
         $(".intro4 .red-btn-container").on("click touchend", function () {

@@ -292,7 +292,7 @@ function toggleFullScreen() {
     }
 }
 function resizeCanvas() {
-    setTimeout(function () { window.scrollTo(0, 1); }, 0);
+   // setTimeout(function () { window.scrollTo(0, 1); }, 0);
    // toggleFullScreen();
     //document.body.requestFullscreen();
     var hMenuOffset = 45;
@@ -318,9 +318,16 @@ function resizeCanvas() {
 
         if (resizing == false) {
             resizing = true;
-            $(document.body).height(window.innerHeight);
 
-             $(".km-content").css('height', window.innerHeight + "px");
+            if (iosx11 == true) {
+                $(".km-content").css('height', 375 + "px");
+            } else {
+                setTimeout(function () { window.scrollTo(0, 1); }, 0);
+                $(document.body).height(window.innerHeight);
+
+                $(".km-content").css('height', window.innerHeight + "px");
+
+            }
 
                var acw = $("#chinaCanvas").width();
             var ach = $("#chinaCanvas").height();
@@ -351,6 +358,9 @@ function resizeCanvas() {
                 } else {
                     // adjust by height
                     console.log("adjust to height");
+                    if (iosx11 == true) {
+                        h = 375;
+                    }
                     zRatio = h / ch;
                     console.log(h + " " + ch);
                     zoomIt(zRatio);
