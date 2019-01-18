@@ -1559,7 +1559,7 @@ font-family:russo;
             /*min-height:25%;*/
             /*margin-left: 11%;
     margin-top: 3%;*/
-            bottom: 6%;
+            top: 26%;
             left: 2%;
             box-sizing: border-box;
         }
@@ -5154,6 +5154,13 @@ width:100%;
 
     @media screen and (max-width: 815px) {
 
+        #bCardLayout {
+            max-height: 370px;
+            width: 100%;
+            height: 100%;
+        }
+
+
         .discovery-container,.diplomacy-container {
         width:70%;
         min-height:275px;
@@ -5578,7 +5585,7 @@ width:100%;
             }
 
         .add-itin-panel {
-        font-size:1.8em;
+        font-size:1.4em;
         
         }
 
