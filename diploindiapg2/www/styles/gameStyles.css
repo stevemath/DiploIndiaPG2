@@ -8,7 +8,6 @@
 #wedge {
 width:812px;
 height:764px;
-
 background-color:transparent;
 }
 
@@ -2810,7 +2809,7 @@ cursor:pointer;
         font-family: Karma;
         font-size: 2vw;
         margin-top: 10px;
-        margin-bottom: 15px;
+        margin-bottom: 7px;
         width: 50%;
         margin-left: 25%;
     }

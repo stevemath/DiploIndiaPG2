@@ -3,7 +3,9 @@
 app.home = kendo.observable({
     onShow: function () {
        
-
+        if (isIPX11 == true) {
+            $("body").css("height", "675px")
+        }
 
 
         if (gamePlay.properties.gameStarted != true) {
