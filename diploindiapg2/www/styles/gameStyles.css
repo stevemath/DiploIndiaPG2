@@ -5154,12 +5154,18 @@ width:100%;
 
     @media screen and (max-width: 815px) {
 
-        #bCardLayout {
-            max-height: 370px;
-            width: 100%;
-            height: 100%;
+      .iosx11  #bCardLayout {
+           height: 350px;
+            width: 812px;
+           
         }
 
+      .iosx11  .q-wrapper {
+          
+            min-height: 50px;
+            top: 22%;
+            
+        }
 
         .discovery-container,.diplomacy-container {
         width:70%;

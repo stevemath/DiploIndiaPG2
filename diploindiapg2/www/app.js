@@ -31,6 +31,9 @@
 
                         if (iosx11 == true) {
                             console.log("app init");
+
+
+                            $("body").addClass("iosx11")
                             //alert(iosx11)
                             var winh = $(window).height();
                             var winw = $(window).width();
