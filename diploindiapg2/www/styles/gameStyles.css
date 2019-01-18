@@ -5156,9 +5156,14 @@ width:100%;
 
       .iosx11  #bCardLayout {
            height: 350px;
-            width: 812px;
+            width: 635px;
            
         }
+
+
+
+
+
 
       .iosx11  .q-wrapper {
           
@@ -5166,11 +5171,42 @@ width:100%;
             top: 22%;
             
         }
+      
+      .iosx11  .resp-wrapper {
+          
+            min-height: 50px;
+            top: 23%;
+            
+        }
 
-        .discovery-container,.diplomacy-container {
-        width:70%;
-        min-height:275px;
-        margin-left:-40%;
+        .iosx11 .task-text.small {
+        
+       font-size: 1em;
+        } 
+        
+        .iosx11 .a-btns .red-button {
+      width:700px !important;
+        } 
+        
+        .iosx11 .a-btns .btn-text {
+     font-size:17px !important;
+        }
+
+        .iosx11 .q-text {
+            font-size: 1.6em !important;
+        }
+        
+        .iosx11 .subtext {
+            font-size: 1.3em !important;
+        }
+
+
+
+
+        .discovery-container, .diplomacy-container {
+            width: 70%;
+            min-height: 275px;
+            margin-left: -40%;
         }
 
         .task-text {
