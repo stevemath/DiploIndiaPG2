@@ -5157,20 +5157,21 @@ width:100%;
 
         .iosx11 .bush-wrapper {
             position:static;
-            height:374px;
+            height:100%;
             width:100%;
         }
 
-      .iosx11  #bCardLayout {
-           height: 374px;
-            width: 812px;
-           
+        .iosx11 #bCardLayout {
+            /*height: 374px;
+            width: 812px;*/
+            height: 100%;
+           overflow:visible !important;
         }
 
-        .iosx11 .card-content {
+        /*.iosx11 .card-content {
             height: 374px;
             width: 812px;
-        }
+        }*/
 
 
 
