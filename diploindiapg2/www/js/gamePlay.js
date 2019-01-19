@@ -1824,7 +1824,7 @@ if(item){
 
          playAudio(audioList.bushLayout)
 
-         self.scaleBushCards();
+        // self.scaleBushCards();
 
         
          setTimeout(function () {
@@ -1878,7 +1878,13 @@ if(item){
 
         var availW = $(window).width() - 100;
           var availH = $(window).height() - ($(".heading-text").height() + $("#bCardLayout .header").height())-105;
-           
+
+        if (iosx11() == true) {
+
+
+        }
+
+
         var cardW = $(".bcardfull-content").width()+50 ;
         var cardH = $(".bcardfull-content").height();
         var wScale = availW / (cardW * 5)

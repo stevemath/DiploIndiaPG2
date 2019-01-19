@@ -5157,7 +5157,7 @@ width:100%;
 
         .iosx11 .bush-wrapper {
             position:static;
-            height:100%;
+            height:374px;
             width:100%;
         }
 
@@ -5165,6 +5165,11 @@ width:100%;
            height: 374px;
             width: 812px;
            
+        }
+
+        .iosx11 .card-content {
+            height: 374px;
+            width: 812px;
         }
 
 
@@ -5191,7 +5196,7 @@ width:100%;
         } 
         
         .iosx11 .a-btns .red-button {
-      width:600px !important;
+      width:550px !important;
         } 
         
         .iosx11 .a-btns .btn-text {
