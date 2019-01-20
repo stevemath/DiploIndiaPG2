@@ -1880,10 +1880,7 @@ if(item){
         var availW = $(window).width() - 100;
           var availH = $(window).height() - ($(".heading-text").height() + $("#bCardLayout .header").height())-105;
 
-        //if (isIPX11() == true) {
-
-
-        //}
+      
 
 
         var cardW = $(".bcardfull-content").width()+50 ;

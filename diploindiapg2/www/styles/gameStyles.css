@@ -1492,8 +1492,8 @@ font-family:russo;
     width: 100%;
     height: 100%;
     /*background-image:url('../images/system/great-wall.jpg');*/
-    /*background-size: cover;
-    background-position:center center;*/
+    background-size: cover;
+    background-position:center center;
 }
 
     .dis-fact .card-content {
@@ -5185,7 +5185,7 @@ width:100%;
 
         .iosx11 .q-wrapper {
             min-height: 50px;
-            top: 22%;
+            top: 20%;
             bottom: auto;
         }
       
@@ -5199,6 +5199,7 @@ width:100%;
         .iosx11 .task-text.small {
         
        font-size: 1em;
+       padding:10px;
         } 
         
         .iosx11 .a-btns .red-button {
@@ -5287,6 +5288,8 @@ width:100%;
 
         .close-scrapbook-btn {
             transform: scale(.6);
+            top:1%;
+            right:-2%;
         }
 
         @media screen and (min-height: 568px) {
