@@ -73,7 +73,9 @@ app.intro = kendo.observable({
             kendo.fx(curr).slideIn("up").duration(500).reverse();
         });
 
+        alert(kendo.support.mobileOS.device)
 
+        console.log(kendo.support.mobileOS);
         // set links for desk or mobile
         if (kendo.support.mobileOS.device == undefined) {
             $(".gwb").on("click touchend", function () {
@@ -116,6 +118,8 @@ app.intro = kendo.observable({
         $(".img-credits").on("click touchend", function () {
             app.intro.showImgCredits();
         });
+
+        alert(kendo.support.mobileOS.name)
 
     },
    slidePanel: function (panelId, newPanelId) {

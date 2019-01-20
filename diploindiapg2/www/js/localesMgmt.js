@@ -982,7 +982,7 @@ var localesMgmt = {
         //        }
         //    }
         //});
-
+      
         if (kendo.support.mobileOS.device == undefined) {
             isMobile = false;
 

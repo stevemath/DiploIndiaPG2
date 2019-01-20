@@ -5203,7 +5203,7 @@ width:100%;
         } 
         
         .iosx11 .a-btns .red-button {
-      width:550px !important;
+      width:570px !important;
         } 
         
         .iosx11 .a-btns .btn-text {
@@ -5288,8 +5288,8 @@ width:100%;
 
         .close-scrapbook-btn {
             transform: scale(.6);
-            top:1%;
-            right:-2%;
+            top:1% !important;
+            right:-3% !important;
         }
 
         @media screen and (min-height: 568px) {
