@@ -119,7 +119,7 @@ app.intro = kendo.observable({
             app.intro.showImgCredits();
         });
 
-        alert(JSON.stringify(kendo.support.mobileOS))
+       // alert(JSON.stringify(kendo.support.mobileOS))
 
     },
    slidePanel: function (panelId, newPanelId) {
