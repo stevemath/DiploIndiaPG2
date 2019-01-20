@@ -5164,6 +5164,11 @@ width:100%;
         .iosx11 #bCardLayout {
             /*height: 374px;
             width: 812px;*/
+            position:absolute;
+            left:0px;
+            right:0px;
+            top:0px;
+            bottom:0px;
             height: 100%;
            overflow:visible !important;
         }

@@ -1807,7 +1807,7 @@ if(item){
         var self = this;
         console.log("get bcard layout");
  
-        $(".messagebar").remove();
+       // $(".messagebar").remove();
 
         configData.dsBushCards.ds.filter([]);
        
@@ -1829,7 +1829,8 @@ if(item){
         
          setTimeout(function () {
             
-          
+             $(".iosx11 #bCardLayout").css("height","574px")
+             $(".iosx11 #bCardLayout").css("width", "812px");
 
             $(".close-bush-cards").on("click touchend", function () {
                 fadeAudio(currentAudio);
