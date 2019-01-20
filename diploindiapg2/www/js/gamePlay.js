@@ -1824,13 +1824,13 @@ if(item){
 
          playAudio(audioList.bushLayout)
 
-        // self.scaleBushCards();
+         self.scaleBushCards();
 
         
          setTimeout(function () {
             
-             $(".iosx11 #bCardLayout").css("height","574px")
-             $(".iosx11 #bCardLayout").css("width", "812px");
+            // $(".iosx11 #bCardLayout").css("height","574px")
+             //$(".iosx11 #bCardLayout").css("width", "812px");
 
             $(".close-bush-cards").on("click touchend", function () {
                 fadeAudio(currentAudio);
