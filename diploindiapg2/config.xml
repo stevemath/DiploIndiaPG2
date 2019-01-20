@@ -5,7 +5,7 @@
   <author href="http://cordova.io" email="dev@cordova.apache.org">Eduweb</author>
   <vs:template-name>BlankJS</vs:template-name>
   <vs:toolsetVersion>6.3.1</vs:toolsetVersion>
-  <engine name="android" spec="5.2.1" />
+  <engine name="android" spec="latest" />
   <engine name="ios" spec="latest" />
   <engine name="windows" spec="4.4.2" />
   <content src="index.html" />
