@@ -73,7 +73,7 @@ app.intro = kendo.observable({
             kendo.fx(curr).slideIn("up").duration(500).reverse();
         });
 
-        alert(kendo.support.mobileOS.device)
+       // alert(kendo.support.mobileOS.device)
 
         console.log(kendo.support.mobileOS);
         // set links for desk or mobile
@@ -119,7 +119,7 @@ app.intro = kendo.observable({
             app.intro.showImgCredits();
         });
 
-        alert(kendo.support.mobileOS.name)
+        alert(JSON.stringify(kendo.support.mobileOS))
 
     },
    slidePanel: function (panelId, newPanelId) {
