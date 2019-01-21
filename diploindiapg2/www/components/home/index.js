@@ -102,7 +102,7 @@ var currentAudio = null;
 //var workingH = 640;
 //var workingW = 1070;
 
-var workingH = 762;
+var workingH = 745;//762;
 var workingW = 1280;
 //var workingH = 723;
 //var workingW = 1120;
