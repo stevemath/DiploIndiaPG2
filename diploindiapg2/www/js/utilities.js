@@ -226,7 +226,11 @@ document.addEventListener("visibilitychange", handleVisibilityChange, false);
 
 function onDeviceReady() {
     console.log("device ready");
+    var wsh = window.screen.height;
+    var wih = window.innerHeight;
 
+
+    alert(wsh + "   " + wih)
             if (checkSimulator() == false && window.screen.orientation.lock) {
 
             console.log("locking");

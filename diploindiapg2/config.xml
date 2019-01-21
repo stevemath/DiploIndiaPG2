@@ -5,7 +5,7 @@
   <author href="http://cordova.io" email="dev@cordova.apache.org">Eduweb</author>
   <vs:template-name>BlankJS</vs:template-name>
   <vs:toolsetVersion>6.3.1</vs:toolsetVersion>
-  <engine name="android" spec="latest" />
+  <engine name="android" spec="5.2.1" />
   <engine name="ios" spec="latest" />
   <engine name="windows" spec="4.4.2" />
   <content src="index.html" />
@@ -110,4 +110,10 @@
   <plugin name="cordova-plugin-splashscreen" spec="~5.0.2" />
   <plugin name="cordova-plugin-device" spec="~2.0.2" />
   <preference name="android-targetSdkVersion" value="14" />
+  <plugin name="cordova-plugin-wkwebview-engine" spec="~1.1.4" />
+  <feature name="CDVWKWebViewEngine">
+    <param name="ios-package" value="CDVWKWebViewEngine" />
+  </feature>
+
+  <preference name="CordovaWebViewEngine" value="CDVWKWebViewEngine" />
 </widget>
