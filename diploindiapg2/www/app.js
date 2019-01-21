@@ -32,7 +32,7 @@
                         if (iosx11 == true) {
                             console.log("app init");
                             alert("ipxv11")
-                           // $("body").append('<div id="wedge"></div>')
+                            $("body").append('<div id="wedge"></div>')
                             $("body").addClass("iosx11")
                             //alert(iosx11)
                             var winh = $(window).height();
