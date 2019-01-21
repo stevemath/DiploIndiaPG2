@@ -259,8 +259,11 @@ function isIPX11() {
     var dev = kendo.support.mobileOS.device;
 
     // alert(osver + "  " + os + "  " + dev)
-    if (osver >= 1100 && osver < 1200 && os == "ios" && dev == "iphone") {
+   // chg chk to <11.4
+    if (osver >= 1100 && osver < 1104 && os == "ios" && dev == "iphone") {
+       
         return true
+       // return false
     } else {
         return false
     }

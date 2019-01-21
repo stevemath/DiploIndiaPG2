@@ -31,7 +31,7 @@
 
                         if (iosx11 == true) {
                             console.log("app init");
-
+                            alert("ipxv11")
 
                             $("body").addClass("iosx11")
                             //alert(iosx11)
