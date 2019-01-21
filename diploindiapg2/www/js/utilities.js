@@ -228,9 +228,9 @@ function onDeviceReady() {
     console.log("device ready");
     var wsh = window.screen.height;
     var wih = window.innerHeight;
+    var ddh = document.documentElement.clientHeight;
 
-
-    alert(wsh + "   " + wih)
+    alert(wsh + "   " + wih + "  " + ddh)
             if (checkSimulator() == false && window.screen.orientation.lock) {
 
             console.log("locking");
