@@ -45,7 +45,7 @@
                            // alert("ipxv11")
                            // $("body").append('<div id="wedge"></div>')
 
-                          //  $("#wedge").remove();
+                          
                             $("body").addClass("iosx11")
                             //alert(iosx11)
                             var winh = $(window).height();
@@ -73,7 +73,7 @@
                             $(".km-view").css("height", "100%");
                             $(".km-content").css("height", "100%");
 
-
+                              $("#wedge").remove();
                         }
                     }, 400)
 
