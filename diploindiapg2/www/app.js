@@ -73,7 +73,9 @@
                             $(".km-view").css("height", "100%");
                             $(".km-content").css("height", "100%");
 
-                            
+                            $("body").css("width", "100%");
+                            $(".km-view").css("width", "100%");
+                            $(".km-content").css("width", "100%");
                              
                         }
                     }, 400)
