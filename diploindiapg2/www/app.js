@@ -61,7 +61,7 @@
 
                             console.log(vh);
                              //app.showNotification("win: " +winw + "x" + winh + " " + "view: " + viewh + " " + "content: " + vh)
-                             alert("win: " +winw + "x" + winh + " " + "view: " + viewh + " " + "content: " + vh)
+                             alert("win: " + winw + "x" + winh + " " + "view: " + viewh + " " + "content: " + vh)
 
                             $(".text-panel").css("top", "44%");
                             $(".intro2 .text-panel").css("top", "65%")
@@ -73,7 +73,7 @@
                             $(".km-view").css("height", "100%");
                             $(".km-content").css("height", "100%");
 
-                            setTimeout(function () {  $("#wedge").remove();},1000)
+                            
                              
                         }
                     }, 400)
@@ -87,7 +87,7 @@
 
     $(document).ready(function () {
         console.log("doc ready");
-       
+        document.addEventListener('deviceready', function () { onDeviceReady() })
         if (isIPX11() == true) {
             iosx11 = true;
            
@@ -123,7 +123,7 @@
         app.notification.fadeIn("slow").delay(autoHideAfter).fadeOut("slow");
     };
 
-    document.addEventListener('deviceready', function () { onDeviceReady()})
+  
     //if (window.cordova) {
     //    document.addEventListener('deviceready', function() {
     //        if (navigator && navigator.splashscreen) {

@@ -259,7 +259,7 @@ function isIPX11() {
     var osver = kendo.support.mobileOS.flatVersion;
     var os = kendo.support.mobileOS.name;
     var dev = kendo.support.mobileOS.device;
-    var sh = kendo.support.screenHeight;
+    var sh = kendo.support.screenWidth;
     alert(sh);
     // alert(osver + "  " + os + "  " + dev)
    // chg chk to <11.4
