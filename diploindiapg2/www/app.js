@@ -42,7 +42,7 @@
 
                         if (iosx11 == true) {
                             console.log("app init");
-                            alert("ios11")
+                           // alert("ios11")
                            // $("body").append('<div id="wedge"></div>')
 
                           
