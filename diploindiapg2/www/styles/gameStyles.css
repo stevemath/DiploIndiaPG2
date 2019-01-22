@@ -6,9 +6,10 @@
 
 
 #wedge {
-width:664px;
-height:374px;
-background-color:transparent;
+    /*width:664px;*/
+    width: 812px;
+    height: 374px;
+    background-color: transparent;
 }
 
 .km-content {

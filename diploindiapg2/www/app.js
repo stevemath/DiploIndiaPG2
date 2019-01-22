@@ -25,7 +25,12 @@
         var wih = window.innerHeight;
         var ddh = document.documentElement.clientHeight;
 
-        alert("dev: " + wsh + "   " + wih + "  " + ddh)
+        var wsw = window.screen.width;
+        var wiw = window.innerWidth;
+        var ddw = document.documentElement.clientWidth;
+
+        alert("h: " + wsh + "   " + wih + "  " + ddh);
+        alert("w: " + wsw + "   " + wiw + "  " + ddw)
             app.mobileApp = new kendo.mobile.Application(document.body, {
                 transition: 'slide',
                 skin: 'nova',
@@ -37,7 +42,7 @@
 
                         if (iosx11 == true) {
                             console.log("app init");
-                            alert("ipxv11")
+                           // alert("ipxv11")
                            // $("body").append('<div id="wedge"></div>')
 
                           //  $("#wedge").remove();
@@ -55,7 +60,8 @@
                             var vh = $(".km-content").height();
 
                             console.log(vh);
-                             app.showNotification("win: " +winw + "x" + winh + " " + "view: " + viewh + " " + "content: " + vh)
+                             //app.showNotification("win: " +winw + "x" + winh + " " + "view: " + viewh + " " + "content: " + vh)
+                             alert("win: " +winw + "x" + winh + " " + "view: " + viewh + " " + "content: " + vh)
 
                             $(".text-panel").css("top", "44%");
                             $(".intro2 .text-panel").css("top", "65%")
