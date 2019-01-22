@@ -29,8 +29,8 @@
         var wiw = window.innerWidth;
         var ddw = document.documentElement.clientWidth;
 
-        alert("h: " + wsh + "   " + wih + "  " + ddh);
-        alert("w: " + wsw + "   " + wiw + "  " + ddw)
+       // alert("h: " + wsh + "   " + wih + "  " + ddh);
+       // alert("w: " + wsw + "   " + wiw + "  " + ddw)
             app.mobileApp = new kendo.mobile.Application(document.body, {
                 transition: 'slide',
                 skin: 'nova',
@@ -67,6 +67,13 @@
                             $(".intro2 .text-panel").css("top", "65%")
 
                             $(".intro-btn-wrapper").css("bottom", "9%");
+
+
+                            $("body").css("height", "100%");
+                            $(".km-view").css("height", "100%");
+                            $(".km-content").css("height", "100%");
+
+
                         }
                     }, 400)
 
