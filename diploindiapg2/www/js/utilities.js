@@ -234,8 +234,8 @@ function onDeviceReady() {
             console.log("landscape lock");
                 console.log(screen.orientation.type);
                
-                bootstrap();
-           // alert(screen.orientation.type)
+              //  bootstrap();
+            alert(screen.orientation.type)
         } else {
 //alert("no screen orientation")
 

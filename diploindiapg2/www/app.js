@@ -91,7 +91,7 @@
         kendo.bind($('#navigation-show-more-view'), app.showMore.viewModel);
 
         app.notification = $("#notify");
-       // bootstrap();
+        bootstrap();
        
 
     });
