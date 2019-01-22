@@ -116,4 +116,5 @@
   </feature>
 
   <preference name="CordovaWebViewEngine" value="CDVWKWebViewEngine" />
+  <preference name="EnableViewportScale" value="true"/>
 </widget>
