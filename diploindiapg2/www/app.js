@@ -19,7 +19,13 @@
     };
 
     var bootstrap = function() {
-        $(function() {
+       // $(function () {
+
+        var wsh = window.screen.height;
+        var wih = window.innerHeight;
+        var ddh = document.documentElement.clientHeight;
+
+        alert("dev: " + wsh + "   " + wih + "  " + ddh)
             app.mobileApp = new kendo.mobile.Application(document.body, {
                 transition: 'slide',
                 skin: 'nova',
@@ -32,7 +38,9 @@
                         if (iosx11 == true) {
                             console.log("app init");
                             alert("ipxv11")
-                            $("body").append('<div id="wedge"></div>')
+                           // $("body").append('<div id="wedge"></div>')
+
+                            $("#wedge").remove();
                             $("body").addClass("iosx11")
                             //alert(iosx11)
                             var winh = $(window).height();
@@ -60,7 +68,7 @@
             });
 
             kendo.bind($('.navigation-link-text'), app.navigation.viewModel);
-        });
+       // });
     };
 
     $(document).ready(function () {

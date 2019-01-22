@@ -233,11 +233,7 @@ function onDeviceReady() {
             screen.orientation.lock('landscape');
             console.log("landscape lock");
                 console.log(screen.orientation.type);
-                var wsh = window.screen.height;
-                var wih = window.innerHeight;
-                var ddh = document.documentElement.clientHeight;
-
-                alert("dev: " + wsh + "   " + wih + "  " + ddh)
+               
                 bootstrap();
            // alert(screen.orientation.type)
         } else {
@@ -266,7 +262,7 @@ function isIPX11() {
 
     // alert(osver + "  " + os + "  " + dev)
    // chg chk to <11.4
-    if (osver >= 1100 && osver < 1104 && os == "ios" && dev == "iphone") {
+    if (osver >= 1100 && osver < 1200 && os == "ios" && dev == "iphone") {
        
         return true
        // return false
