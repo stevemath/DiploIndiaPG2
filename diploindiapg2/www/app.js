@@ -83,7 +83,7 @@
         kendo.bind($('#navigation-show-more-view'), app.showMore.viewModel);
 
         app.notification = $("#notify");
-        bootstrap();
+       // bootstrap();
        
 
     });
@@ -101,6 +101,7 @@
         app.notification.fadeIn("slow").delay(autoHideAfter).fadeOut("slow");
     };
 
+    document.addEventListener('deviceready', function () { onDeviceReady()})
     //if (window.cordova) {
     //    document.addEventListener('deviceready', function() {
     //        if (navigator && navigator.splashscreen) {

@@ -7,7 +7,7 @@
 
 #wedge {
 width:812px;
-height:764px;
+height:734px;
 background-color:transparent;
 }
 
@@ -20,7 +20,7 @@ background-color:transparent;
     right: 0;
     left: 0;
     bottom: 0;
-    /*bottom: calc(0px - constant(safe-area-inset-top));*/
+    bottom: calc(0px - constant(safe-area-inset-top));
 }
 
 .km-view {
@@ -32,7 +32,7 @@ background-color:transparent;
     right: 0;
     left: 0;
     bottom: 0;
-    /*bottom: calc(0px - constant(safe-area-inset-top));*/
+    bottom: calc(0px - constant(safe-area-inset-top));
 }
 
 

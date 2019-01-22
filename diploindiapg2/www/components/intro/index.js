@@ -9,7 +9,7 @@ app.intro = kendo.observable({
 
         //function onLoad() {
            // alert("loaded")
-            document.addEventListener("deviceready", onDeviceReady, false);
+          //  document.addEventListener("deviceready", onDeviceReady, false);
         //}
 
             app.intro.resizeIntro();
