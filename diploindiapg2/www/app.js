@@ -40,7 +40,7 @@
                             alert("ipxv11")
                            // $("body").append('<div id="wedge"></div>')
 
-                            $("#wedge").remove();
+                          //  $("#wedge").remove();
                             $("body").addClass("iosx11")
                             //alert(iosx11)
                             var winh = $(window).height();
@@ -55,7 +55,7 @@
                             var vh = $(".km-content").height();
 
                             console.log(vh);
-                            //  app.showNotification("win: " +winw + "x" + winh + " " + "view: " + viewh + " " + "content: " + vh)
+                             app.showNotification("win: " +winw + "x" + winh + " " + "view: " + viewh + " " + "content: " + vh)
 
                             $(".text-panel").css("top", "44%");
                             $(".intro2 .text-panel").css("top", "65%")

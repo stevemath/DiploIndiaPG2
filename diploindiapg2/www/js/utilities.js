@@ -235,7 +235,7 @@ function onDeviceReady() {
                 console.log(screen.orientation.type);
                
               //  bootstrap();
-            alert(screen.orientation.type)
+           // alert(screen.orientation.type)
         } else {
 //alert("no screen orientation")
 
