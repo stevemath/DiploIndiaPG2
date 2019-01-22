@@ -225,7 +225,7 @@ document.addEventListener("visibilitychange", handleVisibilityChange, false);
 
 
 function onDeviceReady() {
-    console.log("device ready");
+   alert("device ready");
    
             if (checkSimulator() == false && window.screen.orientation.lock) {
 
@@ -259,10 +259,10 @@ function isIPX11() {
     var osver = kendo.support.mobileOS.flatVersion;
     var os = kendo.support.mobileOS.name;
     var dev = kendo.support.mobileOS.device;
-
+    var sh = kendo.support.screenHeight;
     // alert(osver + "  " + os + "  " + dev)
    // chg chk to <11.4
-    if (osver >= 1100 && osver < 1200 && os == "ios" && dev == "iphone") {
+    if (osver >= 1100 && osver < 1200 && os == "ios" && dev == "iphone" && sh>800) {
        
         return true
        // return false

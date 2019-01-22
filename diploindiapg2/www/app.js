@@ -42,7 +42,7 @@
 
                         if (iosx11 == true) {
                             console.log("app init");
-                           // alert("ipxv11")
+                            alert("ios11")
                            // $("body").append('<div id="wedge"></div>')
 
                           
@@ -73,7 +73,8 @@
                             $(".km-view").css("height", "100%");
                             $(".km-content").css("height", "100%");
 
-                              $("#wedge").remove();
+                            setTimeout(function () {  $("#wedge").remove();},1000)
+                             
                         }
                     }, 400)
 
