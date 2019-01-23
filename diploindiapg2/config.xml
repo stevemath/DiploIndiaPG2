@@ -111,4 +111,21 @@
   <plugin name="cordova-plugin-device" spec="~2.0.2" />
   <preference name="android-targetSdkVersion" value="14" />
   <preference name="deployment-target" value="10" />
+
+  <preference name="AllowInlineMediaPlayback" value="false" />
+  <preference name="BackupWebStorage" value="cloud" />
+  <preference name="DisallowOverscroll" value="true" />
+  <preference name="EnableViewportScale" value="true" />
+  <preference name="KeyboardDisplayRequiresUserAction" value="true" />
+  <preference name="MediaPlaybackRequiresUserAction" value="false" />
+  <preference name="SuppressesIncrementalRendering" value="false" />
+  <preference name="SuppressesLongPressGesture" value="false" />
+  <preference name="Suppresses3DTouchGesture" value="false" />
+  <preference name="GapBetweenPages" value="0" />
+  <preference name="PageLength" value="0" />
+  <preference name="PaginationBreakingMode" value="page" />
+  <!-- page, column -->
+  <preference name="PaginationMode" value="unpaginated" />
+  <!-- unpaginated, leftToRight, topToBottom, bottomToTop, rightToLeft -->
+  <preference name="StatusBarBackgroundColor" value="#000000" />
 </widget>
