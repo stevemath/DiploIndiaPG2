@@ -8,7 +8,7 @@
     right: 0;
     left: 0;
     bottom: 0;
-    bottom: calc(0px - constant(safe-area-inset-top));
+    /*bottom: calc(0px - env(safe-area-inset-top));*/
 }
 
 
@@ -31,7 +31,7 @@
     right: 0;
     left: 0;
     bottom: 0;
-    bottom: calc(0px - constant(safe-area-inset-top));
+    /*bottom: calc(0px - env(safe-area-inset-top));*/
 }
 
 .km-view {
@@ -43,7 +43,7 @@
     right: 0;
     left: 0;
     bottom: 0;
-    bottom: calc(0px - constant(safe-area-inset-top));
+    /*bottom: calc(0px - env(safe-area-inset-top));*/
 }
 
 

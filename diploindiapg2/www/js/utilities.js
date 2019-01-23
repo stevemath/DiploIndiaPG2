@@ -272,7 +272,7 @@ function isIPX11() {
 
     var ipx = false;
     // iPhone X Detection
-    if (os == "ios" && (screen.width == 1125 && screen.height === 2436 || screen.width == 960 && screen.height == 1704) {
+    if (os == "ios" && (screen.width == 1125 && screen.height === 2436 || screen.width == 960 && screen.height == 1704)) {
         alert('iPhoneX Detected!');
         ipx = true;
     } else {
