@@ -18,7 +18,7 @@
     /*width: 568px;
     height: 320px;*/
     width:812px;
-    height:274px;
+    height:349px;
     background-color: transparent;
 }
 
@@ -5189,7 +5189,13 @@ width:100%;
             width: 812px;
         }*/
 
+        .iosx11 .scrap-bkgrd {
+max-height:349px !important;
+}
 
+        .iosx11 #scrapbookLayout {
+            max-height: 349px !important;
+        }
 
 
 
