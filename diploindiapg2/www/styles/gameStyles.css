@@ -1,6 +1,14 @@
 ﻿body {
     background-color: #140809;
     /*background-color: #000;*/
+   
+    height: 100% !important;
+   
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    bottom: calc(0px - constant(safe-area-inset-top));
 }
 
 
@@ -10,7 +18,7 @@
     /*width: 568px;
     height: 320px;*/
     width:812px;
-    height:374px;
+    height:274px;
     background-color: transparent;
 }
 
