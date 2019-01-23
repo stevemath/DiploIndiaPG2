@@ -61,7 +61,7 @@
 
                             console.log(vh);
                              //app.showNotification("win: " +winw + "x" + winh + " " + "view: " + viewh + " " + "content: " + vh)
-                             alert("win: " + winw + "x" + winh + " " + "view: " + viewh + " " + "content: " + vh)
+                            // alert("win: " + winw + "x" + winh + " " + "view: " + viewh + " " + "content: " + vh)
 
                             $(".text-panel").css("top", "44%");
                             $(".intro2 .text-panel").css("top", "65%")
