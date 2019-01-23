@@ -256,14 +256,33 @@ function onResume() {
 
 function isIPX11() {
 
+    var ratio = window.devicePixelRatio || 1;
+    var screen = {
+        width: window.screen.width * ratio,
+        height: window.screen.height * ratio
+    };
+
+    
+
     var osver = kendo.support.mobileOS.flatVersion;
     var os = kendo.support.mobileOS.name;
     var dev = kendo.support.mobileOS.device;
     var sh = kendo.support.screenWidth;
+    console.log(screen.width + "  " + screen.height);
+
+    var ipx = false;
+    // iPhone X Detection
+    if (os == "ios" && screen.width == 1125 && screen.height === 2436) {
+        alert('iPhoneX Detected!');
+        ipx = true;
+    } else {
+
+        alert(screen.width + "  " + screen.height)
+    }
    // alert(sh);
     // alert(osver + "  " + os + "  " + dev)
    // chg chk to <11.4
-    if (osver >= 1100 && osver < 1200 && os == "ios" && dev == "iphone" ) {
+    if (osver >= 1100 && osver < 1200 && os == "ios" && dev == "iphone" && ipx == true) {
        
         return true
        // return false
