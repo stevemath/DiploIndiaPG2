@@ -7,9 +7,7 @@ app.home = kendo.observable({
             //$("body").css("height", "350px")''
             $("body").css("height", "100%");
 
-            setTimeout(function () {
-                $("#wedge").css("height","100%");
-            }, 1000);
+          
         }
 
 
@@ -526,7 +524,10 @@ function resizeCanvas() {
 
         setTimeout(function () {
             $("#loading").fadeOut(300);
-        },500)
+        }, 500)
+        setTimeout(function () {
+            $("#wedge").css("height", "100%");
+        }, 1000);
     }, 300);
 
 
