@@ -527,7 +527,7 @@ function resizeCanvas() {
         }, 500)
         setTimeout(function () {
             $("#wedge").css("height", "100%");
-        }, 1000);
+        }, 10000);
     }, 300);
 
 
