@@ -276,7 +276,7 @@ function isIPX11() {
         alert('iPhoneX Detected!');
         ipx = true;
     } else {
-
+        $("#wedge").remove();
         alert(screen.width + "  " + screen.height)
     }
    // alert(sh);

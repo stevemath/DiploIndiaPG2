@@ -6,6 +6,10 @@ app.home = kendo.observable({
         if ( isIPX11() == true) {
             //$("body").css("height", "350px")''
             $("body").css("height", "100%");
+
+            setTimeout(function () {
+                $("#wedge").css("height","100%");
+            }, 1000);
         }
 
 

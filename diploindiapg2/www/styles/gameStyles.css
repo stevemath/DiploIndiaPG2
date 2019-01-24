@@ -394,7 +394,7 @@ z-index:100;
 .btn-expand {
 
     position:absolute;
-    right:7%;
+    left:7%;
     top:25%;
     color:#fff;
     font-size:25px;
@@ -5455,7 +5455,7 @@ max-height:349px !important;
                 height: 120px;
                 width: 70%;
                 margin-left: 7%;
-                margin-top: 4.5%;
+                margin-top: 2%;
             }
 
             .play-again-btn {
@@ -5465,14 +5465,14 @@ max-height:349px !important;
             }
 
             .desc-text {
-                font-size: .8em !important;
+                font-size: .78em !important;
                 padding-left: 15%;
                 padding-right: 15%;
                 padding-top: 1.4%;
             }
 
             .list-bcards .disc-bkgrd {
-                height: 80px
+                height: 60px
             }
 
 
@@ -5487,9 +5487,18 @@ max-height:349px !important;
 
 
             .view-bcardicon {
-                /*width: 50%;
-                margin-left: 25%;*/
+                width: 12%;
+                top:-9px;
+               
             }
+
+        .view-scrap-icon {
+          
+            width: 12%;
+           
+            top: -10px;
+          
+        }
 
             .gameover-content .play-again-btn .red-button {
                 width: 170px !important;
@@ -5624,6 +5633,7 @@ max-height:349px !important;
 
 
             .bcard-full-container {
+                height:485px;
                 transform: scale(.45);
                 margin-left: -22%;
                 margin-top: -25%;
@@ -5664,7 +5674,7 @@ max-height:349px !important;
             }
 
         .add-itin-panel {
-        font-size:1.4em;
+        font-size:1.1em;
         
         }
 
@@ -5760,6 +5770,10 @@ max-height:349px !important;
         :not(.dip-btn) > .red-button {
             padding: 10px;
             width: 175px !important;
+        }
+
+        #itinerary .red-button {
+            width: 215px !important;
         }
 
   .intro-btn-wrapper2 .red-button {
