@@ -5235,6 +5235,9 @@ max-height:349px !important;
             font-size: 1.3em !important;
         }
 
+        .iosx11 .dis-fact, .iosx11 .career-wrapper, .iosx11 .bush-wrapper, .iosx11 .gameover-wrapper {
+            max-height: 374px !important;
+        }
 
 
 

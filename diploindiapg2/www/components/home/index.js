@@ -526,8 +526,8 @@ function resizeCanvas() {
             $("#loading").fadeOut(300);
         }, 500)
         setTimeout(function () {
-            $("#wedge").css("height", "100%");
-        }, 10000);
+            //$("#wedge").css("height", "100%");
+        }, 500);
     }, 300);
 
 
