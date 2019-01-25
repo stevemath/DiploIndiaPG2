@@ -5166,11 +5166,15 @@ width:100%;
 
     @media screen and (max-width: 815px) {
 
+        .iosx11 body {
+        overflow:hidden !important;
+        height:320px !important;
+        }
 
         .iosx11 .bush-wrapper {
-            position:static;
-            height:100%;
-            width:100%;
+            position: static;
+            height: 100%;
+            width: 100%;
         }
 
         .iosx11 #bCardLayout {
@@ -5239,10 +5243,17 @@ max-height:349px !important;
       
 
         .iosx11 .dis-fact, .iosx11 .career-wrapper, .iosx11 .bush-wrapper, .iosx11 .gameover-wrapper {
-            max-height: 320px !important;
-            max-height: 568px !important;
+           height: 320px !important;
+           min-height: 320px !important;
+           width: 568px !important;
+           min-width: 568px !important;
+           
         }
 
+        .iosx11 .km-root, .iosx11 .km-root.km-native-scrolling {
+        height:320px !important;
+        min-height:320px !important;
+        }
 
 
         .discovery-container, .diplomacy-container {
@@ -5360,7 +5371,7 @@ max-height:349px !important;
             }
 
             #gameoverLayout .header .subtext {
-                font-size: 2.75vh;
+                font-size: 3.5vh;
             }
 
             .list-itin {
@@ -5406,7 +5417,7 @@ max-height:349px !important;
                 }
 
         #gameoverLayout .header .title {
-            font-size: 4.5vh;
+            font-size: 5.5vh;
             margin-top: -0.5%;
         }
 

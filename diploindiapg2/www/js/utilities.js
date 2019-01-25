@@ -276,7 +276,7 @@ function isIPX11() {
     //alert("h: " + h);
     if (os == "ios" && (screen.width == 1125 && screen.height === 2436 || screen.width == 960 && screen.height == 1704)) {
         var h = document.documentElement.clientHeight;
-      //  alert("h: " + h);
+      alert("iphone x detected");
         ipx = true;
     } else {
         $("#wedge").remove();
