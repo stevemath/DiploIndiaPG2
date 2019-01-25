@@ -273,10 +273,10 @@ function isIPX11() {
     var ipx = false;
     // iPhone X Detection
     var h = document.documentElement.clientHeight;
-    alert("h: " + h);
+    //alert("h: " + h);
     if (os == "ios" && (screen.width == 1125 && screen.height === 2436 || screen.width == 960 && screen.height == 1704)) {
         var h = document.documentElement.clientHeight;
-        alert("h: " + h);
+      //  alert("h: " + h);
         ipx = true;
     } else {
         $("#wedge").remove();

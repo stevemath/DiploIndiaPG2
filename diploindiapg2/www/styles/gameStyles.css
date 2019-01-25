@@ -5233,8 +5233,10 @@ max-height:349px !important;
         }
         
         .iosx11 .subtext {
-            font-size: 1.3em !important;
+            font-size: 2.75vh !important;
         }
+
+      
 
         .iosx11 .dis-fact, .iosx11 .career-wrapper, .iosx11 .bush-wrapper, .iosx11 .gameover-wrapper {
             max-height: 320px !important;
@@ -5659,7 +5661,7 @@ max-height:349px !important;
             }
 
             .itin-item {
-                font-size: .85em !important;
+                /*font-size: .85em !important;*/
                 margin-top:-2px;
                 padding:1px;
             }
@@ -5970,6 +5972,11 @@ max-height:349px !important;
                 height: 18px;
                 margin-top: -5px;
             }
+
+        .gameover-content #itinGameOver .star-container {
+           
+            margin-top: 0px;
+        }
 
 
             .resp-wrapper {
