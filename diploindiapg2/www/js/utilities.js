@@ -272,12 +272,15 @@ function isIPX11() {
 
     var ipx = false;
     // iPhone X Detection
+    var h = document.documentElement.clientHeight;
+    alert("h: " + h);
     if (os == "ios" && (screen.width == 1125 && screen.height === 2436 || screen.width == 960 && screen.height == 1704)) {
-        alert('iPhoneX Detected!');
+        var h = document.documentElement.clientHeight;
+        alert("h: " + h);
         ipx = true;
     } else {
         $("#wedge").remove();
-        alert(screen.width + "  " + screen.height)
+       // alert(screen.width + "  " + screen.height)
     }
    // alert(sh);
     // alert(osver + "  " + os + "  " + dev)

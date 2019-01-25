@@ -457,7 +457,7 @@ z-index:100;
 position:absolute;
 left:0px;
 width:100%;
-bottom:-30px;
+bottom:-50px;
 text-align:center;
 }
 
@@ -4858,6 +4858,7 @@ width:100%;
 
         #itinerary {
             width: 660px;
+            height:485px; 
             transform-origin: 0% 0%;
             transform: scale(.65);
         }
@@ -5236,7 +5237,8 @@ max-height:349px !important;
         }
 
         .iosx11 .dis-fact, .iosx11 .career-wrapper, .iosx11 .bush-wrapper, .iosx11 .gameover-wrapper {
-            max-height: 349px !important;
+            max-height: 320px !important;
+            max-height: 568px !important;
         }
 
 
@@ -5365,19 +5367,24 @@ max-height:349px !important;
 
 
             .itin-side-panel {
-                min-height: 195px;
+                min-height: 180px;
                 width: 35%;
             }
 
                 .itin-side-panel .heading {
-                    font-size: 13px;
+                    font-size: 12px;
                     margin-bottom: 0px;
                     margin-top: 0px;
                     padding: 2px;
                 }
 
+                .itin-side-panel .heading.first {
+                    margin-top: -10px;
+                }
+
                 .itin-side-panel .eval-text {
-                    font-size: 9px;
+                    font-size: 8px;
+                    line-height:1.35;
                     margin-bottom: 2px;
                 }
 
@@ -5396,10 +5403,14 @@ max-height:349px !important;
                     height: 30%;
                 }
 
+        #gameoverLayout .header .title {
+            font-size: 4.5vh;
+            margin-top: -0.5%;
+        }
 
-            .gameover-itin .itin-header {
-                transform: scale(.35);
-            }
+        .gameover-itin .itin-header {
+            transform: scale(.35);
+        }
 
             .gameover-itin .itinhead-wrapper {
                 width: 200%;
@@ -5458,7 +5469,7 @@ max-height:349px !important;
                 height: 120px;
                 width: 70%;
                 margin-left: 7%;
-                margin-top: 2%;
+                margin-top: 2.1%;
             }
 
             .play-again-btn {
@@ -5468,14 +5479,14 @@ max-height:349px !important;
             }
 
             .desc-text {
-                font-size: .78em !important;
+                font-size: .7em !important;
                 padding-left: 15%;
                 padding-right: 15%;
                 padding-top: 1.4%;
             }
 
             .list-bcards .disc-bkgrd {
-                height: 60px
+                height: 50px
             }
 
 
@@ -5490,16 +5501,16 @@ max-height:349px !important;
 
 
             .view-bcardicon {
-                width: 12%;
-                top:-9px;
+                width: 11%;
+                top:-6px;
                
             }
 
         .view-scrap-icon {
           
-            width: 12%;
+            width: 11%;
            
-            top: -10px;
+            top: -7px;
           
         }
 
@@ -5648,11 +5659,13 @@ max-height:349px !important;
             }
 
             .itin-item {
-                font-size: .98em;
+                font-size: .85em !important;
+                margin-top:-2px;
+                padding:1px;
             }
 
                 .itin-item i {
-                    font-size: 23px;
+                    font-size: 15px;
                 }
 
             .itin-scalable {
@@ -5757,7 +5770,8 @@ max-height:349px !important;
         }
 
         .dip-btn .btn-text {
-            font-size: 18px !important;
+            font-size: 17px !important;
+            padding: 9px 8px 5px 8px !important;
         }
 
         .intro-btn-wrapper2 .btn-text {

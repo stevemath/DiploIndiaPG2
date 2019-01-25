@@ -278,6 +278,13 @@
             self.getScrapbook();
         })
 
+
+        $(".expPts").css("pointer-events","all !important")
+        $(".expPts").on("click touchend", function () {
+            console.log("get gameover");
+            self.getGameOver();
+        })
+
         $(".btn-expand").on("click", function () {
             console.log(self.properties.itinExpanded);
             if (self.properties.itinExpanded == true) {
