@@ -1348,7 +1348,8 @@ $(".accept").on("click touchend", function (e) {
 
                     var resultF = kendo.render(templateF, tData);
 
-                    $("body").prepend(resultF);
+                   // $("body").prepend(resultF);
+                    $(".km-view").prepend(resultF);
                     self.renderRedButtons();
 
                     self.registerFactAsViewed(tData[0].Id);
@@ -1360,7 +1361,8 @@ $(".accept").on("click touchend", function (e) {
                             var disH = $(".dis-fact").height();
                             var bodyH = $("body").height()
                             var cH = $("#chinaCanvas").height();
-                            alert(disH + "  " + bodyH + "  " + cH);
+                            var kmv =  $(".km-view").height();
+                            alert(disH + "  " + bodyH + "  " + cH + "  " + kmv);
                           
                             $(".dis-btn .continue").remove();
                            // updateDiscovery(src);
