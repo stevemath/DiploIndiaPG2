@@ -326,7 +326,7 @@ function resizeCanvas() {
 
             if (iosx11 == true) {
                 $(".km-content").css('height', 375 + "px");
-                $(".km-content").css('width', 812 + "px");
+              //  $(".km-content").css('width', 812 + "px");
 
 
 
