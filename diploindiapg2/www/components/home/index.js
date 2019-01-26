@@ -6,10 +6,10 @@ app.home = kendo.observable({
         if ( isIPX11() == true) {
             //$("body").css("height", "350px")''
             $("body").css("height", "100%");
-
-          
+            stopBodyScrolling(true)
+           
         }
-
+ $("body").css("width", "100%");
 
         if (gamePlay.properties.gameStarted != true) {
             console.log(gamePlay.properties.gameStarted)

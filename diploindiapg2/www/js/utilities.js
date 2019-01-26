@@ -276,25 +276,36 @@ function isIPX11() {
     //alert("h: " + h);
     if (os == "ios" && (screen.width == 1125 && screen.height === 2436 || screen.width == 960 && screen.height == 1704)) {
         var h = document.documentElement.clientHeight;
-      alert("iphone x detected");
+       alert("iphone x detected");
         ipx = true;
     } else {
-        $("#wedge").remove();
+       
        // alert(screen.width + "  " + screen.height)
     }
    // alert(sh);
     // alert(osver + "  " + os + "  " + dev)
    // chg chk to <11.4
     if (osver >= 1100 && osver < 1200 && os == "ios" && dev == "iphone" && ipx == true) {
-       
+      
         return true
        // return false
     } else {
+        $("#wedge").remove();
         return false
     }
 
 }
 
+function stopBodyScrolling(bool) {
+    if (bool === true) {
+        document.body.addEventListener("touchmove", freezeVp, false);
+    } else {
+        document.body.removeEventListener("touchmove", freezeVp, false);
+    }
+}
 
 
+var freezeVp = function (e) {
+    e.preventDefault();
+};
 

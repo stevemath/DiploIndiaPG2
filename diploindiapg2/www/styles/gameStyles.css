@@ -5172,16 +5172,20 @@ width:100%;
         height:320px !important;
         }
 
-        .iosx11 .bush-wrapper {
-            position: static;
-            height: 100%;
-            width: 100%;
+        .iosx11 .km-view, .iosx11 .km-content {
+            position:fixed;
         }
+
+            .iosx11 .bush-wrapper {
+                position: fixed;
+                height: 100%;
+                width: 100%;
+            }
 
         .iosx11 #bCardLayout {
             /*height: 374px;
             width: 812px;*/
-            position:absolute;
+            position:fixed;
             left:0px;
             right:0px;
             top:0px;
@@ -5200,6 +5204,7 @@ max-height:349px !important;
 }
 
         .iosx11 #scrapbookLayout {
+            position: fixed;
             max-height: 349px !important;
         }
 
@@ -5244,8 +5249,14 @@ max-height:349px !important;
 
 
         .iosx11 .dis-fact, .iosx11 .career-wrapper, .iosx11 .bush-wrapper, .iosx11 .gameover-wrapper {
+            position: fixed;
+            left: 0px;
+            right: 0px;
+            top: 0px;
+            bottom: 0px;
             height: 100% !important;
             min-height: 100% !important;
+
             /*width: 95%;*/
             /*min-width: 69% !important;*/
             /*height: 320px !important;
