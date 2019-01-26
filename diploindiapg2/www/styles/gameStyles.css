@@ -5177,7 +5177,7 @@ width:100%;
         }*/
 
             .iosx11 .bush-wrapper {
-                position: fixed;
+                position: absolute;
                 height: 100%;
                 width: 100%;
             }
@@ -5185,7 +5185,7 @@ width:100%;
         .iosx11 #bCardLayout {
             /*height: 374px;
             width: 812px;*/
-            position:fixed;
+            position:absolute;
             left:0px;
             right:0px;
             top:0px;
@@ -5249,7 +5249,7 @@ max-height:349px !important;
 
 
         .iosx11 .dis-fact, .iosx11 .career-wrapper, .iosx11 .bush-wrapper, .iosx11 .gameover-wrapper {
-            position: fixed;
+            position: absolute;
             left: 0px;
             right: 0px;
             top: 0px;
