@@ -1349,7 +1349,8 @@ $(".accept").on("click touchend", function (e) {
                     var resultF = kendo.render(templateF, tData);
 
                    // $("body").prepend(resultF);
-                    $(".km-view").prepend(resultF);
+                   // $(".km-view").prepend(resultF);
+                    $(".km-content").prepend(resultF);
                     self.renderRedButtons();
 
                     self.registerFactAsViewed(tData[0].Id);

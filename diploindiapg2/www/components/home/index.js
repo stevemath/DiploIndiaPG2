@@ -326,6 +326,10 @@ function resizeCanvas() {
 
             if (iosx11 == true) {
                 $(".km-content").css('height', 375 + "px");
+                $(".km-content").css('width', 812 + "px");
+
+
+
             } else {
                 setTimeout(function () { window.scrollTo(0, 1); }, 0);
                 $(document.body).height(window.innerHeight);
