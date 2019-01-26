@@ -1362,7 +1362,8 @@ $(".accept").on("click touchend", function (e) {
                             var bodyH = $("body").width();
                             var cH = $("#chinaCanvas").width();
                             var kmv = $(".km-view").width();
-                            alert(disH + "  " + bodyH + "  " + cH + "  " + kmv);
+                            var kmc = $(".km-content").width();
+                            alert(disH + "  " + bodyH + "  " + cH + "  " + kmv + " " + kmc);
                             //var disH = $(".dis-fact").height();
                             //var bodyH = $("body").height()
                             //var cH = $("#chinaCanvas").height();

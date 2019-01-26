@@ -5245,8 +5245,8 @@ max-height:349px !important;
         .iosx11 .dis-fact, .iosx11 .career-wrapper, .iosx11 .bush-wrapper, .iosx11 .gameover-wrapper {
             height: 100% !important;
             min-height: 100% !important;
-            width: 100% !important;
-            min-width: 100% !important;
+            width: auto !important;
+            min-width: 69% !important;
             /*height: 320px !important;
            min-height: 320px !important;*/
             /*width: 568px !important;
