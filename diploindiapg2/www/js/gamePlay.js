@@ -1359,7 +1359,8 @@ $(".accept").on("click touchend", function (e) {
 
                             var disH = $(".dis-fact").height();
                             var bodyH = $("body").height()
-                            alert(disH + "  " + bodyH);
+                            var cH = $("#chinaCanvas").height();
+                            alert(disH + "  " + bodyH + "  " + cH);
                           
                             $(".dis-btn .continue").remove();
                            // updateDiscovery(src);
