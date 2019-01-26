@@ -5172,9 +5172,9 @@ width:100%;
         height:320px !important;
         }
 
-        .iosx11 .km-view, .iosx11 .km-content {
+        /*.iosx11 .km-view, .iosx11 .km-content {
             position:fixed;
-        }
+        }*/
 
             .iosx11 .bush-wrapper {
                 position: fixed;
