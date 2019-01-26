@@ -1357,6 +1357,9 @@ $(".accept").on("click touchend", function (e) {
 
                         $(".dis-btn .continue").on("click touchend", function () {
 
+                            var disH = $(".dis-fact").height();
+                            var bodyH = $("body").height()
+                            alert(disH + "  " + bodyH);
                           
                             $(".dis-btn .continue").remove();
                            // updateDiscovery(src);

@@ -270,7 +270,7 @@ function isIPX11() {
     var sh = kendo.support.screenWidth;
     console.log(screen.width + "  " + screen.height);
 
-    var ipx = false;
+    var ipx = true//false;
     // iPhone X Detection
     var h = document.documentElement.clientHeight;
     //alert("h: " + h);
