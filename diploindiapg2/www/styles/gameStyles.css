@@ -5240,21 +5240,22 @@ max-height:349px !important;
             font-size: 2.75vh !important;
         }
 
-      
+
 
         .iosx11 .dis-fact, .iosx11 .career-wrapper, .iosx11 .bush-wrapper, .iosx11 .gameover-wrapper {
-           height: 100% !important;
-           min-height: 100% !important; 
-           /*height: 320px !important;
+            height: 100% !important;
+            min-height: 100% !important;
+            width: 100% !important;
+            min-width: 100% !important;
+            /*height: 320px !important;
            min-height: 320px !important;*/
-           /*width: 568px !important;
+            /*width: 568px !important;
            min-width: 568px !important;*/
-           
         }
 
 
-        .iosx11 .dis-fact {
-          overflow:hidden;
+        .iosx11 .dis-fact, .iosx11 .km-root {
+            overflow: hidden;
         }
 
         /*.iosx11 .km-root, .iosx11 .km-root.km-native-scrolling {
