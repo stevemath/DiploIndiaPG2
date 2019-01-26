@@ -5250,10 +5250,10 @@ max-height:349px !important;
            
         }
 
-        .iosx11 .km-root, .iosx11 .km-root.km-native-scrolling {
+        /*.iosx11 .km-root, .iosx11 .km-root.km-native-scrolling {
         height:320px !important;
         min-height:320px !important;
-        }
+        }*/
 
 
         .discovery-container, .diplomacy-container {
