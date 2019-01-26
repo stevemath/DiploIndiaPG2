@@ -5,7 +5,12 @@ app.intro = kendo.observable({
         var self = this;
         
         var currPg = 1;
-       
+        if (isIPX11() == true) {
+            //$("body").css("height", "350px")''
+            $("body").css("height", "100%");
+
+
+        }
 
         //function onLoad() {
            // alert("loaded")
