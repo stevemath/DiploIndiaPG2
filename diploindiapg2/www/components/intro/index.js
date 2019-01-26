@@ -9,9 +9,9 @@ app.intro = kendo.observable({
             //$("body").css("height", "350px")''
             $("body").css("height", "100%");
 
-            stopBodyScrolling(true)
+          
         }
-
+  stopBodyScrolling(true)
         //function onLoad() {
            // alert("loaded")
           //  document.addEventListener("deviceready", onDeviceReady, false);
