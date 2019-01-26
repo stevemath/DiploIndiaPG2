@@ -17,7 +17,7 @@
     /*width:664px;*/
     /*width: 568px;
     height: 320px;*/
-    width:812px;
+    width:757px;
     height:349px;
     background-color: transparent;
 }
@@ -4858,7 +4858,8 @@ width:100%;
 
         #itinerary {
             width: 660px;
-            height:485px; 
+            height:400px; 
+            /*height:485px;*/ 
             transform-origin: 0% 0%;
             transform: scale(.65);
         }
@@ -5681,8 +5682,8 @@ max-height:349px !important;
 
             .itin-item {
                 /*font-size: .85em !important;*/
-                margin-top:-2px;
-                padding:1px;
+                margin-top:-1px;
+                padding:2px;
             }
 
                 .itin-item i {

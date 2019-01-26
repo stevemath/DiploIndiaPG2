@@ -1350,7 +1350,7 @@ $(".accept").on("click touchend", function (e) {
 
                    // $("body").prepend(resultF);
                    // $(".km-view").prepend(resultF);
-                    $(".km-content").prepend(resultF);
+                    $(".km-view").prepend(resultF);
                     self.renderRedButtons();
 
                     self.registerFactAsViewed(tData[0].Id);
