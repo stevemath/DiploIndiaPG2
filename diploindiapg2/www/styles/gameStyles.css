@@ -5265,17 +5265,17 @@ max-height:349px !important;
             top: 0px;
             bottom: 0px;
             
-            /*transform-origin:top center;
-            transform:scale(1.175);*/
+            transform-origin:top center;
+            transform:scale(1.29,1.175);
             /*transform:scale(1.25);*/
             /*height: 100% !important;
             min-height: 100% !important;*/
 
             /*width: 95%;*/
             /*min-width: 69% !important;*/
-            height: 375px !important;
+            /*height: 375px !important;*/
            /*min-height: 320px !important;*/
-            width: 812px !important;
+            /*width: 667px !important;*/
            /*min-width: 568px !important;*/
         }
 
