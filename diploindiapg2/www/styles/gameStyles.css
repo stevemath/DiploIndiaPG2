@@ -1,7 +1,7 @@
 ﻿html,body {
     background-color: #140809;
     /*background-color: #000;*/
-   
+   /*position:fixed;*/
     height: 100% !important;
    
     top: 0;
@@ -5173,10 +5173,10 @@ width:100%;
         /*height:320px !important;*/
         }
 
-        /*.iosx11 .km-view, .iosx11 .km-content {
+        .iosx11 .km-view, .iosx11 .km-content {
             position:fixed;
 
-        }*/
+        }
 
             .iosx11 .bush-wrapper {
                 position: absolute;

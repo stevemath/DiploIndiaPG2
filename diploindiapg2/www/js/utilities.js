@@ -299,6 +299,8 @@ function isIPX11() {
 function stopBodyScrolling(bool) {
     if (bool === true) {
         document.body.addEventListener("touchmove", freezeVp, false);
+        $$(".km-view").on("touchmove", function () { freezeVp });
+        $$(".km-content").on("touchmove", function () { freezeVp });
     } else {
         document.body.removeEventListener("touchmove", freezeVp, false);
     }
