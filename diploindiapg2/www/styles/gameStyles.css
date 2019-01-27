@@ -1,7 +1,7 @@
 ﻿html,body {
     background-color: #140809;
     /*background-color: #000;*/
-   /*position:fixed;*/
+  
     height: 100% !important;
    
     top: 0;
@@ -12,7 +12,10 @@
     /*bottom: calc(0px - env(safe-area-inset-top));*/
 }
 
+body {
+ position:relative;
 
+}
 
 #wedge {
     /*width:664px;*/
