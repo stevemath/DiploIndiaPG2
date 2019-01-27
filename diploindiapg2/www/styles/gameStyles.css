@@ -5266,10 +5266,10 @@ max-height:349px !important;
 
         .iosx11 .dis-fact {
             position: fixed;
-            left: -env(safe-area-inset-left);
+            /*left: -env(safe-area-inset-left);
             right: -env(safe-area-inset-right);
             top: -env(safe-area-inset-top);
-            bottom: -env(safe-area-inset-bottom);
+            bottom: -env(safe-area-inset-bottom);*/
             /*left: 0px;
             right: 0px;
             top: 0px;
@@ -5278,10 +5278,10 @@ max-height:349px !important;
             /*transform:scale(1,1);*/
             /*transform:scale(1.24,1.16);*/
             /*transform:scale(1.16);*/
-            /*height: 100% !important;
-            min-height: 100% !important;*/
-            /*width: 95%;*/
-            /*min-width: 69% !important;*/
+            height: 100% !important;
+            min-height: 100% !important;
+            width: 100%;
+            min-width: 100% !important;
             /*height: 375px !important;*/
             /*min-height: 320px !important;*/
             /*width: 667px !important;*/
