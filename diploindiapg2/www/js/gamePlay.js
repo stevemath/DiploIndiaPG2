@@ -1351,9 +1351,9 @@ $(".accept").on("click touchend", function (e) {
                     $("body").prepend(resultF);
                     // $(".km-view").prepend(resultF);
 
-                    setTimeout(function () {
-                        $(".iosx11 .dis-fact").css("position", "fixed");
-                    }, 250);
+                    //setTimeout(function () {
+                    //    $(".iosx11 .dis-fact").css("position", "fixed");
+                    //}, 250);
 
                     self.renderRedButtons();
 

@@ -301,6 +301,7 @@ function stopBodyScrolling(bool) {
         document.body.addEventListener("touchmove", freezeVp, false);
         $(".km-view").on("touchmove", function () { freezeVp });
         $(".km-content").on("touchmove", function () { freezeVp });
+        $(".dis-fact").on("touchmove", function () { freezeVp });
     } else {
         document.body.removeEventListener("touchmove", freezeVp, false);
     }
