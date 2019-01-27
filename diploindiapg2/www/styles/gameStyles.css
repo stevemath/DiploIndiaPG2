@@ -5173,10 +5173,10 @@ width:100%;
         /*height:320px !important;*/
         }
 
-        .iosx11 .km-view, .iosx11 .km-content {
+        /*.iosx11 .km-view, .iosx11 .km-content {
             position:fixed;
 
-        }
+        }*/
 
             .iosx11 .bush-wrapper {
                 position: absolute;
@@ -5257,8 +5257,8 @@ max-height:349px !important;
             top: 0px;
             bottom: 0px;
             transform-origin: top center;
-            transform: scale(1,1);
-            /*transform: scale(1.2,1.1);*/
+            /*transform: scale(1,1);*/
+            transform: scale(1.2,1.1);
         }
 
             .iosx11 .dis-fact {
@@ -5271,7 +5271,7 @@ max-height:349px !important;
             transform-origin:top center;
             transform:scale(1,1);
             /*transform:scale(1.24,1.16);*/
-            /*transform:scale(1.25);*/
+            transform:scale(1.16);
             /*height: 100% !important;
             min-height: 100% !important;*/
 
