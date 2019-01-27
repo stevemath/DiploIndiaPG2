@@ -5170,11 +5170,12 @@ width:100%;
 
         .iosx11 body {
         overflow:hidden !important;
-        height:320px !important;
+        /*height:320px !important;*/
         }
 
         /*.iosx11 .km-view, .iosx11 .km-content {
             position:fixed;
+
         }*/
 
             .iosx11 .bush-wrapper {
