@@ -69,8 +69,8 @@
                             $(".intro-btn-wrapper").css("bottom", "9%");
 
 
-                            var mvp = document.getElementById('appViewport');
-                            mvp.setAttribute('content', 'initial-scale=1, user-scalable=no, maximum-scale=1, width=812,height:374');
+                            //var mvp = document.getElementById('appViewport');
+                            //mvp.setAttribute('content', 'initial-scale=1, user-scalable=no, maximum-scale=1, width=812,height:374');
 
                             //$("body").css("height", "100%");
                             //$(".km-view").css("height", "100%");

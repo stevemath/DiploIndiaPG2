@@ -296,6 +296,23 @@ function isIPX11() {
 
 }
 
+function stopBodyScrollingnew() {
+    var firstMove;
+
+    window.addEventListener('touchstart', function (e) {
+        firstMove = true;
+    });
+
+    window.addEventListener('touchmove', function (e) {
+        if (firstMove) {
+            e.preventDefault();
+
+            firstMove = false;
+        }
+    });
+
+}
+
 function stopBodyScrolling(bool) {
     if (bool === true) {
         document.body.addEventListener("touchmove", freezeVp, false);

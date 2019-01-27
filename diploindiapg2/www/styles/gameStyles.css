@@ -5288,6 +5288,18 @@ max-height:349px !important;
             /*min-width: 568px !important;*/
         }
 
+        /*#fixtest {
+            height: 100% !important;
+            min-height: 100% !important;
+            width: 100%;
+            min-width: 100% !important;
+            /*background-color:red;*/
+            left: 0px;
+            right: 0px;
+            top: 0px;
+            bottom: 0px;
+            z-index: 100000;
+        }*/
 
         .iosx11 .dis-fact, .iosx11 .km-root, .iosx11 .km-content {
             overflow: hidden;

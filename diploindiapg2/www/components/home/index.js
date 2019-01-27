@@ -9,7 +9,22 @@ app.home = kendo.observable({
           
            
         }
-        stopBodyScrolling(true)
+       // stopBodyScrolling(true)
+
+
+        var firstMove;
+
+        window.addEventListener('touchstart', function (e) {
+            firstMove = true;
+        });
+
+        window.addEventListener('touchmove', function (e) {
+            if (firstMove) {
+                e.preventDefault();
+
+                firstMove = false;
+            }
+        });
 
  //$("body").css("width", "100%");
 
