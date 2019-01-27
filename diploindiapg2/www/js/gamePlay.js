@@ -1332,14 +1332,14 @@ $(".accept").on("click touchend", function (e) {
 
 
                     // close disc after first question
-                  //  if (self.properties.lastFactIdx == self.properties.currentDiscObj.id) {
+                    //  if (self.properties.lastFactIdx == self.properties.currentDiscObj.id) {
 
-                self.properties.currentDiscObj.state = "empty";
-                closeDiscovery(self.properties.currentDiscObj.id);
-              //  console.log(self.properties.currentDiscObj)
-                        canvas.renderAll();
-                        self.properties.lastFactIdx = null;
-                   // }
+                    self.properties.currentDiscObj.state = "empty";
+                    closeDiscovery(self.properties.currentDiscObj.id);
+                    //  console.log(self.properties.currentDiscObj)
+                    canvas.renderAll();
+                    self.properties.lastFactIdx = null;
+                    // }
 
                     var templateFContent = $("#discoveryFactTemplate").html();
                     var templateF = kendo.template(templateFContent);
@@ -1349,8 +1349,12 @@ $(".accept").on("click touchend", function (e) {
                     var resultF = kendo.render(templateF, tData);
 
                     $("body").prepend(resultF);
-                   // $(".km-view").prepend(resultF);
-                   
+                    // $(".km-view").prepend(resultF);
+
+                    setTimeout(function () {
+                        $(".iosx11 .dis-fact").css("position", "fixed");
+                    }, 250);
+
                     self.renderRedButtons();
 
                     self.registerFactAsViewed(tData[0].Id);
