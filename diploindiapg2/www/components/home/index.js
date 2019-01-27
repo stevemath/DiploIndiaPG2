@@ -10,6 +10,7 @@ app.home = kendo.observable({
            
         }
         stopBodyScrolling(true)
+
  //$("body").css("width", "100%");
 
         if (gamePlay.properties.gameStarted != true) {

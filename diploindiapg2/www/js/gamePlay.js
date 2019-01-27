@@ -2224,8 +2224,11 @@ $(star).addClass("faded")
 
         var cResult = kendo.render(cTemplate, [careerVM]);
 
-       // $("body").prepend(cResult);
-        $(".km-view").prepend(cResult);
+        $("body").prepend(cResult);
+       // $(".km-view").prepend(cResult);
+        setTimeout(function () {
+            $(".dis-fact").css("position", "fixed !important");
+        },500)
         kendo.bind($("#gameoverLayout"), careerVM);
         console.log(txtQuality);
 
