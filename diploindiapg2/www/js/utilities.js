@@ -276,7 +276,7 @@ function isIPX11() {
     //alert("h: " + h);
     if (os == "ios" && (screen.width == 1125 && screen.height === 2436 || screen.width == 960 && screen.height == 1704)) {
         var h = document.documentElement.clientHeight;
-       alert("iphone x detected");
+      // alert("iphone x detected");
         ipx = true;
     } else {
        
@@ -286,7 +286,7 @@ function isIPX11() {
     // alert(osver + "  " + os + "  " + dev)
    // chg chk to <11.4
     if (osver >= 1100 && osver < 1200 && os == "ios" && dev == "iphone" && ipx == true) {
-       // alert("iphone x detected");
+       alert("iphone x detected");
         return true
        
     } else {
@@ -299,8 +299,8 @@ function isIPX11() {
 function stopBodyScrolling(bool) {
     if (bool === true) {
         document.body.addEventListener("touchmove", freezeVp, false);
-        $$(".km-view").on("touchmove", function () { freezeVp });
-        $$(".km-content").on("touchmove", function () { freezeVp });
+        $(".km-view").on("touchmove", function () { freezeVp });
+        $(".km-content").on("touchmove", function () { freezeVp });
     } else {
         document.body.removeEventListener("touchmove", freezeVp, false);
     }

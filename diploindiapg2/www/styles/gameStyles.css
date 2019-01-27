@@ -5258,7 +5258,7 @@ max-height:349px !important;
             bottom: 0px;
             transform-origin: top center;
             /*transform: scale(1,1);*/
-            transform: scale(1.2,1.1);
+            /*transform: scale(1.2,1.1);*/
         }
 
             .iosx11 .dis-fact {
@@ -5269,7 +5269,7 @@ max-height:349px !important;
             bottom: 0px;
             
             transform-origin:top center;
-            transform:scale(1,1);
+            /*transform:scale(1,1);*/
             /*transform:scale(1.24,1.16);*/
             transform:scale(1.16);
             /*height: 100% !important;
