@@ -286,9 +286,9 @@ function isIPX11() {
     // alert(osver + "  " + os + "  " + dev)
    // chg chk to <11.4
     if (osver >= 1100 && osver < 1200 && os == "ios" && dev == "iphone" && ipx == true) {
-      
+       // alert("iphone x detected");
         return true
-       // return false
+       
     } else {
         $("#wedge").remove();
         return false

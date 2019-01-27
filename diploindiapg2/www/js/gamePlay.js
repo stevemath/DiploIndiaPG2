@@ -1348,9 +1348,9 @@ $(".accept").on("click touchend", function (e) {
 
                     var resultF = kendo.render(templateF, tData);
 
-                   // $("body").prepend(resultF);
+                    $("body").prepend(resultF);
                    // $(".km-view").prepend(resultF);
-                    $(".km-view").prepend(resultF);
+                   // $(".km-view").prepend(resultF);
                     self.renderRedButtons();
 
                     self.registerFactAsViewed(tData[0].Id);
@@ -1364,7 +1364,7 @@ $(".accept").on("click touchend", function (e) {
                             var cH = $("#chinaCanvas").width();
                             var kmv = $(".km-view").width();
                             var kmc = $(".km-content").width();
-                            alert(disH + "  " + bodyH + "  " + cH + "  " + kmv + " " + kmc);
+                          //  alert(disH + "  " + bodyH + "  " + cH + "  " + kmv + " " + kmc);
                             //var disH = $(".dis-fact").height();
                             //var bodyH = $("body").height()
                             //var cH = $("#chinaCanvas").height();
@@ -2226,9 +2226,9 @@ $(star).addClass("faded")
 
         $("body").prepend(cResult);
        // $(".km-view").prepend(cResult);
-        setTimeout(function () {
-            $(".dis-fact").css("position", "fixed !important");
-        },500)
+        //setTimeout(function () {
+        //    $(".dis-fact").css("position", "fixed !important");
+        //},500)
         kendo.bind($("#gameoverLayout"), careerVM);
         console.log(txtQuality);
 

@@ -1,4 +1,4 @@
-﻿body {
+﻿html,body {
     background-color: #140809;
     /*background-color: #000;*/
    
@@ -5246,26 +5246,36 @@ max-height:349px !important;
             font-size: 2.75vh !important;
         }
 
+        /*.iosx11 .bush-wrapper,*/
 
+        .iosx11 .gameover-wrapper {
+            position: fixed;
+            left: 0px;
+            right: 0px;
+            top: 0px;
+            bottom: 0px;
+            transform-origin: top center;
+            transform: scale(1.16);
+        }
 
-        .iosx11 .dis-fact, .iosx11 .career-wrapper, .iosx11 .bush-wrapper, .iosx11 .gameover-wrapper {
+            .iosx11 .dis-fact {
             position: fixed;
             left: 0px;
             right: 0px;
             top: 0px;
             bottom: 0px;
             
-            transform-origin:top center;
-            transform:scale(1.18);
+            /*transform-origin:top center;
+            transform:scale(1.175);*/
             /*transform:scale(1.25);*/
             /*height: 100% !important;
             min-height: 100% !important;*/
 
             /*width: 95%;*/
             /*min-width: 69% !important;*/
-            /*height: 320px !important;*/
+            height: 320px !important;
            /*min-height: 320px !important;*/
-            /*width: 568px !important;*/
+            width: 568px !important;
            /*min-width: 568px !important;*/
         }
 
