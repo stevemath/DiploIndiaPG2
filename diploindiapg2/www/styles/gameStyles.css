@@ -5249,13 +5249,13 @@ max-height:349px !important;
 
 
         .iosx11 .dis-fact, .iosx11 .career-wrapper, .iosx11 .bush-wrapper, .iosx11 .gameover-wrapper {
-            position: absolute;
+            position: fixed;
             left: 0px;
             right: 0px;
             top: 0px;
             bottom: 0px;
-            height: 100% !important;
-            min-height: 100% !important;
+            /*height: 100% !important;
+            min-height: 100% !important;*/
 
             /*width: 95%;*/
             /*min-width: 69% !important;*/
