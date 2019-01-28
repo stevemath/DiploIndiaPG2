@@ -1347,9 +1347,9 @@ $(".accept").on("click touchend", function (e) {
                     console.log(tData);
 
                     var resultF = kendo.render(templateF, tData);
-                    $("#fixtest").empty();
-                    $("#fixtest").prepend(resultF);
-                  //  $("body").prepend(resultF);
+                    //$("#fixtest").empty();
+                  //  $("#fixtest").prepend(resultF);
+                    $("body").prepend(resultF);
                     // $(".km-view").prepend(resultF);
 
                     //setTimeout(function () {
