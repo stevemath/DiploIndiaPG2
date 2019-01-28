@@ -1368,7 +1368,7 @@ $(".accept").on("click touchend", function (e) {
                    // if (w < dw + 2 || h < dh + 2) {
 
                         var wr = (dw + 2) / w;
-                        var hr = (dh + 2) / h;
+                        var hr = (dh + 20) / h;
                         var scale;
                         if (hr > wr) {
                             scale = 1 / hr;
