@@ -1512,7 +1512,7 @@ font-family:russo;
 }
 
     .dis-fact .card-content {
-        border-top: solid 3px #000;
+        /*border-top: solid 3px #000;*/
     }
 
     .dis-fact .header, .career-wrapper .header,  .gameover-wrapper .header {

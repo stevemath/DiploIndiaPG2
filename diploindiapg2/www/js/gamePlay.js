@@ -1363,9 +1363,9 @@ $(".accept").on("click touchend", function (e) {
                     var dw = $(".dis-fact").width();
                     var dh = $(".dis-fact").height();
                     console.log(w + " " + h + " " + dw + " " + dh)
-                    if (w < dw + 0 || h < dh + 20) {
+                    if (w < dw + 10 || h < dh + 20) {
 
-                        var wr = (dw + 0) / w;
+                        var wr = (dw + 10) / w;
                         var hr = (dh + 20) / h;
                         var scale;
                         if (hr > wr) {
@@ -1381,13 +1381,14 @@ $(".accept").on("click touchend", function (e) {
                         setTimeout(function () {
                             var ml = -(w - $(".dis-fact").width()) / 2 - 0;
                             var mt = (h - $(".dis-fact").height()) / 2 - 0;
+                           // $(".dis-fact").css("width", w +"px");
+                            //$(".dis-fact").css("height", h + "px");
 
                         }, 300)
                     }
 
 
-                    $(".dis-fact").css("width", w +"px");
-                    $(".dis-fact").css("height", h +"px");
+                 
 
 
 
