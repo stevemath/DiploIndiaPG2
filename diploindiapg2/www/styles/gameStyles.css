@@ -5301,6 +5301,7 @@ max-height:349px !important;
             bottom: 0px;
             z-index: 100000;
             pointer-events:none;
+            overflow:hidden;
         }
 
         .iosx11 .dis-fact, .iosx11 .km-root, .iosx11 .km-content {

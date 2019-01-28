@@ -1356,6 +1356,41 @@ $(".accept").on("click touchend", function (e) {
                     //    $(".iosx11 .dis-fact").css("position", "fixed");
                     //}, 250);
 
+
+
+                    var w = $(window).width();
+                    var h = $(window).height();
+                    var dw = $(".dis-fact").width();
+                    var dh = $(".dis-fact").height();
+                    console.log(w + " " + h + " " + dw + " " + dh)
+                    if (w < dw + 10 || h < dh + 10) {
+
+                        var wr = (dw + 10) / w;
+                        var hr = (dh + 10) / h;
+                        var scale;
+                        if (hr > wr) {
+                            scale = 1 / hr;
+                        } else {
+                            scale = 1 / wr;
+                        }
+
+                        console.log(scale)
+
+                        $(".dis-fact").css("transform", "scale(" + scale + ") ")
+                        setTimeout(function () {
+                            var ml = -(w - $(".dis-fact").width()) / 2 - 0;
+                            var mt = (h - $(".dis-fact").height()) / 2 - 0;
+
+                        }, 300)
+                    }
+
+
+
+
+
+
+
+
                     self.renderRedButtons();
 
                     self.registerFactAsViewed(tData[0].Id);
