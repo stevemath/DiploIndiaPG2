@@ -5286,7 +5286,7 @@ max-height:349px !important;
             /*min-height: 320px !important;*/
             /*width: 667px !important;*/
             /*min-width: 568px !important;*/
-            pointer-events:all;
+            /*pointer-events:all;*/
         }
 
         #popupLoader {
