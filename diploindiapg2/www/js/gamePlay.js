@@ -1358,8 +1358,10 @@ $(".accept").on("click touchend", function (e) {
 
 
 
-                    var w = window.innerWidth;//$("#popupLoader").width();
-                    var h = window.innerHeight;//$("#popupLoader").height();
+                   // var w = $(window).width();
+                   var w = window.innerWidth;//$("#popupLoader").width();
+                    //var h = $(window).height();
+                  var h = window.innerHeight;//$("#popupLoader").height();
                     var dw = $(".dis-fact").width();
                     var dh = $(".dis-fact").height();
                     console.log(w + " " + h + " " + dw + " " + dh)
@@ -1381,8 +1383,8 @@ $(".accept").on("click touchend", function (e) {
                         setTimeout(function () {
                             var ml = -(w - $(".dis-fact").width()) / 2 - 0;
                             var mt = (h - $(".dis-fact").height()) / 2 - 0;
-                           // $(".dis-fact").css("width", w +"px");
-                            //$(".dis-fact").css("height", h + "px");
+                            $(".dis-fact").css("width", w +"px");
+                           $(".dis-fact").css("height", h + "px");
 
                         }, 300)
                     }
