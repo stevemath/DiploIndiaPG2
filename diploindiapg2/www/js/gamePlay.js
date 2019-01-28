@@ -1348,7 +1348,8 @@ $(".accept").on("click touchend", function (e) {
 
                     var resultF = kendo.render(templateF, tData);
 
-                    $("body").prepend(resultF);
+                    $("#fixtest").prepend(resultF);
+                    //$("body").prepend(resultF);
                     // $(".km-view").prepend(resultF);
 
                     //setTimeout(function () {

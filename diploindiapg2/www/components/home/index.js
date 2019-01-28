@@ -4,7 +4,7 @@ app.home = kendo.observable({
     onShow: function () {
        
         if ( isIPX11() == true) {
-            //$("body").css("height", "350px")''
+            //$("body").css("height", "350px")
             $("body").css("height", "100%");
           
            
