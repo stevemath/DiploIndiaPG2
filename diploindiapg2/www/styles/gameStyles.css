@@ -5286,15 +5286,16 @@ max-height:349px !important;
             /*min-height: 320px !important;*/
             /*width: 667px !important;*/
             /*min-width: 568px !important;*/
+            pointer-events:all;
         }
 
-        #fixtest {
+        #popupLoader {
             position:absolute;
             height: 100% !important;
             min-height: 100% !important;
             width: 100%;
             min-width: 100% !important;
-            /*background-color:red;*/
+           
             left: 0px;
             right: 0px;
             top: 0px;

@@ -1347,9 +1347,9 @@ $(".accept").on("click touchend", function (e) {
                     console.log(tData);
 
                     var resultF = kendo.render(templateF, tData);
-                    //$("#fixtest").empty();
-                  //  $("#fixtest").prepend(resultF);
-                    $("body").prepend(resultF);
+                  $("#popupLoader").empty();
+                  $("#popupLoader").prepend(resultF);
+                   // $("body").prepend(resultF);
                     // $(".km-view").prepend(resultF);
 
                     //setTimeout(function () {
@@ -1363,10 +1363,10 @@ $(".accept").on("click touchend", function (e) {
                     var dw = $(".dis-fact").width();
                     var dh = $(".dis-fact").height();
                     console.log(w + " " + h + " " + dw + " " + dh)
-                    if (w < dw + 20 || h < dh + 20) {
+                    if (w < dw + 2 || h < dh + 2) {
 
-                        var wr = (dw + 20) / w;
-                        var hr = (dh + 20) / h;
+                        var wr = (dw + 2) / w;
+                        var hr = (dh + 2) / h;
                         var scale;
                         if (hr > wr) {
                             scale = 1 / hr;
