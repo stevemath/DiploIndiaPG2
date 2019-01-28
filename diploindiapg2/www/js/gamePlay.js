@@ -1358,10 +1358,10 @@ $(".accept").on("click touchend", function (e) {
 
 
 
-                   // var w = $(window).width();
-                   var w = window.innerWidth;//$("#popupLoader").width();
-                    //var h = $(window).height();
-                  var h = window.innerHeight;//$("#popupLoader").height();
+                   // var w = $(window).width();window.innerWidth;
+                   var w = $("#popupLoader").width();
+                    //var h = $(window).height();window.innerHeight;
+                  var h = $("#popupLoader").height();
                     var dw = $(".dis-fact").width();
                     var dh = $(".dis-fact").height();
                     console.log(w + " " + h + " " + dw + " " + dh)
