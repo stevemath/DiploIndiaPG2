@@ -1363,10 +1363,10 @@ $(".accept").on("click touchend", function (e) {
                     var dw = $(".dis-fact").width();
                     var dh = $(".dis-fact").height();
                     console.log(w + " " + h + " " + dw + " " + dh)
-                    if (w < dw + 2 || h < dh + 2) {
+                    if (w < dw + 20 || h < dh + 20) {
 
-                        var wr = (dw + 2) / w;
-                        var hr = (dh + 2) / h;
+                        var wr = (dw + 20) / w;
+                        var hr = (dh + 20) / h;
                         var scale;
                         if (hr > wr) {
                             scale = 1 / hr;
@@ -1377,17 +1377,17 @@ $(".accept").on("click touchend", function (e) {
                         console.log(scale)
                       
 
-                        //$(".dis-fact").css("transform", "scale(" + scale + ") ")
-                        //setTimeout(function () {
-                        //    var ml = -(w - $(".dis-fact").width()) / 2 - 0;
-                        //    var mt = (h - $(".dis-fact").height()) / 2 - 0;
+                        $(".dis-fact").css("transform", "scale(" + scale + ") ")
+                        setTimeout(function () {
+                            var ml = -(w - $(".dis-fact").width()) / 2 - 0;
+                            var mt = (h - $(".dis-fact").height()) / 2 - 0;
 
-                        //}, 300)
+                        }, 300)
                     }
 
 
-                    $(".dis-fact").css("width", w +"px");
-                    $(".dis-fact").css("height", h-20 +"px");
+                    //$(".dis-fact").css("width", w +"px");
+                    //$(".dis-fact").css("height", h-20 +"px");
 
 
 
