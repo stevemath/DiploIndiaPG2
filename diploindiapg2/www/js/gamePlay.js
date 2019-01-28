@@ -1363,10 +1363,10 @@ $(".accept").on("click touchend", function (e) {
                     var dw = $(".dis-fact").width();
                     var dh = $(".dis-fact").height();
                     console.log(w + " " + h + " " + dw + " " + dh)
-                    if (w < dw + 10 || h < dh + 10) {
+                    if (w < dw + 20 || h < dh + 20) {
 
-                        var wr = (dw + 10) / w;
-                        var hr = (dh + 10) / h;
+                        var wr = (dw + 20) / w;
+                        var hr = (dh + 20) / h;
                         var scale;
                         if (hr > wr) {
                             scale = 1 / hr;
