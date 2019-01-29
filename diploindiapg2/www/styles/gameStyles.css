@@ -5290,16 +5290,16 @@ max-height:349px !important;
         }
 
         #popupLoader {
-            position:absolute;
-            height: 100% !important;
-            min-height: 100% !important;
-            width: 100%;
-            min-width: 100% !important;
+            position:fixed;
+            height: 110% !important;
+            min-height: 110% !important;
+            width: 110%;
+            min-width: 110% !important;
            
-            left: 0px;
-            right: 0px;
-            top: 0px;
-            bottom: 0px;
+            left: -5%;
+            right: -5%;
+            top: -5%;
+            bottom: -5%;
             z-index: 100000;
             pointer-events:none;
             overflow:hidden;
