@@ -5305,7 +5305,12 @@ max-height:349px !important;
             overflow:hidden;
         }
 
-        .iosx11 .dis-fact, .iosx11 .km-root, .iosx11 .km-content {
+            #popupLoader.active {
+                background-image: url('../images/system/marginwide-vert.jpg');
+            }
+
+
+            .iosx11 .dis-fact, .iosx11 .km-root, .iosx11 .km-content {
             overflow: hidden;
         }
 

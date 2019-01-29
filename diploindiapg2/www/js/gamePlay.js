@@ -1347,7 +1347,8 @@ $(".accept").on("click touchend", function (e) {
                     console.log(tData);
 
                     var resultF = kendo.render(templateF, tData);
-                  $("#popupLoader").empty();
+                    $("#popupLoader").empty();
+                    $("#popupLoader").addClass("active");
                   $("#popupLoader").prepend(resultF);
                    // $("body").prepend(resultF);
                     // $(".km-view").prepend(resultF);
@@ -1367,7 +1368,7 @@ $(".accept").on("click touchend", function (e) {
                     console.log(w + " " + h + " " + dw + " " + dh)
                    // if (w < dw + 2 || h < dh + 2) {
 
-                        var wr = (dw + 2) / w;
+                        var wr = (dw + 10) / w;
                         var hr = (dh + 20) / h;
                         var scale;
                         if (hr > wr) {
@@ -1478,8 +1479,9 @@ $(".accept").on("click touchend", function (e) {
                                 }
                             }
                         
-
+                            $("#popupLoader").removeClass("active");
                             $(".dis-fact").fadeOut(200, function () {
+
                                 $(".dis-fact").remove();
 
                                 self.checkForPopup();
@@ -1499,6 +1501,7 @@ $(".accept").on("click touchend", function (e) {
                             }
 
                             console.log(configData.dsViewedLocales.ds.data());
+                            $("#popupLoader").removeClass("active");
                             $(".dis-fact").fadeOut(200, function () {
                                 $(".dis-fact").remove();
                                 $("#resultsScrim").remove()
