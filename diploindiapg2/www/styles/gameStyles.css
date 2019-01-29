@@ -2840,9 +2840,9 @@ cursor:pointer;
     #scrapbookLayout .desc {
         text-align: center;
         font-family: Karma;
-        font-size: 2vw;
-        margin-top: 10px;
-        margin-bottom: 7px;
+        font-size: 1.7vw;
+        margin-top: 5px;
+        margin-bottom: 5px;
         width: 50%;
         margin-left: 25%;
     }
@@ -2854,7 +2854,8 @@ cursor:pointer;
         font-family: Merienda;
         text-align: center;
         font-size: 3.8vw;
-        margin-top: 2.0%;
+        /*margin-top: 2.0%;*/
+        margin-top:1.2%;
     }
 
 .scrap-bkgrd {
@@ -3002,10 +3003,12 @@ right:20px;
     z-index: 25;
     color: #951b1e;
     font-family:Karma;
-    font-size:2.0vw;
+    font-size:1.8vw;
     font-weight:bold;
     text-align:center;
     line-height:1.2;
+    margin-top:-3px;
+
     
 }
 
@@ -5385,9 +5388,10 @@ max-height:349px !important;
         }
 
         .close-scrapbook-btn {
+            transform-origin:right;
             transform: scale(.6);
             top:1% !important;
-            right:-3% !important;
+            right:0.5% !important;
         }
 
         @media screen and (min-height: 568px) {
@@ -5434,7 +5438,7 @@ max-height:349px !important;
             }
 
             #gameoverLayout .header .subtext {
-                font-size: 3.5vh;
+                font-size: 4.2vh;
             }
 
             .list-itin {
@@ -6055,7 +6059,7 @@ max-height:349px !important;
 
             .resp-wrapper {
                 width: 72%;
-                font-size:.9em;
+                font-size:1.0em;
             }
 
             .fact-text {
