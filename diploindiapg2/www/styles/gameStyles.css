@@ -5234,7 +5234,10 @@ max-height:349px !important;
             max-height: 349px !important;
         }
 
-
+        .iosx11 .close-scrapbook-btn {
+        
+        right:-3% !important;
+        }
 
 
         .iosx11 .q-wrapper {
@@ -5270,6 +5273,10 @@ max-height:349px !important;
         
         .iosx11 .subtext {
             font-size: 2.75vh !important;
+        } 
+        
+        .iosx11 .resp-container .subtext {
+            font-size: 4.5vh !important;
         }
 
         /*.iosx11 .bush-wrapper,*/
