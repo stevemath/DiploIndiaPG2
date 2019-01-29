@@ -796,8 +796,8 @@ $(".accept").on("click touchend", function (e) {
     console.log(w + " " + h + " " + dw + " " + dh)
     // if (w < dw + 20 || h < dh + 20) {
 
-    var wr = (dw + 25) / w;
-    var hr = (dh + 25) / h;
+    var wr = (dw + 30) / w;
+    var hr = (dh + 30) / h;
     var scale;
     if (hr > wr) {
         console.log("height");
@@ -1421,8 +1421,8 @@ $(".accept").on("click touchend", function (e) {
                     console.log(w + " " + h + " " + dw + " " + dh)
                    // if (w < dw + 20 || h < dh + 20) {
 
-                        var wr = (dw + 25) / w;
-                        var hr = (dh + 25) / h;
+                        var wr = (dw + 30) / w;
+                        var hr = (dh + 30) / h;
                         var scale;
                     if (hr > wr) {
                         console.log("height");
