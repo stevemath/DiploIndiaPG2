@@ -6,7 +6,7 @@
         selectedFact: null,
         gameStarted: false,
         lastFactIdx: null,
-        itinH: 450,
+        itinH: 380,
         itinTop: 0,
         itinExpanded: true,
         itinState: "itin",
@@ -282,7 +282,7 @@
         $(".expPts").css("pointer-events","all !important")
         $(".expPts").on("click touchend", function () {
             console.log("get gameover");
-            self.getGameOver();
+           // self.getGameOver();
         })
 
         $(".btn-expand").on("click", function () {
@@ -1366,10 +1366,10 @@ $(".accept").on("click touchend", function (e) {
                     var dw = $(".dis-fact").width();
                     var dh = $(".dis-fact").height();
                     console.log(w + " " + h + " " + dw + " " + dh)
-                   // if (w < dw + 2 || h < dh + 2) {
+                   // if (w < dw + 20 || h < dh + 20) {
 
-                        var wr = (dw + 0) / w;
-                        var hr = (dh + 0) / h;
+                        var wr = (dw + 20) / w;
+                        var hr = (dh + 20) / h;
                         var scale;
                     if (hr > wr) {
                         console.log("height");

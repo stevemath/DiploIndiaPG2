@@ -140,7 +140,7 @@ var localesMgmt = {
         var triH = 30;
         var triW = 28;
         var sqW = 25;
-        if ($(window).width() < 750) {
+        if ($(window).width() < 815) {
             cRadius = 25;
 
             triH = 43;
