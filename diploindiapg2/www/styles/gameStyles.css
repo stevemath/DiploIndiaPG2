@@ -1571,10 +1571,8 @@ font-family:russo;
             padding: 5px;
             text-align: center;
             width: 40%;
-            /*min-height:25%;*/
-            /*margin-left: 11%;
-    margin-top: 3%;*/
-            top: 26%;
+            bottom:9%;
+            /*top: 26%;*/
             left: 2%;
             box-sizing: border-box;
         }

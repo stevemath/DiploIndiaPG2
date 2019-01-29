@@ -656,6 +656,13 @@ var result = kendo.render(template,[diploData]);
        // console.log(result);
 $("body").prepend(result);
 
+
+
+
+
+
+
+
 self.renderRedButtons();
 // $("body").append("<div class='modal' ></div>");
 
@@ -772,7 +779,48 @@ $(".accept").on("click touchend", function (e) {
 
     var resultA = kendo.render(templateA, [diploData]);
 
-    $("body").prepend(resultA);
+   // $("body").prepend(resultA);
+
+
+
+
+    $("#popupLoader").empty();
+    $("#popupLoader").addClass("active");
+    $("#popupLoader").prepend(resultA);
+
+    var w = $("#popupLoader").width();
+
+    var h = $("#popupLoader").height();
+    var dw = $(".dis-fact").width();
+    var dh = $(".dis-fact").height();
+    console.log(w + " " + h + " " + dw + " " + dh)
+    // if (w < dw + 20 || h < dh + 20) {
+
+    var wr = (dw + 30) / w;
+    var hr = (dh + 30) / h;
+    var scale;
+    if (hr > wr) {
+        console.log("height");
+        scale = 1 / hr;
+    } else {
+        console.log("width");
+        scale = 1 / wr;
+    }
+
+    console.log(scale)
+
+
+    $(".dis-fact").css("transform", "scale(" + scale + ") ")
+    setTimeout(function () {
+        var ml = -(w - $(".dis-fact").width()) / 2 - 0;
+        var mt = (h - $(".dis-fact").height()) / 2 - 0;
+
+    }, 300)
+
+
+
+
+
     self.renderRedButtons();
 
     if (templateType == "random") {
@@ -818,6 +866,8 @@ $(".accept").on("click touchend", function (e) {
       //  $("#resultsScrim").remove();
         //$("#fireworksiframe").remove();
 
+
+        $("#popupLoader").removeClass("active");
         $(".diplomacy-container").fadeOut(200, function () {
             $(".card-wrapper").remove();
             // $(".diplomacy-container").remove();
@@ -848,6 +898,8 @@ $(".accept").on("click touchend", function (e) {
         }
 
         console.log(configData.dsViewedLocales.ds.data());
+
+        $("#popupLoader").removeClass("active");
         $(".dis-fact").fadeOut(200, function () {
             $(".dis-fact").remove();
             $("#resultsScrim").remove()
@@ -1345,31 +1397,32 @@ $(".accept").on("click touchend", function (e) {
                     var templateF = kendo.template(templateFContent);
 
                     console.log(tData);
-
-                    var resultF = kendo.render(templateF, tData);
-                    $("#popupLoader").empty();
-                    $("#popupLoader").addClass("active");
-                  $("#popupLoader").prepend(resultF);
-                   // $("body").prepend(resultF);
+ // $("body").prepend(resultF);
                     // $(".km-view").prepend(resultF);
 
                     //setTimeout(function () {
                     //    $(".iosx11 .dis-fact").css("position", "fixed");
                     //}, 250);
+   // var w = $(window).width();window.innerWidth;
+//var h = $(window).height();window.innerHeight;
+
+                    var resultF = kendo.render(templateF, tData);
 
 
+                    $("#popupLoader").empty();
+                    $("#popupLoader").addClass("active");
+                  $("#popupLoader").prepend(resultF);
 
-                   // var w = $(window).width();window.innerWidth;
                    var w = $("#popupLoader").width();
-                    //var h = $(window).height();window.innerHeight;
+                    
                   var h = $("#popupLoader").height();
                     var dw = $(".dis-fact").width();
                     var dh = $(".dis-fact").height();
                     console.log(w + " " + h + " " + dw + " " + dh)
                    // if (w < dw + 20 || h < dh + 20) {
 
-                        var wr = (dw + 20) / w;
-                        var hr = (dh + 20) / h;
+                        var wr = (dw + 30) / w;
+                        var hr = (dh + 30) / h;
                         var scale;
                     if (hr > wr) {
                         console.log("height");
@@ -1386,8 +1439,6 @@ $(".accept").on("click touchend", function (e) {
                         setTimeout(function () {
                             var ml = -(w - $(".dis-fact").width()) / 2 - 0;
                             var mt = (h - $(".dis-fact").height()) / 2 - 0;
-                           // $(".dis-fact").css("width", w +"px");
-                           //$(".dis-fact").css("height", h + "px");
 
                         }, 300)
                    // }
@@ -1504,6 +1555,7 @@ $(".accept").on("click touchend", function (e) {
 
                             console.log(configData.dsViewedLocales.ds.data());
                             $("#popupLoader").removeClass("active");
+
                             $(".dis-fact").fadeOut(200, function () {
                                 $(".dis-fact").remove();
                                 $("#resultsScrim").remove()
