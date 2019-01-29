@@ -1559,8 +1559,28 @@ font-family:russo;
             width: 30%;
             height: 99%;
         }
-      
-      
+
+
+#popupLoader {
+    position: absolute;
+    height: 100% !important;
+    min-height: 100% !important;
+    width: 100%;
+    min-width: 100% !important;
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    bottom: 0px;
+    z-index: 100000;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+    #popupLoader.active {
+        background-image: url('../images/system/marginwide-vert.jpg');
+        background-repeat:repeat;
+        background-position-x:center;
+    }
 
 
 
@@ -5287,26 +5307,7 @@ max-height:349px !important;
             /*pointer-events:all;*/
         }
 
-        #popupLoader {
-            position:absolute;
-            height: 100% !important;
-            min-height: 100% !important;
-            width: 100%;
-            min-width: 100% !important;
-           
-            left: 0px;
-            right: 0px;
-            top: 0px;
-            bottom: 0px;
-            z-index: 100000;
-            pointer-events:none;
-            overflow:hidden;
-        }
-
-            #popupLoader.active {
-                background-image: url('../images/system/marginwide-vert.jpg');
-            }
-
+      
 
             .iosx11 .dis-fact, .iosx11 .km-root, .iosx11 .km-content {
             overflow: hidden;
@@ -5756,7 +5757,7 @@ max-height:349px !important;
 
             .a-btns {
                 transform: scale(.65);
-                margin-left: -12%;
+                margin-left: -2%;
                 margin-top: -10%;
             }
 
@@ -5765,7 +5766,7 @@ max-height:349px !important;
             }
 
         .add-itin-panel {
-        font-size:1.1em;
+        /*font-size:1.1em;*/
         
         }
 
@@ -6054,7 +6055,7 @@ max-height:349px !important;
 
             .resp-wrapper {
                 width: 72%;
-                font-size:.8em;
+                font-size:.9em;
             }
 
             .fact-text {

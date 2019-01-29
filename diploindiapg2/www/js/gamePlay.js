@@ -6,7 +6,7 @@
         selectedFact: null,
         gameStarted: false,
         lastFactIdx: null,
-        itinH: 380,
+        itinH: 450,
         itinTop: 0,
         itinExpanded: true,
         itinState: "itin",
@@ -18,7 +18,9 @@
         console.log("init game")
         self.setupNotification();
         
-
+        if ($(window).width() < 815) {
+            self.properties.itinH = 380;
+        }
 
         $(document).on('touchmove', function (ev) {
 
