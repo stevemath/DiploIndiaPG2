@@ -5254,7 +5254,7 @@ max-height:349px !important;
         /*.iosx11 .bush-wrapper,*/
 
         .iosx11 .gameover-wrapper {
-            position: fixed;
+            position: absolute;
             left: 0px;
             right: 0px;
             top: 0px;
@@ -5290,16 +5290,16 @@ max-height:349px !important;
         }
 
         #popupLoader {
-            position:fixed;
-            height: 110% !important;
-            min-height: 110% !important;
-            width: 110%;
-            min-width: 110% !important;
+            position:absolute;
+            height: 100% !important;
+            min-height: 100% !important;
+            width: 100%;
+            min-width: 100% !important;
            
-            left: -5%;
-            right: -5%;
-            top: -5%;
-            bottom: -5%;
+            left: 0px;
+            right: 0px;
+            top: 0px;
+            bottom: 0px;
             z-index: 100000;
             pointer-events:none;
             overflow:hidden;

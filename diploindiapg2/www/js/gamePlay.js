@@ -1359,10 +1359,10 @@ $(".accept").on("click touchend", function (e) {
 
 
 
-                    var w = $(window).width();//window.innerWidth;
-                  // var w = $("#popupLoader").width();
-                    var h = $(window).height();//window.innerHeight;
-                  //var h = $("#popupLoader").height();
+                   // var w = $(window).width();window.innerWidth;
+                   var w = $("#popupLoader").width();
+                    //var h = $(window).height();window.innerHeight;
+                  var h = $("#popupLoader").height();
                     var dw = $(".dis-fact").width();
                     var dh = $(".dis-fact").height();
                     console.log(w + " " + h + " " + dw + " " + dh)
@@ -1371,13 +1371,15 @@ $(".accept").on("click touchend", function (e) {
                         var wr = (dw + 0) / w;
                         var hr = (dh + 0) / h;
                         var scale;
-                        if (hr > wr) {
+                    if (hr > wr) {
+                        console.log("height");
                             scale = 1 / hr;
-                        } else {
+                    } else {
+                        console.log("width");
                             scale = 1 / wr;
                         }
 
-                        console.log(1/hr,1/hr)
+                        console.log(scale)
                       
 
                         $(".dis-fact").css("transform", "scale(" + scale + ") ")
