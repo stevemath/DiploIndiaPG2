@@ -89,7 +89,7 @@ var configData = {
         checkScrapLevel: function (exp) {
             var self = this;
 
-            exp = 10000000;
+           // exp = 10000000;
             var sbookReady = events.subscribe("dsScrapBookReady", function (data) {
                 sbookReady.remove();
                 var sbds = data.ds;
