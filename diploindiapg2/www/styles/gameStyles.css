@@ -3250,11 +3250,25 @@ height:100%;
     font-size: 2.0vw;
 }
 
+.iosx11 .sbpg7 .sb-heading {
+    width: 100%;
+    left: 0%;
+    top: 1%;
+    z-index: 10;
+    font-size: 1.8vw;
+}
+
+.iosx11 .sbpg7 .scrap-photos {
+height:94% !important;
+margin-top:6% !important;
+
+}
+
 
 .sbpg7 .sb-img1 {
     width: 45%;
     left: 8%;
-    top: 8%;    
+    top: 8%;
     z-index: 3;
 }
 
