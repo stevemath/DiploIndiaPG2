@@ -3107,7 +3107,7 @@ height:100%;
     position: absolute;
     font-size: 1.5vw;
     font-style:italic;
-    width: 45%;
+    width: 55%;
     left: 5%;
     top: 17%;
     z-index: 10;
@@ -3125,7 +3125,7 @@ height:100%;
 .sbpg3 .sb-img1 {
     height: 55%;
     width: auto;
-    left: 55%;
+    left: 65%;
     top: 5%;
     z-index: 6;
     transform: rotate(5deg);
