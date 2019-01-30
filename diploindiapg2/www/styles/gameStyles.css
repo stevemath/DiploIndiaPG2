@@ -3251,16 +3251,14 @@ height:100%;
 }
 
 .iosx11 .sbpg7 .sb-heading {
-    width: 100%;
-    left: 0%;
+  
     top: 1%;
-    z-index: 10;
     font-size: 1.8vw;
 }
 
 .iosx11 .sbpg7 .scrap-photos {
-height:94% !important;
-margin-top:6% !important;
+height:92% !important;
+margin-top:8% !important;
 
 }
 
@@ -3568,7 +3566,7 @@ margin-top:6% !important;
     position: absolute;
     font-size: 1.5vw;
     font-style: italic;
-    width: 48%;
+    width: 58%;
     left: 0%;
     top: 17%;
     z-index: 10;
@@ -3579,7 +3577,7 @@ margin-top:6% !important;
     font-size: 1.2vw;
     width: 100%;
     left: 0%;
-    top: 50%;
+    top: 55%;
     z-index: 10;
 }
 
@@ -3588,14 +3586,14 @@ margin-top:6% !important;
     font-size: 0.9vw;
     width: 100%;
     left: 0%;
-    top: 53%;
+    top: 58%;
     z-index: 10;
 }
 
 .sbpg15 .sb-img1 {
     height: 45%;
     width: auto;
-    left: 52%;
+    left: 60%;
     top: 12%;
     z-index: 6;
     transform: rotate(5deg);
@@ -5262,8 +5260,8 @@ max-height:349px !important;
         }
 
         .iosx11 .scrap-photos {
-        margin-top:4%;
-        height:96%;
+        margin-top:6%;
+        height:94%;
         }
 
         .iosx11 .q-wrapper {
