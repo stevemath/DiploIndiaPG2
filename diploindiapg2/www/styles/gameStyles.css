@@ -1574,6 +1574,7 @@ font-family:russo;
     z-index: 100000;
     pointer-events: none;
     overflow: hidden;
+    background-image:none;
 }
 
     #popupLoader.active {
@@ -6101,7 +6102,25 @@ max-height:349px !important;
             }
         }
 
+
+@media screen and (max-width: 750px) {
+
+
+    .resp-wrapper {
+      
+        font-size: 0.65em;
+    }
+
+    /*.fact-text {
+       
+        font-size: 1.1em;
+    }*/
+}
+
     @media screen and (max-width: 650px) {
+
+
+
 
         .dis-fact .header .head-text {
             font-size: 1.25em;
@@ -6459,13 +6478,12 @@ max-height:349px !important;
             padding-top: 20px;
         }*/
 
-            #printArea .cards-wrapper {
-                /*margin-top:-50px;*/
-            }
+        #printArea .cards-wrapper {
+            /*margin-top:-50px;*/
+        }
 
         #scrim {
-        
-        /*width:200%;
+            /*width:200%;
         height:200%;
         z-index:4100;*/
         }

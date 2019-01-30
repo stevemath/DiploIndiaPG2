@@ -862,6 +862,7 @@ $(".accept").on("click touchend", function (e) {
 
     var itinItem = diploData;
     $(".itin-btns .itin-yes").on("click touchend", function () {
+        $("#popupLoader").removeClass("active");
         playAudio(audioList.itinerary);
         updateLocale(true);
         console.log("close diplo");
@@ -869,7 +870,7 @@ $(".accept").on("click touchend", function (e) {
         //$("#fireworksiframe").remove();
 
 
-        $("#popupLoader").removeClass("active");
+       
         $(".diplomacy-container").fadeOut(200, function () {
             $(".card-wrapper").remove();
             // $(".diplomacy-container").remove();
@@ -893,6 +894,7 @@ $(".accept").on("click touchend", function (e) {
 
     $(".itin-btns .itin-no").on("click touchend", function () {
         console.log(itinItem);
+        $("#popupLoader").removeClass("active");
         updateLocale(false);
         var dup = configData.dsViewedLocales.ds.get(itinItem.Id)
         if (dup == undefined) {
@@ -901,7 +903,7 @@ $(".accept").on("click touchend", function (e) {
 
         console.log(configData.dsViewedLocales.ds.data());
 
-        $("#popupLoader").removeClass("active");
+       
         $(".dis-fact").fadeOut(200, function () {
             $(".dis-fact").remove();
             $("#resultsScrim").remove()
@@ -1282,7 +1284,7 @@ $(".accept").on("click touchend", function (e) {
         $(".accept-eval").off();
         $(".accept-eval").on("click touchend", function () {
 
-            fadeAudio(audioList.discover);
+           // fadeAudio(audioList.discover);
             $(".diplomacy-container").fadeOut(200, function () {
                 $(".card-wrapper").remove();
                 $(".diplomacy-container").remove();
@@ -1376,7 +1378,9 @@ $(".accept").on("click touchend", function (e) {
                     configData.gameData.careerList.push(discData.name);
                     configData.gameData.set("activityNum", configData.gameData.careerList.length);
                     console.log(configData.gameData.activityNum);
-                    audioList.discover.play();
+                  //  audioList.discover.play();
+
+
                     // kendo.fx($(".discovery-container")).flip("horizontal", $(".dis-front"), $(".dis-back")).duration(1000).play();
                     $(".discovery-container").fadeOut(200, function () {
                         $(".card-wrapper").remove();
@@ -1511,6 +1515,7 @@ $(".accept").on("click touchend", function (e) {
  var itinItem = discData;
                         $(".itin-btns .itin-yes").on("click touchend", function () {
                             console.log("itin-yes");
+                            $("#popupLoader").removeClass("active");
                             gamePlay.properties.locked = false;
 
                             playAudio(audioList.itinerary);
@@ -1534,7 +1539,7 @@ $(".accept").on("click touchend", function (e) {
                                 }
                             }
                         
-                            $("#popupLoader").removeClass("active");
+                          
                             $(".dis-fact").fadeOut(200, function () {
 
                                 $(".dis-fact").remove();
@@ -1545,6 +1550,8 @@ $(".accept").on("click touchend", function (e) {
 
                         $(".itin-btns .itin-no").on("click touchend", function () {
                             console.log(itinItem);
+                            $("#popupLoader").removeClass("active");
+
                             gamePlay.properties.locked = false;
 
                             var expPts = parseInt(exPts);
@@ -1556,8 +1563,7 @@ $(".accept").on("click touchend", function (e) {
                             }
 
                             console.log(configData.dsViewedLocales.ds.data());
-                            $("#popupLoader").removeClass("active");
-
+                           
                             $(".dis-fact").fadeOut(200, function () {
                                 $(".dis-fact").remove();
                                 $("#resultsScrim").remove()
