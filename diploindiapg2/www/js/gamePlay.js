@@ -863,7 +863,7 @@ $(".accept").on("click touchend", function (e) {
     var itinItem = diploData;
     $(".itin-btns .itin-yes").on("click touchend", function () {
         $("#popupLoader").removeClass("active");
-        playAudio(audioList.itinerary);
+      //  playAudio(audioList.itinerary);
         updateLocale(true);
         console.log("close diplo");
       //  $("#resultsScrim").remove();
@@ -1518,10 +1518,10 @@ $(".accept").on("click touchend", function (e) {
                             $("#popupLoader").removeClass("active");
                             gamePlay.properties.locked = false;
 
-                            playAudio(audioList.itinerary);
+                            //playAudio(audioList.itinerary);
                             var expPts = parseInt(exPts);
                             configData.gameData.adjustRank(expPts);
-                            playAudio(audioList.itinerary);
+                           // playAudio(audioList.itinerary);
 
                             var dup = configData.dsItinerary.ds.get(itinItem.Id);
                             var totalItin = configData.dsItinerary.ds.data().length;

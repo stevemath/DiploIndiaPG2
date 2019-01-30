@@ -5370,14 +5370,14 @@ max-height:349px !important;
             height: 90%;
             top: 2%;
             left: 50%;
-            width: 95%;
-            margin-left: -47.5%;
+            width: 97%;
+            margin-left: -48.5%;
             padding: 1%;
         }
 
 
         .credits-container .heading {
-            font-size:1.25em;
+            font-size:1.15em;
         }
 
         #imgCredits {
@@ -5388,8 +5388,13 @@ max-height:349px !important;
 
         #imgCredits li{
        
-            font-size:.85em !important;
-        }
+            font-size:.7em !important;
+        } 
+        
+       
+
+
+
             #imgCredits li:first-child {
                 
                 font-size: 0.9em !important;
