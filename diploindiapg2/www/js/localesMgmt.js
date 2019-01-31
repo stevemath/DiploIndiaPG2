@@ -833,7 +833,7 @@ var localesMgmt = {
                  openWindows = false;
              }
 
-
+           
              console.log(target);
              console.log(openWindows);
              console.log("gameplaylocked is : " + gamePlay.properties.locked);
@@ -1191,6 +1191,7 @@ var localesMgmt = {
        
 
         self.loadCanvas(dir, file, w, h)
+        configData.gameData.mapLoaded = true;
     })
 
 },
@@ -1754,7 +1755,7 @@ var localesMgmt = {
          console.log(configData.gameData.maxDip);
          console.log(extraDip);
 
-         if (extraDip > 0) {
+         if (extraDip > 0 && configData.gameData.usedRandomDip != null && configData.gameData.usedRandomDip.length >= extraDip) {
              for (var i = 0; i < extraDip; i++) {
                  if (configData.gameData.UsedRandomDip != undefined) {
                      var item = configData.gameData.UsedRandomDip.at(i);
@@ -1772,7 +1773,7 @@ var localesMgmt = {
              }
 
          }
-         if (extraDis > 0) {
+         if (extraDis > 0 && configData.gameData.usedRandomDis != null && configData.gameData.usedRandomDis.length >= extraDis ) {
              for (var i = 0; i < extraDis; i++) {
                  var item = configData.gameData.usedRandomDis.at(i);
                  if (item) {
@@ -1936,7 +1937,7 @@ var localesMgmt = {
              if (configData.gameData.popupEvents.length == 0) {
                  console.log("add and show");
                  gamePlay.addPopupEvent('gamePlay.usedAllLocales');
-                 self.checkForPopup();
+                 gamePlay.checkForPopup();
              } else {
                  console.log("add only");
                  gamePlay.addPopupEvent('gamePlay.usedAllLocales');

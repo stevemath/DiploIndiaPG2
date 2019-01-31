@@ -10,14 +10,19 @@
         itinTop: 0,
         itinExpanded: true,
         itinState: "itin",
-       locked:false,
+        locked: false,
+       replay:false,
        // savedBushCards:null,
     },
-    init: function () {
+    init: function (replay) {
+
+        var gameReplay = replay;
+        if (gameReplay == undefined) { gameReplay = false };
+        console.log(gameReplay);
         var self = this;
         console.log("init game")
         self.setupNotification();
-        
+       // configData.initData = configData.gameData;
         if ($(window).width() < 815) {
             self.properties.itinH = 380;
         }
@@ -284,7 +289,8 @@
         $(".expPts").css("pointer-events","all !important")
         $(".expPts").on("click touchend", function () {
             console.log("get gameover");
-           // self.getGameOver();
+            self.getGameOver();
+
         })
 
         $(".btn-expand").on("click", function () {
@@ -361,7 +367,15 @@
              configData.dsBushCards.getDataSource();
              configData.dsMulti.getDataSource();
             // configData.dsAchievements.getDataSource();
-            localesMgmt.getImgDim(imgDir, bkgrdImg);
+            console.log("replay: " + gamePlay.properties.replay);
+           // if (gamePlay.properties.replay != true) {
+                console.log("load map");
+                localesMgmt.getImgDim(imgDir, bkgrdImg);
+                
+            //} else {
+//localesMgmt.loadCanvas();
+  //          }
+          //  localesMgmt.getImgDim(imgDir, bkgrdImg);
             configData.dsItinerary.getDataSource();
             configData.dsExp.getDataSource();
            
@@ -410,6 +424,73 @@
         }
 
       
+    },
+    reset: function () {
+
+      
+       // $("#viewedLocations").empty();
+       // $("#itin").empty();
+       
+
+       
+       // gamePlay.properties.viewedFacts = null;
+       // gamePlay.properties.usedFacts = null;
+       // gamePlay.properties.factsToView = null;
+       // gamePlay.properties.selectedFact = null;
+       // gamePlay.properties.gameStarted = false;
+       // gamePlay.properties.lastFactIdx = null;
+       // gamePlay.properties.itinH = 450;
+       // gamePlay.properties.itinTop = 0;
+       // gamePlay.properties.itinExpanded = true;
+       // gamePlay.properties.itinState = "itin";
+       // gamePlay.properties.locked = false;
+
+       // configData.gameData.currentDate= currentDate;
+       // configData.gameData.factsToView= null;
+       // configData.gameData.gameOver= false;
+       // configData.gameData.viewedFacts= null;
+       // configData.gameData.usedFacts= null;
+       // configData.gameData.randomDip= null;
+       // configData.gameData.usedRandomDip= null;
+       // configData.gameData.randomDis= null;
+       // configData.gameData.unlockedList= null;
+       // configData.gameData.unlockedDip= 0;
+       // configData.gameData.unlockedDis= 0;
+       // configData.gameData.unknownDip= 0;
+       // configData.gameData.unknownDis= 0;
+       // configData.gameData.usedRandomDis= null;
+       // configData.gameData.savedBushCards= null;
+       // configData.gameData.showingBushCard= false;
+       // configData.gameData.careerList= null;
+       // configData.gameData.popupEvents= [];
+       // configData.gameData.popupsExecuting= false;
+       // configData.gameData.achievementList= null;
+       // configData.gameData.achievementTotal= 0;
+       // configData.gameData.achievementNum= 0;
+       // configData.gameData.expLevel= expLevel;
+       // configData.gameData.activityNum= 0;
+       // configData.gameData.testDip= null;
+       // configData.gameData.rank= "";
+       // configData.gameData.rankIdx= 0;
+                                                                                                                   
+       // configData.gameData.currExpLevel= 0;
+       // configData.gameData.savedCardsNum= 0;
+       // configData.gameData.scrapPgs= 1;
+       // configData.gameData.totalCards= 0;
+       // configData.gameData.unlockedScrapPages= 1;
+       // configData.gameData.totalScrapPages= 0;
+
+       // localesMgmt.clearCanvas();
+       //// $("#chinaCanvas").empty();
+       // //$(".canvas-container").empty();
+   
+
+       // configData.dsItinerary.ds.data([]);
+       // configData.dsViewedLocales.ds.data([]);
+       // gamePlay.properties.replay = true;
+       // gamePlay.init(true);
+        window.location.reload(true);
+
     },
     setupNotification: function () {
 
@@ -2372,7 +2453,14 @@ $(star).addClass("faded")
         $(".gameover-content .play-again-btn").on("click touchend", function () {
            // fadeAudio(currentAudio);
             console.log("replay");
-            location.href = configData.gameData.appPage;
+            if (isMobile == false) {
+               // location.href = configData.gameData.appPage;
+            } else {
+                
+                gamePlay.reset();
+                $("#gameoverLayout").remove();
+            }
+           
 
         });
        // this.scaleGameOver();

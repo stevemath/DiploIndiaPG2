@@ -10,6 +10,7 @@ var configData = {
         currDip: 0,
         currDis: 0,
       //  pendingLevelup:null,
+        mapLoaded:false,
         currentDate: currentDate,
         factsToView: null,
         gameOver:false,
