@@ -85,15 +85,17 @@
     <Content Include="**\**" Exclude="**\platforms\**;**\bin\**;**\bld\**;**\node_modules\**;**\simulation\**;**\plugins\**;.gitignore;diploindiapg2.*" />
   </ItemGroup>
   <ItemGroup>
+    <Content Update="config - Copy %282%29.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Update="config - Copy %283%29.xml">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Update="config.xml">
       <SubType>Designer</SubType>
     </Content>
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4a0dddb5-7a95-4fbf-97cc-616d07737a77}" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include=".vs\archive\screens\android\" />
-    <Folder Include=".vs\archive\screens\ios\" />
   </ItemGroup>
 </Project>
