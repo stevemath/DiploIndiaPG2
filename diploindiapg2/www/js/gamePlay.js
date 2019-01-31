@@ -1469,8 +1469,8 @@ $(".accept").on("click touchend", function (e) {
 
                    // defer disc handling
                      $(".discovery-container").fadeOut(200, function () {
-                        $(".card-wrapper").remove();
-                        $(".discovery-container").remove();
+                       // $(".card-wrapper").remove();
+                        //$(".discovery-container").remove();
                     });
 
 
@@ -1591,6 +1591,7 @@ $(".accept").on("click touchend", function (e) {
                         $(".itin-btns .itin-yes").on("click touchend", function () {
                             console.log("itin-yes");
                             $("#popupLoader").removeClass("active");
+                           
                             gamePlay.properties.locked = false;
 
                             // audio plays on itin add event
@@ -1615,13 +1616,10 @@ $(".accept").on("click touchend", function (e) {
                             }
                         
                           // deferred removal;
+                            self.removeDiscoveryPanel();
+
+
                             $(".dis-fact").fadeOut(200, function () {
-
-                                $(".dis-fact").remove();
-                                $(".card-wrapper").remove();
-                                $(".discovery-container").remove();
-
-
 
 
                                 self.properties.currentDiscObj.state = "empty";
@@ -1630,10 +1628,9 @@ $(".accept").on("click touchend", function (e) {
                                 canvas.renderAll();
                                 self.properties.lastFactIdx = null;
 
-
-
-
                                 self.checkForPopup();
+                                self.removeDiscoveryPanel();
+                                playAudio(audioList.itinerary);
                             });
                         })
 
@@ -1685,8 +1682,25 @@ $(".accept").on("click touchend", function (e) {
              
               //  configData.gameData.adjustDipLevel(pts);
 
-       // playAudio(audioList.discover);
+        playAudio(audioList.discover);
 
+
+    },
+
+    buryElement: function (elem, delay) {
+        var el = $(elem);
+        el.css("opacity", 0)
+        if (delay != undefined) {
+            setTimeout(function () {
+                el.remove();
+            }, delay)
+        }
+
+    },
+    removeDiscoveryPanel: function () {
+        $(".dis-fact").remove();
+        $(".card-wrapper").remove();
+        $(".discovery-container").remove();
 
     },
     removeItinItem: function (itemId) {
