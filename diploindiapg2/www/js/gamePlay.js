@@ -489,6 +489,7 @@
        // configData.dsViewedLocales.ds.data([]);
        // gamePlay.properties.replay = true;
        // gamePlay.init(true);
+        location.href = "#components/intro/view.html"
         window.location.reload(true);
 
     },
@@ -1463,21 +1464,23 @@ $(".accept").on("click touchend", function (e) {
 
 
                     // kendo.fx($(".discovery-container")).flip("horizontal", $(".dis-front"), $(".dis-back")).duration(1000).play();
-                    $(".discovery-container").fadeOut(200, function () {
+
+                    //defer disc handling
+                    // $(".discovery-container").fadeOut(200, function () {
                         //$(".card-wrapper").remove();
                         //$(".discovery-container").remove();
-                    });
+                    //});
 
 
 
                     // close disc after first question
                     //  if (self.properties.lastFactIdx == self.properties.currentDiscObj.id) {
 
-                    self.properties.currentDiscObj.state = "empty";
-                    closeDiscovery(self.properties.currentDiscObj.id);
-                    //  console.log(self.properties.currentDiscObj)
-                    canvas.renderAll();
-                    self.properties.lastFactIdx = null;
+                    //self.properties.currentDiscObj.state = "empty";
+                    //closeDiscovery(self.properties.currentDiscObj.id);
+                    ////  console.log(self.properties.currentDiscObj)
+                    //canvas.renderAll();
+                    //self.properties.lastFactIdx = null;
                     // }
 
                     var templateFContent = $("#discoveryFactTemplate").html();
@@ -1620,12 +1623,22 @@ $(".accept").on("click touchend", function (e) {
                                 }
                             }
                         
-                          
+                          // deferred removal;
                             $(".dis-fact").fadeOut(200, function () {
 
                                 $(".dis-fact").remove();
                                                         $(".card-wrapper").remove();
-                        $(".discovery-container").remove();
+                                $(".discovery-container").remove();
+
+                                self.properties.currentDiscObj.state = "empty";
+                                closeDiscovery(self.properties.currentDiscObj.id);
+                                //  console.log(self.properties.currentDiscObj)
+                                canvas.renderAll();
+                                self.properties.lastFactIdx = null;
+
+
+
+
                                 self.checkForPopup();
                             });
                         })
@@ -1652,6 +1665,11 @@ $(".accept").on("click touchend", function (e) {
                               $(".card-wrapper").remove();
                                 $(".discovery-container").remove();
                                 self.checkForPopup();
+
+                                self.properties.currentDiscObj.state = "empty";
+                                closeDiscovery(self.properties.currentDiscObj.id); 
+                                canvas.renderAll();
+                                self.properties.lastFactIdx = null;
                             });
                         })
 
@@ -2455,6 +2473,8 @@ $(star).addClass("faded")
             console.log("replay");
             if (isMobile == false) {
                // location.href = configData.gameData.appPage;
+                gamePlay.reset();
+                $("#gameoverLayout").remove();
             } else {
                 
                 gamePlay.reset();
