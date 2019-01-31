@@ -5381,9 +5381,11 @@ max-height:349px !important;
         }
 
         #imgCredits {
+            position:absolute;
             width: 96%;
             margin-left: 2%;
-            
+            height:65%;
+            overflow-y:scroll;
         }
 
         #imgCredits li{

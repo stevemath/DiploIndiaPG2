@@ -1383,8 +1383,8 @@ $(".accept").on("click touchend", function (e) {
 
                     // kendo.fx($(".discovery-container")).flip("horizontal", $(".dis-front"), $(".dis-back")).duration(1000).play();
                     $(".discovery-container").fadeOut(200, function () {
-                        $(".card-wrapper").remove();
-                        $(".discovery-container").remove();
+                        //$(".card-wrapper").remove();
+                        //$(".discovery-container").remove();
                     });
 
 
@@ -1518,11 +1518,11 @@ $(".accept").on("click touchend", function (e) {
                             $("#popupLoader").removeClass("active");
                             gamePlay.properties.locked = false;
 
+                            // audio plays on itin add event
                             //playAudio(audioList.itinerary);
                             var expPts = parseInt(exPts);
                             configData.gameData.adjustRank(expPts);
-                           // playAudio(audioList.itinerary);
-
+                           
                             var dup = configData.dsItinerary.ds.get(itinItem.Id);
                             var totalItin = configData.dsItinerary.ds.data().length;
                             console.log(dup);
@@ -1543,7 +1543,8 @@ $(".accept").on("click touchend", function (e) {
                             $(".dis-fact").fadeOut(200, function () {
 
                                 $(".dis-fact").remove();
-
+                                                        $(".card-wrapper").remove();
+                        $(".discovery-container").remove();
                                 self.checkForPopup();
                             });
                         })
@@ -1567,6 +1568,8 @@ $(".accept").on("click touchend", function (e) {
                             $(".dis-fact").fadeOut(200, function () {
                                 $(".dis-fact").remove();
                                 $("#resultsScrim").remove()
+                              $(".card-wrapper").remove();
+                                $(".discovery-container").remove();
                                 self.checkForPopup();
                             });
                         })
@@ -2764,7 +2767,7 @@ $(star).addClass("faded")
         console.log("chk for popup");
         console.log(configData.gameData.popupEvents);
         console.log(configData.gameData.popupsExecuting);//&& configData.gameData.popupsExecuting == false
-        if (configData.gameData.popupEvents.length > 0 && self.checkOpenPopups() == false) {
+        if (configData.gameData.popupEvents.length > 0 && configData.gameData.popupEvents[0].callback && self.checkOpenPopups() == false) {
             configData.gameData.popupsExecuting = true;
             setTimeout(function () {
                 console.log(configData.gameData.popupEvents)
