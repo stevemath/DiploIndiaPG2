@@ -67,12 +67,13 @@ body {
     font-weight: normal;
     font-style: normal;
 }
-   
 
-    body, .km-content, .km-android {
+
+body, .km-content, .km-android {
     margin: 0px;
     padding: 0px;
     background-image: url('../images/system/marginwide-vert.jpg');
+    background-position-x: center;
     font-family: Karma;
     overflow: visible;
     pointer-events: all;
@@ -1576,16 +1577,20 @@ z-index:0;
     right: 0px;
     top: 0px;
     bottom: 0px;
-    z-index: 100000;
+    border: 0px;
+    padding: 0px;
+    margin: 0px;
+    z-index: 0;
     pointer-events: none;
     overflow: hidden;
-    background-image:none;
+    background-image: none;
 }
 
     #popupLoader.active {
         background-image: url('../images/system/marginwide-vert.jpg');
-        background-repeat:repeat;
-        background-position-x:center;
+        background-repeat: repeat;
+        background-position-x: center;
+        z-index: 100000;
     }
 
 
