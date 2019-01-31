@@ -893,6 +893,7 @@ var localesMgmt = {
 
                           
                             gamePlay.getDiscovery(item.contentId, item.Id);
+                            playAudio(audioList.discover);
                             item.discResult = 'viewed';
                             // }
                         }
@@ -1164,6 +1165,7 @@ var localesMgmt = {
 
 
                         gamePlay.getDiscovery(item.contentId, item.Id);
+                        playAudio(audioList.discover);
                         item.discResult = 'viewed';
                         // }
                     }

@@ -1685,7 +1685,7 @@ $(".accept").on("click touchend", function (e) {
              
               //  configData.gameData.adjustDipLevel(pts);
 
-        playAudio(audioList.discover);
+       // playAudio(audioList.discover);
 
 
     },
