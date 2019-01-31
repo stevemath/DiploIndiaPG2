@@ -1383,7 +1383,7 @@ $(".accept").on("click touchend", function (e) {
     getDiscovery: function (id, src) {
         var self = this;
        
-        playAudio(audioList.discover);
+        //playAudio(audioList.discover);
        // window.plugins.NativeAudio.play('discovery');
 
         self.properties.currentDiscObj = selectObject(src);
@@ -1685,7 +1685,7 @@ $(".accept").on("click touchend", function (e) {
              
               //  configData.gameData.adjustDipLevel(pts);
 
-       
+        playAudio(audioList.discover);
 
 
     },
