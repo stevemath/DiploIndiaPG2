@@ -1465,23 +1465,14 @@ $(".accept").on("click touchend", function (e) {
 
                     // kendo.fx($(".discovery-container")).flip("horizontal", $(".dis-front"), $(".dis-back")).duration(1000).play();
 
-                    //defer disc handling
-                    // $(".discovery-container").fadeOut(200, function () {
-                        //$(".card-wrapper").remove();
-                        //$(".discovery-container").remove();
-                    //});
+                   // defer disc handling
+                     $(".discovery-container").fadeOut(200, function () {
+                        $(".card-wrapper").remove();
+                        $(".discovery-container").remove();
+                    });
 
 
 
-                    // close disc after first question
-                    //  if (self.properties.lastFactIdx == self.properties.currentDiscObj.id) {
-
-                    //self.properties.currentDiscObj.state = "empty";
-                    //closeDiscovery(self.properties.currentDiscObj.id);
-                    ////  console.log(self.properties.currentDiscObj)
-                    //canvas.renderAll();
-                    //self.properties.lastFactIdx = null;
-                    // }
 
                     var templateFContent = $("#discoveryFactTemplate").html();
                     var templateF = kendo.template(templateFContent);
@@ -1548,11 +1539,11 @@ $(".accept").on("click touchend", function (e) {
 
                         $(".dis-btn .continue").on("click touchend", function () {
 
-                            var disH = $(".dis-fact").width();
-                            var bodyH = $("body").width();
-                            var cH = $("#chinaCanvas").width();
-                            var kmv = $(".km-view").width();
-                            var kmc = $(".km-content").width();
+                            //var disH = $(".dis-fact").width();
+                            //var bodyH = $("body").width();
+                            //var cH = $("#chinaCanvas").width();
+                            //var kmv = $(".km-view").width();
+                            //var kmc = $(".km-content").width();
                           //  alert(disH + "  " + bodyH + "  " + cH + "  " + kmv + " " + kmc);
                             //var disH = $(".dis-fact").height();
                             //var bodyH = $("body").height()
@@ -1560,10 +1551,8 @@ $(".accept").on("click touchend", function (e) {
                             //var kmv =  $(".km-view").height();
                             //alert(disH + "  " + bodyH + "  " + cH + "  " + kmv);
                           
-                            $(".dis-btn .continue").remove();
-                           // updateDiscovery(src);
-                          // localesMgmt.updateLocalesStates();
-
+                           //
+                            $(".dis-btn .continue").fadeOut();
                              var bCardData = configData.dsBushCards.getBushCardByArrayId(id);
                             if (bCardData != null) {
                                 if (configData.gameData.isCardSaved(id) == false) {
@@ -1627,8 +1616,11 @@ $(".accept").on("click touchend", function (e) {
                             $(".dis-fact").fadeOut(200, function () {
 
                                 $(".dis-fact").remove();
-                                                        $(".card-wrapper").remove();
+                                $(".card-wrapper").remove();
                                 $(".discovery-container").remove();
+
+
+
 
                                 self.properties.currentDiscObj.state = "empty";
                                 closeDiscovery(self.properties.currentDiscObj.id);
@@ -1672,7 +1664,7 @@ $(".accept").on("click touchend", function (e) {
                                 self.properties.lastFactIdx = null;
                             });
                         })
-
+                      
 
                     }, 450)
 
@@ -2473,7 +2465,7 @@ $(star).addClass("faded")
             console.log("replay");
             if (isMobile == false) {
                // location.href = configData.gameData.appPage;
-                gamePlay.reset();
+                 gamePlay.reset();
                 $("#gameoverLayout").remove();
             } else {
                 

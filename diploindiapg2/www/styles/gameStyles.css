@@ -1560,6 +1560,11 @@ font-family:russo;
             height: 99%;
         }
 
+#playAudio {
+position:absolute;
+z-index:0;
+
+}
 
 #popupLoader {
     position: absolute;
@@ -5723,7 +5728,7 @@ max-height:349px !important;
                 position: relative;
                 font-size: 3.5vh;
                 height: 9%;
-                margin: 15px 15px 15px 15px;
+                margin: 15px 15px 30px 15px;
             }
 
             .bcard-num {

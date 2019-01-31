@@ -144,7 +144,8 @@ function getDisplayName(cleanText){
 	return displayText;
 }
 
-function playAudio(item) {
+function playAudioBtn(item) {
+    console.log("***audio events***");
     console.log(item)
     if (item != null && currentAudio != null && item != currentAudio   ) {
         console.log("stop audio");
@@ -158,6 +159,20 @@ function playAudio(item) {
         currentAudio = item;
         item.volume = 1;
     }
+}
+
+function playAudio(item) {
+
+    // attach to perm btn
+
+    $("#btnPlayAudio").off();
+    $("#btnPlayAudio").on("click", function () {
+        playAudioBtn(item)
+    });
+
+    $("#btnPlayAudio").trigger("click")
+
+
 }
 
 function fadeAudio(item) {
