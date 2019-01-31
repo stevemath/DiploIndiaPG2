@@ -93,7 +93,7 @@
     <Service Include="{4a0dddb5-7a95-4fbf-97cc-616d07737a77}" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="res\screens\android\" />
-    <Folder Include="res\screens\ios\" />
+    <Folder Include=".vs\archive\screens\android\" />
+    <Folder Include=".vs\archive\screens\ios\" />
   </ItemGroup>
 </Project>

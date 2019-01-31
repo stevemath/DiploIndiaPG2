@@ -1383,7 +1383,9 @@ $(".accept").on("click touchend", function (e) {
     getDiscovery: function (id, src) {
         var self = this;
        
-        playAudio(audioList.discover);
+       // playAudio(audioList.discover);
+        window.plugins.NativeAudio.play('discovery');
+
         self.properties.currentDiscObj = selectObject(src);
         var discData = self.getDiscoveryData(id);
        

@@ -144,7 +144,7 @@ function getDisplayName(cleanText){
 	return displayText;
 }
 
-function playAudioBtn(item) {
+function playAudio(item) {
     console.log("***audio events***");
     console.log(item)
     if (item != null && currentAudio != null && item != currentAudio   ) {
@@ -161,7 +161,7 @@ function playAudioBtn(item) {
     }
 }
 
-function playAudio(item) {
+function playAudioBtn(item) {
 
     // attach to perm btn
 
