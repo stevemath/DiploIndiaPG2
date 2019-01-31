@@ -149,7 +149,7 @@ function updateDiscovery(id) {
 }
 
 function closeDiscovery(id) {
-
+    console.log(">>>>> close discovery");
     var src = selectObject(id);
     localesMgmt.removeGlow(src);
     src.set("stroke", "#303030");

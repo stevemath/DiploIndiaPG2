@@ -1587,7 +1587,8 @@ $(".accept").on("click touchend", function (e) {
                           
                         });
 
- var itinItem = discData;
+                        var itinItem = discData;
+                        $(".itin-btns .itin-yes").off();
                         $(".itin-btns .itin-yes").on("click touchend", function () {
                             console.log("itin-yes");
                             $("#popupLoader").removeClass("active");
@@ -1621,7 +1622,7 @@ $(".accept").on("click touchend", function (e) {
 
                             $(".dis-fact").fadeOut(200, function () {
 
-
+ });
                                 self.properties.currentDiscObj.state = "empty";
                                 closeDiscovery(self.properties.currentDiscObj.id);
                                 //  console.log(self.properties.currentDiscObj)
@@ -1631,9 +1632,10 @@ $(".accept").on("click touchend", function (e) {
                                 self.checkForPopup();
                                 self.removeDiscoveryPanel();
                                 playAudio(audioList.itinerary);
-                            });
+                           
                         })
 
+                        $(".itin-btns .itin-no").off();
                         $(".itin-btns .itin-no").on("click touchend", function () {
                             console.log(itinItem);
                             $("#popupLoader").removeClass("active");

@@ -152,6 +152,7 @@ function playAudio(item) {
         currentAudio.pause();
         currentAudio.currentTime = 0;
         currentAudio.volume = 1;
+       // currentAudio.release()
     }
     if (item != null) {
         console.log("play audio");
