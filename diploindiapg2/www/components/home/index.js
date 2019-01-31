@@ -28,11 +28,11 @@ app.home = kendo.observable({
 
 
 
-        window.plugins.NativeAudio.preloadSimple('discovery', 'audio/Bollywood.mp3', function (msg) {
-            console.log("play");
-        }, function (msg) {
-            console.log('error: ' + msg);
-        });
+        //window.plugins.NativeAudio.preloadSimple('discovery', 'audio/Bollywood.mp3', function (msg) {
+        //    console.log("play");
+        //}, function (msg) {
+        //    console.log('error: ' + msg);
+        //});
 
 
  //$("body").css("width", "100%");
