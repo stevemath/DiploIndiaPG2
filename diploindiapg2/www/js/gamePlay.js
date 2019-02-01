@@ -1468,11 +1468,11 @@ $(".accept").on("click touchend", function (e) {
                     // kendo.fx($(".discovery-container")).flip("horizontal", $(".dis-front"), $(".dis-back")).duration(1000).play();
 
                    // defer disc handling
-                     $(".discovery-container").fadeOut(200, function () {
+                    // $(".discovery-container").fadeOut(200, function () {
                        // $(".card-wrapper").remove();
                         //$(".discovery-container").remove();
-                    });
-
+                    //});
+                    self.buryElement(".discovery-container")
 
 
 
@@ -1554,7 +1554,10 @@ $(".accept").on("click touchend", function (e) {
                             //alert(disH + "  " + bodyH + "  " + cH + "  " + kmv);
                           
                            //
-                            $(".dis-btn .continue").fadeOut();
+                           // $(".dis-btn .continue").fadeOut();
+
+                            // hide continue button
+                            self.buryElement(".dis-btn .continue");
                              var bCardData = configData.dsBushCards.getBushCardByArrayId(id);
                             if (bCardData != null) {
                                 if (configData.gameData.isCardSaved(id) == false) {
@@ -1620,9 +1623,13 @@ $(".accept").on("click touchend", function (e) {
                             self.removeDiscoveryPanel();
 
 
-                            $(".dis-fact").fadeOut(200, function () {
+                            //$(".dis-fact").fadeOut(200, function () {
 
- });
+                            //});
+                            self.buryElement(".dis-fact",2000)
+                            setTimeout(function () {
+                                self.removeDiscoveryPanel();
+                            }, 2100)
                                 self.properties.currentDiscObj.state = "empty";
                                 closeDiscovery(self.properties.currentDiscObj.id);
                                 //  console.log(self.properties.currentDiscObj)
@@ -1630,7 +1637,7 @@ $(".accept").on("click touchend", function (e) {
                                 self.properties.lastFactIdx = null;
 
                                 self.checkForPopup();
-                                self.removeDiscoveryPanel();
+                               // 
                                 playAudio(audioList.itinerary);
                            
                         })
@@ -1650,11 +1657,10 @@ $(".accept").on("click touchend", function (e) {
                                 configData.dsViewedLocales.ds.add(itinItem);
                             }
 
-                            console.log(configData.dsViewedLocales.ds.data());
                            
                             $(".dis-fact").fadeOut(200, function () {
                                 $(".dis-fact").remove();
-                                $("#resultsScrim").remove()
+                               
                               $(".card-wrapper").remove();
                                 $(".discovery-container").remove();
                                 self.checkForPopup();
@@ -1691,7 +1697,8 @@ $(".accept").on("click touchend", function (e) {
 
     buryElement: function (elem, delay) {
         var el = $(elem);
-        el.css("opacity", 0)
+        el.css("opacity", 0);
+       // el.css("z-index", 0)
         if (delay != undefined) {
             setTimeout(function () {
                 el.remove();
