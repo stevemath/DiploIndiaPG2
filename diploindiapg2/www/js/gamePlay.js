@@ -330,7 +330,8 @@
             
          //},3000)
         configData.gameData.adjustRank(0);
-        events.subscribe("dsFactsReady", function (d) {
+        var dsfReady = events.subscribe("dsFactsReady", function (d) {
+            dsfReady.remove();
            // alert("ds ready");
             var arrData = d.ds.data().toJSON();
             configData.gameData.factsToView = new kendo.data.DataSource({
@@ -368,13 +369,14 @@
              configData.dsMulti.getDataSource();
             // configData.dsAchievements.getDataSource();
             console.log("replay: " + gamePlay.properties.replay);
-           // if (gamePlay.properties.replay != true) {
+            if (gamePlay.properties.replay != true) {
                 console.log("load map");
                 localesMgmt.getImgDim(imgDir, bkgrdImg);
                 
-            //} else {
+            } else {
 //localesMgmt.loadCanvas();
-  //          }
+               localesMgmt.getImgDim(imgDir, bkgrdImg);
+            }
           //  localesMgmt.getImgDim(imgDir, bkgrdImg);
             configData.dsItinerary.getDataSource();
             configData.dsExp.getDataSource();
@@ -427,70 +429,79 @@
     },
     reset: function () {
 
-      
-       // $("#viewedLocations").empty();
-       // $("#itin").empty();
-       
+        if (isIPX11() == true) {
+            $("#gameoverLayout").remove();
 
-       
-       // gamePlay.properties.viewedFacts = null;
-       // gamePlay.properties.usedFacts = null;
-       // gamePlay.properties.factsToView = null;
-       // gamePlay.properties.selectedFact = null;
-       // gamePlay.properties.gameStarted = false;
-       // gamePlay.properties.lastFactIdx = null;
-       // gamePlay.properties.itinH = 450;
-       // gamePlay.properties.itinTop = 0;
-       // gamePlay.properties.itinExpanded = true;
-       // gamePlay.properties.itinState = "itin";
-       // gamePlay.properties.locked = false;
+            $("#viewedLocations").empty();
+            $("#itin").empty();
 
-       // configData.gameData.currentDate= currentDate;
-       // configData.gameData.factsToView= null;
-       // configData.gameData.gameOver= false;
-       // configData.gameData.viewedFacts= null;
-       // configData.gameData.usedFacts= null;
-       // configData.gameData.randomDip= null;
-       // configData.gameData.usedRandomDip= null;
-       // configData.gameData.randomDis= null;
-       // configData.gameData.unlockedList= null;
-       // configData.gameData.unlockedDip= 0;
-       // configData.gameData.unlockedDis= 0;
-       // configData.gameData.unknownDip= 0;
-       // configData.gameData.unknownDis= 0;
-       // configData.gameData.usedRandomDis= null;
-       // configData.gameData.savedBushCards= null;
-       // configData.gameData.showingBushCard= false;
-       // configData.gameData.careerList= null;
-       // configData.gameData.popupEvents= [];
-       // configData.gameData.popupsExecuting= false;
-       // configData.gameData.achievementList= null;
-       // configData.gameData.achievementTotal= 0;
-       // configData.gameData.achievementNum= 0;
-       // configData.gameData.expLevel= expLevel;
-       // configData.gameData.activityNum= 0;
-       // configData.gameData.testDip= null;
-       // configData.gameData.rank= "";
-       // configData.gameData.rankIdx= 0;
-                                                                                                                   
-       // configData.gameData.currExpLevel= 0;
-       // configData.gameData.savedCardsNum= 0;
-       // configData.gameData.scrapPgs= 1;
-       // configData.gameData.totalCards= 0;
-       // configData.gameData.unlockedScrapPages= 1;
-       // configData.gameData.totalScrapPages= 0;
 
-       // localesMgmt.clearCanvas();
-       //// $("#chinaCanvas").empty();
-       // //$(".canvas-container").empty();
-   
 
-       // configData.dsItinerary.ds.data([]);
-       // configData.dsViewedLocales.ds.data([]);
-       // gamePlay.properties.replay = true;
-       // gamePlay.init(true);
+            gamePlay.properties.viewedFacts = null;
+            gamePlay.properties.usedFacts = null;
+            gamePlay.properties.factsToView = null;
+            gamePlay.properties.selectedFact = null;
+            gamePlay.properties.gameStarted = false;
+            gamePlay.properties.lastFactIdx = null;
+            gamePlay.properties.itinH = 450;
+            gamePlay.properties.itinTop = 0;
+            gamePlay.properties.itinExpanded = true;
+            gamePlay.properties.itinState = "itin";
+            gamePlay.properties.locked = false;
+
+            configData.gameData.currentDate = currentDate;
+            configData.gameData.factsToView = null;
+            configData.gameData.gameOver = false;
+            configData.gameData.viewedFacts = null;
+            configData.gameData.usedFacts = null;
+            configData.gameData.randomDip = null;
+            configData.gameData.usedRandomDip = null;
+            configData.gameData.randomDis = null;
+            configData.gameData.unlockedList = null;
+            configData.gameData.unlockedDip = 0;
+            configData.gameData.unlockedDis = 0;
+            configData.gameData.unknownDip = 0;
+            configData.gameData.unknownDis = 0;
+            configData.gameData.usedRandomDis = null;
+            configData.gameData.savedBushCards = null;
+            configData.gameData.showingBushCard = false;
+            configData.gameData.careerList = null;
+            configData.gameData.popupEvents = [];
+            configData.gameData.popupsExecuting = false;
+            configData.gameData.achievementList = null;
+            configData.gameData.achievementTotal = 0;
+            configData.gameData.achievementNum = 0;
+            configData.gameData.expLevel = expLevel;
+            configData.gameData.activityNum = 0;
+            configData.gameData.testDip = null;
+            configData.gameData.rank = "";
+            configData.gameData.rankIdx = 0;
+
+            configData.gameData.currExpLevel = 0;
+            configData.gameData.savedCardsNum = 0;
+            configData.gameData.scrapPgs = 1;
+            configData.gameData.totalCards = 0;
+            configData.gameData.unlockedScrapPages = 1;
+            configData.gameData.totalScrapPages = 0;
+
+
+            // canvas = null;
+            //$("#chinaCanvas").empty();
+            // $(".canvas-container").remove();
+
+            // $("#loading").after('<canvas width="950" height="680" id="chinaCanvas"></canvas>')
+            // configData.dsItinerary.ds.data([]);
+            configData.dsViewedLocales.ds.data([]);
+            gamePlay.properties.replay = true;
+
+            console.log("***ready to reset");
+            localesMgmt.clearCanvas();
+        } else {
         location.href = "#components/intro/view.html"
         window.location.reload(true);
+        }
+       // gamePlay.init(true);
+       
 
     },
     setupNotification: function () {
@@ -2493,7 +2504,7 @@ $(star).addClass("faded")
             gamePlay.getScrapbook();
         });
 
-
+        $(".gameover-content .play-again-btn").off();
         $(".gameover-content .play-again-btn").on("click touchend", function () {
            // fadeAudio(currentAudio);
             console.log("replay");

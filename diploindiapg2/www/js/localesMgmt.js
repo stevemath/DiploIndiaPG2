@@ -2067,7 +2067,11 @@ setTimeout(function () {
     $("canvas").attr("width", 950);
     $("canvas").attr("height", 680);
     currentFactor = 1;
-    gamePlay.init();
+    if (gamePlay.properties.replay != true) {
+        gamePlay.init();
+    } else {
+        gamePlay.init();
+    }
 }, 300);
 
 }
