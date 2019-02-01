@@ -1594,6 +1594,8 @@ $(".accept").on("click touchend", function (e) {
                         $(".itin-btns .itin-yes").off();
                         $(".itin-btns .itin-yes").on("click touchend", function () {
                             console.log("itin-yes");
+
+                            playAudio(audioList.itinerary);
                             $("#popupLoader").removeClass("active");
                            
                             gamePlay.properties.locked = false;
@@ -1620,16 +1622,15 @@ $(".accept").on("click touchend", function (e) {
                             }
                         
                           // deferred removal;
-                            self.removeDiscoveryPanel();
-
+                          
 
                             //$(".dis-fact").fadeOut(200, function () {
 
                             //});
-                            self.buryElement(".dis-fact",2000)
+                            self.buryElement(".dis-fact",3000)
                             setTimeout(function () {
-                                self.removeDiscoveryPanel();
-                            }, 2100)
+                               self.removeDiscoveryPanel();
+                            }, 3100)
                                 self.properties.currentDiscObj.state = "empty";
                                 closeDiscovery(self.properties.currentDiscObj.id);
                                 //  console.log(self.properties.currentDiscObj)
@@ -1638,7 +1639,7 @@ $(".accept").on("click touchend", function (e) {
 
                                 self.checkForPopup();
                                // 
-                                playAudio(audioList.itinerary);
+                               
                            
                         })
 
