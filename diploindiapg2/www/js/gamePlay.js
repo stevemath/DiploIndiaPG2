@@ -945,7 +945,7 @@ $(".accept").on("click touchend", function (e) {
     var itinItem = diploData;
     $(".itin-btns .itin-yes").on("click touchend", function () {
         $("#popupLoader").removeClass("active");
-      //  playAudio(audioList.itinerary);
+        playAudio(audioList.itinerary);
         updateLocale(true);
         console.log("close diplo");
       //  $("#resultsScrim").remove();
@@ -1596,8 +1596,7 @@ $(".accept").on("click touchend", function (e) {
                             console.log("itin-yes");
 
                             playAudio(audioList.itinerary);
-                            $("#popupLoader").removeClass("active");
-                           
+                          
                            
 
                             // audio plays on itin add event
@@ -1627,11 +1626,16 @@ $(".accept").on("click touchend", function (e) {
                             //$(".dis-fact").fadeOut(200, function () {
 
                             //});
-                            self.buryElement(".dis-fact",2500)
+                            
                             setTimeout(function () {
-                               // self.removeDiscoveryPanel();
+                                $("#popupLoader").removeClass("active");
+                               // self.buryElement(".dis-fact")
+                                self.removeDiscoveryPanel();
                                 gamePlay.properties.locked = false;
-                            }, 2600);
+                                self.checkForPopup();
+        currentAudio.pause();
+
+                            }, 1500);
 
                                 self.properties.currentDiscObj.state = "empty";
                                 closeDiscovery(self.properties.currentDiscObj.id);
@@ -1639,7 +1643,7 @@ $(".accept").on("click touchend", function (e) {
                                 canvas.renderAll();
                                 self.properties.lastFactIdx = null;
 
-                                self.checkForPopup();
+                                
                                // 
                                
                            
@@ -1699,12 +1703,14 @@ $(".accept").on("click touchend", function (e) {
     },
 
     buryElement: function (elem, delay) {
+        var self = this;
         var el = $(elem);
         el.css("opacity", 0);
        // el.css("z-index", 0)
         if (delay != undefined) {
             setTimeout(function () {
                 el.remove();
+               // self.removeDiscoveryPanel();
             }, delay)
         }
 
@@ -1739,7 +1745,7 @@ if(item){
         console.log("add");
 
         if (configData.dsItinerary.ds.data().length < itinSlots) {
-            playAudio(audioList.itinerary);
+           // playAudio(audioList.itinerary);
             var item = configData.dsViewedLocales.ds.get(itemId)
             if (itemId != undefined) {
                 if (configData.dsViewedLocales.ds.data.length <= itinSlots) {
@@ -1779,7 +1785,7 @@ if(item){
         console.log("add from dialog");
         console.log(itinItem);
         if (configData.dsItinerary.ds.data().length < itinSlots) {
-            playAudio(audioList.itinerary);
+           // playAudio(audioList.itinerary);
           
             configData.dsItinerary.ds.add(itinItem);
             // show itin panel
