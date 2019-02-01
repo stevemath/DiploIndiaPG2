@@ -429,7 +429,8 @@
     },
     reset: function () {
 
-        if (isIPX11() == true) {
+        var testpassivereset = false;
+        if (isIPX11() == true && testpassivereset== true ) {
             $("#gameoverLayout").remove();
 
             $("#viewedLocations").empty();
@@ -852,10 +853,13 @@ $(".accept").on("click touchend", function (e) {
    // kendo.fx($(".diplomacy-container")).flip("horizontal", $(".dip-front"), $(".dip-back")).duration(1000).play();
   //  console.log(templateContent);
 
-    $(".diplomacy-container").fadeOut(200, function () {
-        $(".card-wrapper").remove();
-        $(".diplomacy-container").remove();
-    });
+    // ***defer diplo remove
+
+    //$(".diplomacy-container").fadeOut(200, function () {
+    //    $(".card-wrapper").remove();
+    //    $(".diplomacy-container").remove();
+    //});
+    self.buryElement(".diplomacy-container")
 
 
 
@@ -955,32 +959,41 @@ $(".accept").on("click touchend", function (e) {
 
     var itinItem = diploData;
     $(".itin-btns .itin-yes").on("click touchend", function () {
-        $("#popupLoader").removeClass("active");
+       
         playAudio(audioList.itinerary);
-        updateLocale(true);
+       
         console.log("close diplo");
       //  $("#resultsScrim").remove();
         //$("#fireworksiframe").remove();
 
 
        
-        $(".diplomacy-container").fadeOut(200, function () {
-            $(".card-wrapper").remove();
-            // $(".diplomacy-container").remove();
-           // $("#resultsScrim").remove();
-            //$("#fireworksiframe").remove();
-            self.checkForPopup();
-        });
+        //$(".diplomacy-container").fadeOut(200, function () {
+        //    $(".card-wrapper").remove();
+        //    // $(".diplomacy-container").remove();
+        //   // $("#resultsScrim").remove();
+        //    //$("#fireworksiframe").remove();
+        //    self.checkForPopup();
+        //});
 
-        $(".dis-fact").fadeOut(200, function () {
-            $(".card-wrapper").remove();
-            // $(".diplomacy-container").remove();
-           // $("#resultsScrim").remove();
-            //$("#fireworksiframe").remove();
-            self.checkForPopup();
-        });
+        //$(".dis-fact").fadeOut(200, function () {
+        //    $(".card-wrapper").remove();
+        //    // $(".diplomacy-container").remove();
+        //   // $("#resultsScrim").remove();
+        //    //$("#fireworksiframe").remove();
+        //    self.checkForPopup();
+        //});
 
-     
+        setTimeout(function () {
+            updateLocale(true);
+            $("#popupLoader").removeClass("active");
+            // self.buryElement(".dis-fact")
+            self.removeDiscoveryPanel();
+            gamePlay.properties.locked = false;
+            self.checkForPopup();
+            currentAudio.pause();
+
+        }, 1500);
 
        
     })
@@ -1730,7 +1743,7 @@ $(".accept").on("click touchend", function (e) {
         $(".dis-fact").remove();
         $(".card-wrapper").remove();
         $(".discovery-container").remove();
-
+        $(".diplomacy-container").remove();
     },
     removeItinItem: function (itemId) {
        
