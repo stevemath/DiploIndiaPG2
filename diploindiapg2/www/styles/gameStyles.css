@@ -5377,13 +5377,20 @@ max-height:349px !important;
         }
 
         .credits-container {
-            height: 90%;
+            height: 85%;
             top: 2%;
             left: 50%;
             width: 97%;
             margin-left: -48.5%;
             padding: 1%;
         }
+        
+       .iosx11 .credits-container {
+            height: 250px;
+           
+        }
+
+
 
 
         .credits-container .heading {
@@ -5395,6 +5402,12 @@ max-height:349px !important;
             width: 96%;
             margin-left: 2%;
             height:65%;
+            overflow-y:scroll;
+        }
+
+       .iosx11  #imgCredits {
+           
+            height:170px;
             overflow-y:scroll;
         }
 
