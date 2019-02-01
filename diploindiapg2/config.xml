@@ -64,6 +64,9 @@
     <splash density="port-xxxhdpi" src="res/screen/android/splash-port-xxxhdpi.png"/>
   </platform>
   <platform name="ios">
+    <config-file parent="CFBundleDisplayName" platform="ios" target="*-Info.plist">
+      <string>Presidential Mission to India</string>
+    </config-file>
     <icon src="res/icon/ios/icon-1024.png" width="1024" height="1024"/>
     <icon src="res/icon/ios/icon-small.png" width="29" height="29"/>
     <icon src="res/icon/ios/icon-small@2x.png" width="58" height="58"/>
