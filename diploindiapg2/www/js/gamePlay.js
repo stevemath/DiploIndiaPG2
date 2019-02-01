@@ -1598,7 +1598,7 @@ $(".accept").on("click touchend", function (e) {
                             playAudio(audioList.itinerary);
                             $("#popupLoader").removeClass("active");
                            
-                            gamePlay.properties.locked = false;
+                           
 
                             // audio plays on itin add event
                             //playAudio(audioList.itinerary);
@@ -1627,10 +1627,12 @@ $(".accept").on("click touchend", function (e) {
                             //$(".dis-fact").fadeOut(200, function () {
 
                             //});
-                            self.buryElement(".dis-fact",3000)
+                            self.buryElement(".dis-fact",2500)
                             setTimeout(function () {
-                               self.removeDiscoveryPanel();
-                            }, 3100)
+                               // self.removeDiscoveryPanel();
+                                gamePlay.properties.locked = false;
+                            }, 2600);
+
                                 self.properties.currentDiscObj.state = "empty";
                                 closeDiscovery(self.properties.currentDiscObj.id);
                                 //  console.log(self.properties.currentDiscObj)
