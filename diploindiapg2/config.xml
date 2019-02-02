@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='utf-8'?>
 <widget defaultlocale="en-US" id="io.cordova.myapp3c686b" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0" xmlns:vs="http://schemas.microsoft.com/appx/2014/htmlapps">
-    <name>Presidential Mission to India</name>
+    <name>To&#x2007;India</name>
     <description>Presidential Mission to India: An educational game about diplomacy and India's geography, culture, and history.</description>
     <author email="dev@cordova.apache.org" href="http://cordova.io">Eduweb</author>
     <vs:template-name>BlankJS</vs:template-name>
@@ -115,7 +115,10 @@
    
     <preference name="PaginationMode" value="unpaginated" />
     <preference name="StatusBarBackgroundColor" value="#000000" />
+  <config-file parent="CFBundleDisplayName" platform="ios" target="*-Info.plist">
+    <string>Mission&#x2007;to&#x2007;India</string>
+  </config-file>
     <plugin name="cordova-plugin-app-name" spec="^1.0.4">
-        <variable name="APP_NAME" value="Presidential Mission to India" />
+        <variable name="APP_NAME" value="Bush&#x2007;in&#x2007;India" />
     </plugin>
 </widget>
