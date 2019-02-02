@@ -116,7 +116,7 @@
     <preference name="PaginationMode" value="unpaginated" />
     <preference name="StatusBarBackgroundColor" value="#000000" />
   <config-file parent="CFBundleDisplayName" platform="ios" target="*-Info.plist">
-    <string>Mission&#x2007;to&#x2007;India</string>
+    <string>Mission&#x2007;Asia</string>
   </config-file>
     <plugin name="cordova-plugin-app-name" spec="^1.0.4">
         <variable name="APP_NAME" value="Bush&#x2007;in&#x2007;India" />
