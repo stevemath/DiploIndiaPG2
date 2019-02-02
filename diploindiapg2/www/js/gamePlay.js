@@ -290,7 +290,7 @@
         $(".expPts").css("pointer-events","all !important")
         $(".expPts").on("click touchend", function () {
             console.log("get gameover");
-            self.getGameOver();
+           // self.getGameOver();
 
         })
 
