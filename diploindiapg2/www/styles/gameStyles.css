@@ -1591,6 +1591,7 @@ z-index:0;
         background-repeat: repeat;
         background-position-x: center;
         z-index: 100000;
+        pointer-events:all;
     }
 
 

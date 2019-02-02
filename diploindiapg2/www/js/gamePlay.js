@@ -810,11 +810,11 @@ $(".diplomacy-container").fadeIn();
 
 
           
-        $(".cancel").on("click touchend", function () {
+        $(".cancel").on("touchend", function () {
             gamePlay.properties.locked = false;
     fadeAudio(currentAudio);
     $(".diplomacy-container").fadeOut(200, function () {
-       // $(".diplomacy-container").remove();
+        $(".diplomacy-container").remove();
         $(".card-wrapper").remove();
     });
    
@@ -855,11 +855,11 @@ $(".accept").on("click touchend", function (e) {
 
     // ***defer diplo remove
 
-    //$(".diplomacy-container").fadeOut(200, function () {
-    //    $(".card-wrapper").remove();
-    //    $(".diplomacy-container").remove();
-    //});
-    self.buryElement(".diplomacy-container")
+    $(".diplomacy-container").fadeOut(200, function () {
+        $(".card-wrapper").remove();
+        $(".diplomacy-container").remove();
+    });
+    //self.buryElement(".diplomacy-container")
 
 
 
@@ -930,7 +930,7 @@ $(".accept").on("click touchend", function (e) {
     }
 
     setTimeout(function () {
- $(".dip-btn").on("click touchend", function (e) {
+ $(".dip-btn").on("touchend", function (e) {
         console.log("answer click");
         //self.evalDipResp(e, diploPts, exPts, diploData.risk.id)
         self.evalDipResp(e, diploPts, exPts)
@@ -941,7 +941,7 @@ $(".accept").on("click touchend", function (e) {
 
 
     $(".continue").off();
-    $(".card-content .continue").on("click touchend", function () {
+    $(".card-content .continue").on("touchend", function () {
         $(".card-content .continue").remove();
         var itinExists = configData.dsItinerary.ds.get(diploData.Id)
         if (itinExists) {
@@ -958,7 +958,7 @@ $(".accept").on("click touchend", function (e) {
 
 
     var itinItem = diploData;
-    $(".itin-btns .itin-yes").on("click touchend", function () {
+    $(".itin-btns .itin-yes").on("touchend", function () {
        
         playAudio(audioList.itinerary);
        
@@ -976,24 +976,25 @@ $(".accept").on("click touchend", function (e) {
         //    self.checkForPopup();
         //});
 
-        //$(".dis-fact").fadeOut(200, function () {
-        //    $(".card-wrapper").remove();
-        //    // $(".diplomacy-container").remove();
-        //   // $("#resultsScrim").remove();
-        //    //$("#fireworksiframe").remove();
-        //    self.checkForPopup();
-        //});
-
-        setTimeout(function () {
-            updateLocale(true);
+        $(".dis-fact").fadeOut(200, function () {
+            $(".card-wrapper").remove();
+             $(".diplomacy-container").remove();
             $("#popupLoader").removeClass("active");
-            // self.buryElement(".dis-fact")
-            self.removeDiscoveryPanel();
-            gamePlay.properties.locked = false;
+            $("#chinaMap").focus();
             self.checkForPopup();
-            currentAudio.pause();
+        });
 
-        }, 1500);
+        //setTimeout(function () {
+        //    updateLocale(true);
+        //    $("#popupLoader").removeClass("active");
+        //    $("#chinaMap").focus();
+        //    // self.buryElement(".dis-fact")
+        //    self.removeDiscoveryPanel();
+        //    gamePlay.properties.locked = false;
+        //    self.checkForPopup();
+        //    currentAudio.pause();
+
+        //}, 1500);
 
        
     })
@@ -1001,6 +1002,7 @@ $(".accept").on("click touchend", function (e) {
     $(".itin-btns .itin-no").on("click touchend", function () {
         console.log(itinItem);
         $("#popupLoader").removeClass("active");
+        $("#chinaMap").focus();
         updateLocale(false);
         var dup = configData.dsViewedLocales.ds.get(itinItem.Id)
         if (dup == undefined) {
@@ -1111,18 +1113,14 @@ $(".accept").on("click touchend", function (e) {
                 if (result < compare) {
                     correct = 1;
                     
-                 //if (diploData.risk.id == "low") {
-                 //    playAudio(audioList.goodLow);
-                 //} else {
-                 //    playAudio(audioList.goodHigh);
-                 //}
+                 
                     playAudio(audioList.goodLow);
 
                  if (typeof diploData.correctResponse.noQuiz != 'undefined') {
                      console.log("fail on correct")
                      var outcomeHtml = diploData.correctResponse.noQuiz;
 
-                    // $(".outcome").html(outcomeHtml);
+                    
                  } else {
                      console.log("correct");
                      $(".outcome").html("");
@@ -1132,11 +1130,7 @@ $(".accept").on("click touchend", function (e) {
              } else {
                     correct = 0;
 
-                    //if (diploData.risk.id == "low") {
-                    //    playAudio(audioList.badLow);
-                    //} else {
-                    //    playAudio(audioList.badHigh);
-                    //}
+                    
 
                     playAudio(audioList.badLow);
 
@@ -1144,17 +1138,17 @@ $(".accept").on("click touchend", function (e) {
                      console.log("fail on incorrect")
                      var outcomeHtml = diploData.incorrectResponse.noQuiz;
 
-                    // $(".outcome").html(outcomeHtml);
+                    
                  } else {
                      console.log("incorrect")
                      $(".outcome").html("");
                      self.evalRandom(correct);
                  }
 
-                 if (diploData.random == false) {
-                    // trigger game tip 0
-                     configData.gameData.checkTips(0);
-                 }
+                 //if (diploData.random == false) {
+                 //   // trigger game tip 0
+                 //    configData.gameData.checkTips(0);
+                 //}
              }
 
              self.evalRandom(correct);
@@ -1482,7 +1476,7 @@ $(".accept").on("click touchend", function (e) {
 
                 });
                 $(".accept").off();
-                $(".accept").on("touchend click", function (e) {
+                $(".accept").on("touchend", function (e) {
                     configData.gameData.careerList.push(discData.name);
                     configData.gameData.set("activityNum", configData.gameData.careerList.length);
                     console.log(configData.gameData.activityNum);
@@ -1492,11 +1486,11 @@ $(".accept").on("click touchend", function (e) {
                     // kendo.fx($(".discovery-container")).flip("horizontal", $(".dis-front"), $(".dis-back")).duration(1000).play();
 
                    // defer disc handling
-                    // $(".discovery-container").fadeOut(200, function () {
-                       // $(".card-wrapper").remove();
-                        //$(".discovery-container").remove();
-                    //});
-                    self.buryElement(".discovery-container")
+                     $(".discovery-container").fadeOut(200, function () {
+                        $(".card-wrapper").remove();
+                        $(".discovery-container").remove();
+                    });
+                   // self.buryElement(".discovery-container")
 
 
 
@@ -1518,7 +1512,7 @@ $(".accept").on("click touchend", function (e) {
 
                     $("#popupLoader").empty();
                     $("#popupLoader").addClass("active");
-                  $("#popupLoader").prepend(resultF);
+                 $("#popupLoader").prepend(resultF);
 
                    var w = $("#popupLoader").width();
                     
@@ -1563,7 +1557,7 @@ $(".accept").on("click touchend", function (e) {
                     setTimeout(function () {
                         $(".continue").off();
 
-                        $(".dis-btn .continue").on("click touchend", function () {
+                        $(".dis-btn .continue").on("touchend", function () {
 
                             //var disH = $(".dis-fact").width();
                             //var bodyH = $("body").width();
@@ -1616,7 +1610,7 @@ $(".accept").on("click touchend", function (e) {
 
                         var itinItem = discData;
                         $(".itin-btns .itin-yes").off();
-                        $(".itin-btns .itin-yes").on("click touchend", function () {
+                        $(".itin-btns .itin-yes").on("touchend", function () {
                             console.log("itin-yes");
 
                             playAudio(audioList.itinerary);
@@ -1624,7 +1618,7 @@ $(".accept").on("click touchend", function (e) {
                            
 
                             // audio plays on itin add event
-                            //playAudio(audioList.itinerary);
+                           playAudio(audioList.itinerary);
                             var expPts = parseInt(exPts);
                             configData.gameData.adjustRank(expPts);
                            
@@ -1647,19 +1641,25 @@ $(".accept").on("click touchend", function (e) {
                           // deferred removal;
                           
 
-                            //$(".dis-fact").fadeOut(200, function () {
-
-                            //});
-                            
-                            setTimeout(function () {
-                                $("#popupLoader").removeClass("active");
+                           $(".dis-fact").fadeOut(200, function () {
+                              
                                // self.buryElement(".dis-fact")
-                                self.removeDiscoveryPanel();
-                                gamePlay.properties.locked = false;
-                                self.checkForPopup();
-        currentAudio.pause();
+                               self.removeDiscoveryPanel();
+                               gamePlay.properties.locked = false;
+                               self.checkForPopup();
+                               $("#popupLoader").removeClass("active");
+                               $("#chinaMap").focus();
+                            });
+                            
+        //                    setTimeout(function () {
+        //                        $("#popupLoader").removeClass("active");
+        //                       // self.buryElement(".dis-fact")
+        //                        self.removeDiscoveryPanel();
+        //                        gamePlay.properties.locked = false;
+        //                        self.checkForPopup();
+        //currentAudio.pause();
 
-                            }, 1500);
+        //                    }, 1500);
 
                                 self.properties.currentDiscObj.state = "empty";
                                 closeDiscovery(self.properties.currentDiscObj.id);
@@ -1674,10 +1674,10 @@ $(".accept").on("click touchend", function (e) {
                         })
 
                         $(".itin-btns .itin-no").off();
-                        $(".itin-btns .itin-no").on("click touchend", function () {
+                        $(".itin-btns .itin-no").on("touchend", function () {
                             console.log(itinItem);
                             $("#popupLoader").removeClass("active");
-
+                            $("#chinaMap").focus();
                             gamePlay.properties.locked = false;
 
                             var expPts = parseInt(exPts);
@@ -2716,12 +2716,7 @@ $(star).addClass("faded")
 
             playAudio(audioList.goodLow);
 
-
-
-
-           // $(".card-content .heading").text("DIPLOMACY SUCCESS");
-
-           // $(".card-content .heading").text($(e.target).data().corrresp);
+           
             $(".q-wrapper").hide();
             $(".corr-resp").show();
             $(".resp-wrapper").fadeIn();
@@ -2729,16 +2724,9 @@ $(star).addClass("faded")
            
 
         } else {
-            //$(".card-content .heading").text($(e.target).data().incorrresp);
-            //if (risk == "low") {
-            //    playAudio(audioList.badLow);
-            //} else {
-            //    playAudio(audioList.badHigh);
-            //}
+           
 
             playAudio(audioList.badLow);
-
-           // $(".card-content .heading").text("DIPLOMACY FAILURE");
 
             $(".q-wrapper").hide();
             $(".incorr-resp").show();
@@ -2748,7 +2736,7 @@ $(star).addClass("faded")
         }
 
         $(".card-content .continue").show();
-      //  self.showResults(correct, expPts, dipPts)
+      
     },
 
     evalRandom: function (correct) {
