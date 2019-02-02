@@ -60,7 +60,7 @@
     <platform name="ios">
 
       <config-file parent="CFBundleDisplayName" platform="ios" target="*-Info.plist">
-        <string>Mission&#x2007;To&#x2007;India</string>
+        <string>Presidential&#x2007;Mission&#x2007;To&#x2007;India</string>
       </config-file>
         <icon height="1024" src="res/icon/ios/icon-1024.png" width="1024" />
         <icon height="29" src="res/icon/ios/icon-small.png" width="29" />
