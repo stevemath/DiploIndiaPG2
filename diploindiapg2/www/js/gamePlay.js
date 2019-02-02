@@ -5,6 +5,7 @@
         factsToView: null,
         selectedFact: null,
         gameStarted: false,
+        mapTouched:false,
         lastFactIdx: null,
         itinH: 450,
         itinTop: 0,
@@ -977,10 +978,12 @@ $(".accept").on("click touchend", function (e) {
         //});
 
         $(".dis-fact").fadeOut(200, function () {
+            updateLocale(true);
             $(".card-wrapper").remove();
              $(".diplomacy-container").remove();
             $("#popupLoader").removeClass("active");
             $("#chinaMap").focus();
+            gamePlay.properties.locked = false;
             self.checkForPopup();
         });
 

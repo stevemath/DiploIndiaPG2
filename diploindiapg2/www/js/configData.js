@@ -13,7 +13,8 @@ var configData = {
         mapLoaded:false,
         currentDate: currentDate,
         factsToView: null,
-        gameOver:false,
+        gameOver: false,
+        
         viewedFacts: null,
         usedFacts: null,
         randomDip: null,

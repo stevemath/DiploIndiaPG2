@@ -813,7 +813,8 @@ var localesMgmt = {
              window.mousedown = false;
              console.log("obj click registered");
              gamePlay.checkForPopup();
-               fadeAudio(currentAudio);
+            
+               
                 var target = canvas.findTarget(event);
          
             //  console.log("canvas click")
@@ -840,7 +841,10 @@ var localesMgmt = {
 
              if (target.id && openWindows == false && gamePlay.properties.locked == false) {
 
-               
+                 if (gamePlay.properties.mapTouched == false) {
+                     fadeAudio(currentAudio);
+                     gamePlay.properties.mapTouched = true;
+                 }
 
                
 

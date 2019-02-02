@@ -64,9 +64,7 @@
     <splash density="port-xxxhdpi" src="res/screen/android/splash-port-xxxhdpi.png"/>
   </platform>
   <platform name="ios">
-    <edit-config file="*-Info.plist" mode="merge" target="CFBundleDisplayName">
-      <string>Presidential Mission to India</string>
-    </edit-config>
+  
     <icon src="res/icon/ios/icon-1024.png" width="1024" height="1024"/>
     <icon src="res/icon/ios/icon-small.png" width="29" height="29"/>
     <icon src="res/icon/ios/icon-small@2x.png" width="58" height="58"/>
@@ -124,7 +122,9 @@
   <preference name="GapBetweenPages" value="0" />
   <preference name="PageLength" value="0" />
   <preference name="PaginationBreakingMode" value="page" />
-
+  <edit-config file="*-Info.plist" mode="merge" target="CFBundleDisplayName">
+    <string>Presidential Mission to India</string>
+  </edit-config>
   <!-- page, column -->
   <preference name="PaginationMode" value="unpaginated" />
   <!-- unpaginated, leftToRight, topToBottom, bottomToTop, rightToLeft -->
