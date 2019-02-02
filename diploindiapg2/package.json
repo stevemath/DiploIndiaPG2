@@ -1,7 +1,15 @@
 {
-    "name": "diploindiapg2",
-    "version": "1.0.0",
-    "private": true,
-    "dependencies": {
+  "name": "diploindiapg2",
+  "version": "1.0.0",
+  "private": true,
+  "dependencies": {
+    "cordova-plugin-app-name": "^1.0.4"
+  },
+  "cordova": {
+    "plugins": {
+      "cordova-plugin-app-name": {
+        "APP_NAME": "Presidential Mission to India"
+      }
     }
+  }
 }

@@ -1,0 +1,101 @@
+{
+  "_args": [
+    [
+      {
+        "raw": "cordova-plugin-app-name",
+        "scope": null,
+        "escapedName": "cordova-plugin-app-name",
+        "name": "cordova-plugin-app-name",
+        "rawSpec": "",
+        "spec": "latest",
+        "type": "tag"
+      },
+      "D:\\repositories\\diploindiapg2\\diploindiapg2\\diploindiapg2"
+    ]
+  ],
+  "_from": "cordova-plugin-app-name@latest",
+  "_id": "cordova-plugin-app-name@1.0.4",
+  "_inCache": true,
+  "_location": "/cordova-plugin-app-name",
+  "_nodeVersion": "7.7.3",
+  "_npmOperationalInternal": {
+    "host": "s3://npm-registry-packages",
+    "tmp": "tmp/cordova-plugin-app-name-1.0.4.tgz_1503128707726_0.26764287636615336"
+  },
+  "_npmUser": {
+    "name": "blakgeek",
+    "email": "blakgeek@gmail.com"
+  },
+  "_npmVersion": "4.6.1",
+  "_phantomChildren": {},
+  "_requested": {
+    "raw": "cordova-plugin-app-name",
+    "scope": null,
+    "escapedName": "cordova-plugin-app-name",
+    "name": "cordova-plugin-app-name",
+    "rawSpec": "",
+    "spec": "latest",
+    "type": "tag"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/cordova-plugin-app-name/-/cordova-plugin-app-name-1.0.4.tgz",
+  "_shasum": "16bbb0cd1af0740ba6347eba40f2203341d4fb3d",
+  "_shrinkwrap": null,
+  "_spec": "cordova-plugin-app-name",
+  "_where": "D:\\repositories\\diploindiapg2\\diploindiapg2\\diploindiapg2",
+  "bugs": {
+    "url": "https://github.com/blakgeek/cordova-plugin-app-name/issues"
+  },
+  "cordova": {
+    "id": "cordova-plugin-app-name",
+    "platforms": [
+      "ios",
+      "android"
+    ]
+  },
+  "dependencies": {
+    "xml2js": "^0.4.16"
+  },
+  "description": "A Cordova/PhoneGap plugin that allows you to give you app a name with spaces and special characters and stuff.",
+  "devDependencies": {
+    "libxmljs": "^0.18.4"
+  },
+  "directories": {},
+  "dist": {
+    "shasum": "16bbb0cd1af0740ba6347eba40f2203341d4fb3d",
+    "tarball": "https://registry.npmjs.org/cordova-plugin-app-name/-/cordova-plugin-app-name-1.0.4.tgz"
+  },
+  "gitHead": "28e6fa8bd1e90d297896eda87e7a23a086e2000c",
+  "homepage": "https://github.com/blakgeek/cordova-plugin-app-name",
+  "keywords": [
+    "ecosystem:cordova",
+    "cordova-android",
+    "cordova-ios",
+    "cordova:plugin",
+    "spaces",
+    "app",
+    "name",
+    "rename"
+  ],
+  "license": "MIT",
+  "maintainers": [
+    {
+      "name": "blakgeek",
+      "email": "blakgeek@gmail.com"
+    }
+  ],
+  "name": "cordova-plugin-app-name",
+  "optionalDependencies": {},
+  "readme": "ERROR: No README data found!",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/blakgeek/cordova-plugin-app-name.git"
+  },
+  "scripts": {
+    "postversion": "node scripts/sync-plugin-version.js; git add plugin.xml; git commit plugin.xml -m \"v${npm_package_version}\""
+  },
+  "version": "1.0.4"
+}
