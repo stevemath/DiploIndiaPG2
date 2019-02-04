@@ -879,45 +879,54 @@ $(".accept").on("click touchend", function (e) {
 
     var resultA = kendo.render(templateA, [diploData]);
 
-   // $("body").prepend(resultA);
+  
 
 
 
+    if (isIPX11() == true) {
+        $("#popupLoader").empty();
+        $("#popupLoader").addClass("active");
+        $("#popupLoader").prepend(resultA);
 
-    $("#popupLoader").empty();
-    $("#popupLoader").addClass("active");
-    $("#popupLoader").prepend(resultA);
+        var w = $("#popupLoader").width();
 
-    var w = $("#popupLoader").width();
+        var h = $("#popupLoader").height();
 
-    var h = $("#popupLoader").height();
-    var dw = $(".dis-fact").width();
-    var dh = $(".dis-fact").height();
-    console.log(w + " " + h + " " + dw + " " + dh)
-    // if (w < dw + 20 || h < dh + 20) {
+        var dw = $(".dis-fact").width();
+        var dh = $(".dis-fact").height();
+        console.log(w + " " + h + " " + dw + " " + dh)
+        // if (w < dw + 20 || h < dh + 20) {
 
-    var wr = (dw + 30) / w;
-    var hr = (dh + 30) / h;
-    var scale;
-    if (hr > wr) {
-        console.log("height");
-        scale = 1 / hr;
+        var wr = (dw + 30) / w;
+        var hr = (dh + 30) / h;
+        var scale;
+        if (hr > wr) {
+            console.log("height");
+            scale = 1 / hr;
+        } else {
+            console.log("width");
+            scale = 1 / hr;
+        }
+
+        console.log(scale)
+
+
+        $(".dis-fact").css("transform", "scale(" + scale + ") ")
+        setTimeout(function () {
+            var ml = -(w - $(".dis-fact").width()) / 2 - 0;
+            var mt = (h - $(".dis-fact").height()) / 2 - 0;
+
+        }, 300)
+
+
+
     } else {
-        console.log("width");
-        scale = 1 / hr;
+ $("body").prepend(resultA);
     }
-
-    console.log(scale)
-
-
-    $(".dis-fact").css("transform", "scale(" + scale + ") ")
-    setTimeout(function () {
-        var ml = -(w - $(".dis-fact").width()) / 2 - 0;
-        var mt = (h - $(".dis-fact").height()) / 2 - 0;
-
-    }, 300)
+ 
 
 
+   
 
 
 
@@ -1512,32 +1521,33 @@ $(".accept").on("click touchend", function (e) {
 
                     var resultF = kendo.render(templateF, tData);
 
+                    if (isIPX11() == true) {
 
-                    $("#popupLoader").empty();
-                    $("#popupLoader").addClass("active");
-                 $("#popupLoader").prepend(resultF);
+                        $("#popupLoader").empty();
+                        $("#popupLoader").addClass("active");
+                        $("#popupLoader").prepend(resultF);
 
-                   var w = $("#popupLoader").width();
-                    
-                  var h = $("#popupLoader").height();
-                    var dw = $(".dis-fact").width();
-                    var dh = $(".dis-fact").height();
-                    console.log(w + " " + h + " " + dw + " " + dh)
-                   // if (w < dw + 20 || h < dh + 20) {
+                        var w = $("#popupLoader").width();
+
+                        var h = $("#popupLoader").height();
+                        var dw = $(".dis-fact").width();
+                        var dh = $(".dis-fact").height();
+                        console.log(w + " " + h + " " + dw + " " + dh)
+                        // if (w < dw + 20 || h < dh + 20) {
 
                         var wr = (dw + 30) / w;
                         var hr = (dh + 30) / h;
                         var scale;
-                    if (hr > wr) {
-                        console.log("height");
+                        if (hr > wr) {
+                            console.log("height");
                             scale = 1 / hr;
-                    } else {
-                        console.log("width");
+                        } else {
+                            console.log("width");
                             scale = 1 / hr;
                         }
 
                         console.log(scale)
-                      
+
 
                         $(".dis-fact").css("transform", "scale(" + scale + ") ")
                         setTimeout(function () {
@@ -1545,7 +1555,13 @@ $(".accept").on("click touchend", function (e) {
                             var mt = (h - $(".dis-fact").height()) / 2 - 0;
 
                         }, 300)
-                   // }
+                    } else {
+
+
+                        $("body").prepend(resultF);
+                    }
+                   
+                   
 
 
                  
