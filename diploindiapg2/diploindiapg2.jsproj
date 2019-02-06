@@ -85,10 +85,16 @@
     <Content Include="**\**" Exclude="**\platforms\**;**\bin\**;**\bld\**;**\node_modules\**;**\simulation\**;**\plugins\**;.gitignore;diploindiapg2.*" />
   </ItemGroup>
   <ItemGroup>
-    <Content Update="config - Copy %282%29.xml">
+    <Content Update=".vs\archive\config - Copy (2).xml">
       <SubType>Designer</SubType>
     </Content>
-    <Content Update="config - Copy %283%29.xml">
+    <Content Update=".vs\archive\config - Copy (3).xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Update=".vs\archive\config - Copy (4).xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Update="config - Copy.xml">
       <SubType>Designer</SubType>
     </Content>
     <Content Update="config.xml">
