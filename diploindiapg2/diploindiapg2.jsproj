@@ -94,10 +94,10 @@
     <Content Update=".vs\archive\config - Copy (4).xml">
       <SubType>Designer</SubType>
     </Content>
-    <Content Update="config - Copy.xml">
+    <Content Update="config.xml">
       <SubType>Designer</SubType>
     </Content>
-    <Content Update="config.xml">
+    <Content Update="config-bad.xml">
       <SubType>Designer</SubType>
     </Content>
   </ItemGroup>
