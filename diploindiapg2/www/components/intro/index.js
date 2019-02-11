@@ -82,6 +82,10 @@ app.intro = kendo.observable({
 
         console.log(kendo.support.mobileOS);
         // set links for desk or mobile
+
+        $(".appstore").hide();
+        $(".googlestore").hide();
+       
         if (kendo.support.mobileOS.device == undefined) {
             $(".gwb").on("click touchend", function () {
                 window.open('https://www.bush41.org', '_blank');
@@ -108,9 +112,7 @@ app.intro = kendo.observable({
                 
             });
 
-            $(".appstore").hide();
-            $(".googlestore").hide();
-
+           
 
 
             $(".eduweb-link").on("click touchend", function () {
