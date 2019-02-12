@@ -129,6 +129,5 @@
   <preference name="PaginationMode" value="unpaginated" />
   <preference name="StatusBarBackgroundColor" value="#000000" />
   
-  <plugin name="cordova-plugin-app-name" spec="~1.0.4" />
-  <plugin name="cordova-plugin-nativeaudio" spec="~3.0.9" />
+ 
 </widget>
