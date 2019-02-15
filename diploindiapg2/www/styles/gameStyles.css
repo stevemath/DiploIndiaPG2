@@ -100,6 +100,14 @@ body, .km-content, .km-android {
    
 }
 
+.loading-text {
+    font-size: 4vh;
+    font-family: Karma;
+    color: #bb0000;
+    font-weight:bold;
+    margin-top:20px;
+}
+
 .two-thirds {
     float:left;
     width:65%;
